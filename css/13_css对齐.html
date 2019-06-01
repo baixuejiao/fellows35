@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            left: 0;;
+        }
+
+        /* 
+            块级元素左右居中
+            margin-left = marign-right = auto
+            margin: 0 auto;
+        */
+
+        /* 
+            单行文本 垂直居中 行高等于容器的高度
+        */
+        div{
+
+            /* width: 200px;
+            height: 100px;
+            margin: 0 auto; */
+            /* 行高 */
+            /* line-height: 100px;
+            text-align: center; */
+            /* background: aqua; */
+        }
+
+        span{
+            overflow-x: scroll;
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+        }
+
+        #inner{
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+            /* 
+                溢出 overflow
+            */
+            overflow-y: hidden;
+        }
+
+        #textoverflow{
+            width: 200px;
+            height: 30px;
+            border: 1px solid #000;
+            
+            /* 文本溢出 */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        /* 
+            单行文本溢出展示..
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        */
+    </style>
+</head>
+<body>
+    <div>12345671234</div>
+
+    <div id="inner">1234567890-7654ertyuiop[1234567890-7654ertyuiop[1234567890-7654ertyuiop[1234567890-7654ertyuiop[</div>
+    
+    <div id="textoverflow">
+        sdfghjklfdfgjklertuyiopcvjksdfghjklfdfgjklertuyiopcvjk
+    </div>
+
+</body>
+</html>
