@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* px像素 */
+        body{
+            height: 3000px;
+        }
+        /* 标签选择器
+            标签名 
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        /* 
+            id选择器
+            #id名称
+        */
+        #content{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+
+        /* 
+            类选择器/class选择器
+            .类型
+        */
+        .list{
+            color: blue;
+        }
+
+        /* 子代选择器 >
+            选中亲儿子
+        */
+        #wrap>li{
+            color: red;
+        }
+
+        p>span{
+            background: blue;
+        }
+
+        /* 后代选择器
+            选中 儿子 孙子 。。。。
+        */
+        p span{
+            color: red;
+        }
+
+        /* 分组选择器 , */
+        #content, .list{
+            color: brown;
+        }
+
+        /* 
+            伪类选择器 :
+        */
+        a:hover{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <!-- id 名称必须是唯一的 页面内不可以重复 -->
+    <div id="content">div1</div>
+    <p class="list">段落</p>
+
+    <ul id="wrap">
+        <li class="list1">1</li>
+        <li class="list1">2</li>
+        <li class="list1">3</li>
+    </ul>
+
+    <p>
+        <a href="">a1</a>
+        <span>span1</span>
+        <a href="">
+            a2
+            <span>span2
+                <span>span3</span>
+            </span>
+        </a>
+        <a href="">
+            <a href="">
+                <span>
+                    <span></span>
+                </span>
+            </a>
+        </a>
+        <span></span>
+    </p>
+
+    <a href="#">超链接</a>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wraper{
+            width: 600px;
+            height: 600px;
+            background-repeat: repeat-x;
+        }
+        #inner{
+            width: 500px;
+            height: 500px;
+
+            /* 设置背景颜色 */
+            background-color: aqua;
+
+            /* 背景图片
+                url 图片地址
+            */
+            background-image: url('../images/pic.jpg');
+
+            /* 背景重复
+                repeat 默认的
+                no-repeat
+                repeat-x
+                repeat-y
+                inherit
+            */
+            background-repeat: no-repeat;
+
+            /* 背景图位置
+                x y
+                实际的像素
+                left top bottom right center
+                百分比
+            */
+            background-position: 10% 20%;
+
+            /* 简写 */
+            background: green url('../images/pic.jpg') center no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wraper">
+        <div id="inner"></div>
+    </div>
+</body>
+</html>
