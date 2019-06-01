@@ -1,4 +1,4 @@
-<!-- 声明文档类型 通知浏览器根据哪个版本渲染页面 -->
+<!-- 声明文档类型 通知浏览器根据哪个版本渲染页面 html5版本 -->
 <!DOCTYPE html>
 <!-- 根元素 -->
 <html lang="en">
@@ -20,8 +20,160 @@
     <title>网页标题</title>
 </head>
 <!-- 主要内容在body标签里 -->
-<body>
-   <!-- html注释 --> 
-   
+<body style="height: 3000px;">
+    <!-- html注释 --> 
+    网页内容
+    <!-- h1~h6 标题 -->
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <h3>标题3</h3>
+    <h4>标题4</h4>
+    <h5>标题5</h5>
+    <h6>标题6</h6>
+
+    <!-- p 段落 -->
+    <p>段落</p>
+    <!-- i 斜体 -->
+    <p>淘宝网 - 亚洲较大的网上交易平台，<i>提供各类服饰</i>、美容、家居、数码、话费/点卡充值… 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！</p>
+    
+    <!-- 
+        br 强制换行
+        strong 加粗
+    -->
+    <p><strong>淘宝网</strong> - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值… <br/> 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！</p>
+
+    <!-- 
+        src 图片地址
+        图片地址： 绝对路径、相对路径
+        alt 图片的说明 图片加载不出来展示
+
+        png  .png 透明图 
+        jpeg .jpg .jpeg
+        gif .gif 动图
+     -->
+    <img src="http://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png" alt="淘宝logo">
+    <img src="../images/pic111.jpg" alt="图片">
+    <img src="./inter.png" alt="">
+
+    <!-- 
+        超链接
+        href 跳转链接
+        target="_blank" 打开新页面
+    -->
+    <a href="https://www.baidu.com" target="_blank">百度</a>
+
+    <!-- 无序列表 -->
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+    </ul>
+
+    <!-- 有序列表 -->
+    <ol>
+        <li>列表3</li>
+        <li>列表4</li>
+    </ol>
+
+    <!-- 
+        div+css
+        div span 布局
+    -->
+    <div>div1234567</div>
+    <div>div1234567</div>
+    <span>span1</span>
+    <span>span2</span>
+    <!-- 
+        块级元素： 
+            自己占一行 
+            嵌套块级元素、行级元素
+
+        行级元素/行内元素： 
+            多个元素占一行
+            只能嵌套行级元素
+    -->
+
+    <!-- 
+        表单
+        action 表单提交的动作
+    -->
+    <form action="">
+        <!-- 输入框
+            value 表单默认值
+        -->
+        文本框<input name="name" type="text" value="123456">
+        <br/>
+
+        <!-- type: password 密码框 -->
+        密码<input name="pwd" type="password" >
+        <br/>
+        
+        <!-- 
+            单选框
+            name 值相同的话就是一组
+            name 填写项的名称
+        -->
+        性别
+        女<input name="sex" type="radio">
+        男<input name="sex" type="radio">
+        <br/>
+        <!-- 
+            label
+            for 与 input id相等
+        -->
+        <label for="input1">女</label><input name="sex" type="radio" id="input1">
+        <label for="input2">男</label><input name="sex" type="radio" id="input2">
+    
+        <!-- 复选框
+            checked 默认选中
+        -->
+        苹果<input type="checkbox" checked>
+        香蕉<input type="checkbox">
+        草莓<input type="checkbox">
+
+        <br/>
+
+        <!-- 
+            select + option
+            下拉列表
+            option 下拉列表的每一项
+        -->
+        <select>
+            <option value="1">哈尔滨</option>
+            <option value="2">齐齐哈尔</option>
+            <option value="3">牡丹江</option>
+        </select>
+
+        <!-- 提交按钮 -->
+        <input type="submit">
+
+        <!-- 按钮 -->
+        <button>按钮</button>
+
+        <!-- 文本域 
+            cols 列  多少字符宽度
+            rows 行  多少行
+        -->
+        <textarea name="" id="" cols="10" rows="2"></textarea>
+    </form>
+    
+    <!-- table 表格
+        border  边框
+    -->
+    <table border="10">
+        <!-- 
+            tr 行
+            td 列
+         -->
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+
 </body>
 </html>
