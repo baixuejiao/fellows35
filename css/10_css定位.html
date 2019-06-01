@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        .wrap{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            /* 
+                position 定位
+                relative 相对定位 相对于元素本身进行定位 定位后空间不会释放
+                absolute 绝对定位 相对于最近已定位的祖先元素进行定位 定位后空间释放
+                fixed 固定定位 相对于浏览器定位 定位后空间释放
+            */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+        }
+        .main{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+
+        #content{
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            position: relative;
+            border: 1px solid green;
+        }
+
+        #container{
+            width: 300px;
+            height: 300px;
+            margin: 50px;
+            overflow: hidden;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        #div1{
+            width: 100%;
+            height: 100px;
+            border: 1px solid red;
+            background: red;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #div2{
+            height: 200px;
+            border: 1px solid blue;
+        }
+
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            /* 定位之后用z-index设置层级 */
+            z-index: 1;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div id="container">
+        <div id="content">
+            <div class="wrap"></div>
+            <div class="main"></div>
+        </div>
+    </div> -->
+
+    <!-- <div id="div1">
+    </div>
+    <div id="div2"></div> -->
+
+    <div id="div3"></div>
+    <div id="inner"></div>
+</body>
+</html>

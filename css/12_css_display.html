@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            块级元素 
+                display block
+                自己占一行
+                可以设置宽高
+
+            行级元素/行内元素
+                display inline
+                多个元素占一行
+                不可以设置宽高
+            
+            行级块元素
+                display inline-block
+                多个元素占一行
+                可以设置宽高
+        */
+        div{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: #ff0089;
+        }
+        span{
+            /* display: block; */
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: #ff0036;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 
+            行级元素设置宽高
+            1.dispaly
+            2.float
+        */
+    </style>
+</head>
+<body>
+    <div>1234567</div>
+    <a href="">12345678</a>
+    <span>56789</span>
+
+    <img src="../images/pic.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            /* width: 100px;
+            height: 100px;
+            font-size: 30px;
+            border: 1px solid red; */
+            /* 
+                浮动 float
+                left 按照html结构的顺序 从左向右依次排列
+                right 按照html结构的顺序 从右向左依次排列
+            */
+            /* float: right; */
+        }
+
+        #div1{
+            width: 100px;
+            height: 200px;
+            font-size: 30px;
+            border: 1px solid red;
+            float: left;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue
+        }
+        #wraper{
+            height: 200px;
+            background: aqua;
+            /* overflow: hidden; */
+        }
+
+        #clear{
+            /* 清除浮动 clear
+                left right both
+            */
+            clear: both;
+        }
+        /* 
+            :: 伪元素
+            after before
+        
+        */
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* 
+            浮动的塌陷问题
+            1.父元素溢出隐藏 overflow: hidden;
+            2.新增一个空元素 清除浮动
+            3. .clearfix
+            4.给父元素设置高度
+        */
+    </style>
+</head>
+<body>
+    <div id='wraper'>
+        <div id="div1">1</div>
+        <!-- <div id="clear"></div> -->
+    </div>
+    <div id="div2" class="clearfix">2</div>
+    
+</body>
+</html>

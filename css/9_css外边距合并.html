@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 
+            嵌套类型的 外边距合并 解决办法
+            1.给父元素 设置边框 1px solid transparent
+            2.给父元素设置 溢出隐藏 overflow: hidden
+            3.给父元素或子元素设置定位 position: absolute;
+            4.给父元素 或 子元素 设置浮动
+        */
+
+        #wrapper{
+            width: 400px;
+            height: 400px;
+            background: aqua;
+            /* position: absolute; */
+            /* 溢出 */
+            /* overflow: hidden; */
+            /* border: 1px solid transparent; */
+            /* float: left; */
+        }
+
+        #inner{
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            background: pink;
+            /* position: absolute; */
+            float: left;
+
+
+        }
+
+        #main{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 50px;
+            background: red;
+        }
+        #content{
+            padding-top: 30px;
+            width: 100px;
+            height: 100px;
+            /* margin-top: 30px; */
+            /* background: blue; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="wrapper">
+        <div id="inner"></div>
+    </div> -->
+
+
+    <div id="main"></div>
+    <div id="content">12345678</div>
+</body>
+</html>
