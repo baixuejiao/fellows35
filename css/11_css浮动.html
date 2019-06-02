@@ -36,7 +36,7 @@
             border: 1px solid blue
         }
         #wraper{
-            height: 200px;
+            /* height: 200px; */
             background: aqua;
             /* overflow: hidden; */
         }
@@ -64,14 +64,18 @@
             3. .clearfix
             4.给父元素设置高度
         */
+
+        /* div{
+            float: right;
+        } */
     </style>
 </head>
 <body>
-    <div id='wraper'>
+    <div id='wraper' class="clearfix">
         <div id="div1">1</div>
         <!-- <div id="clear"></div> -->
     </div>
-    <div id="div2" class="clearfix">2</div>
-    
+   <div id="div2" class="clearfix">2</div>
+
 </body>
 </html>

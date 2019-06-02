@@ -46,21 +46,28 @@
         src 图片地址
         图片地址： 绝对路径、相对路径
         alt 图片的说明 图片加载不出来展示
+        ../ 上一级目录
+        ./ 同级目录
 
         png  .png 透明图 
         jpeg .jpg .jpeg
         gif .gif 动图
      -->
     <img src="http://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png" alt="淘宝logo">
-    <img src="../images/pic.jpg" alt="图片">
+    <img src="../images/pic.jpg" alt="图片解释">
+
+    <!-- 同级 -->
     <img src="./inter.png" alt="">
+    <img src="inter.png" alt="">
 
     <!-- 
         超链接
         href 跳转链接
-        target="_blank" 打开新页面
+        target="_blank" 在新标签页打开页面
     -->
-    <a href="https://www.baidu.com" target="_blank">百度</a>
+    <a href="https://www.baidu.com">百度1</a>
+    <a href="https://www.baidu.com" target="_blank">百度2</a>
+    <a href="#"></a>
 
     <!-- 无序列表 -->
     <ul>
@@ -118,7 +125,7 @@
             checked 默认选中
         -->
         苹果<input type="checkbox" checked>
-        香蕉<input type="checkbox">
+        香蕉<input type="checkbox" checked>
         草莓<input type="checkbox">
 
         <br/>
@@ -151,7 +158,7 @@
         table 表格
         border  边框
     -->
-    <table border="10">
+    <table border="1">
         <!-- 
             tr 行
             td 列
