@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            id > class > 标签
+        */
+        /* 
+            选择器的权重
+            !important 最高
+            内联样式 1000
+            id 100
+            class 10
+            伪类 10
+            标签 1
+            伪元素 1
+        */
+
+        /* 
+            同一个元素相同的样式 权重相同的话 后面的样式会覆盖前面
+            同一个元素相同的样式 权重不同的话 按照权重大小展示
+            同一个元素的不同样式会合并
+        */
+
+        /* #content{
+            background: green;
+        } */
+        div{
+            width: 200px;
+            height: 200px;
+            background: red !important;
+        }
+        .main{
+            background: pink;
+        }
+        .wrapper{
+            background: blue;
+        }
+
+        
+
+        /* .list{
+            color: brown;
+            font-size: 30px;
+        } */
+        /* 101 */
+        #container>li{
+            color: pink;
+            /* background: #ff0099; */
+        }
+        /* 110 */
+        #container>.list{
+           color:  #333; 
+        }
+        
+        /* 11 */
+        li.list{
+            font-size: 30px;
+            color: red;
+        }
+
+        /* 11 */
+        ul>.list{
+            color: purple;
+        }
+        
+
+        #span1{
+            color: coral;
+        }
+
+        /* 101 */
+        #container span{
+            color: blue;
+        }
+        /* 110 */
+        /* #container .span2{
+            color: green;
+        } */
+
+        /* 102 */
+        #container>li>span{
+            color: yellow;
+        }
+
+        /* 111 */
+        #container>li>.span2{
+            color: #333;
+        }
+
+        p{
+            color: red !important;
+        }
+    
+    </style>
+</head>
+<body style="height: 2000px;">
+    <!-- 同一个元素 可以设置多个 class 中间用空格区分 -->
+    <div id="content" class="wrapper main"></div>
+
+    <ul id="container">
+        <li class="list list1">1234567890</li>
+        <li class="list">2345678</li>
+        <li class="list list1">
+            23456789
+            <span id="span1" class="span2">span1111</span>
+        </li>
+    </ul>
+
+    <p style="color: pink">1234567890</p>
+    
+
+</body>
+</html>
