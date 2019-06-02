@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+
+}
+li{
+    list-style: none;
+}
+
+/* nav导航条 */
+.nav{
+    height: 32px;
+    font-size: 12px;
+    color: #fff;
+    background: #f12f04;
+}
+.nav-wrapper{
+    width: 1230px;
+    height: 100%;
+    margin: 0 auto;
+    line-height: 32px;
+}
+.nav-main{
+    float: left;
+}
+.nav-main span{
+    margin-right: 10px;
+}
+.nav-main>a{
+    padding: 0 10px;
+    color: #fff;
+}
+.nav-menu{
+    float: right;
+}
+.nav-menu>.nav-menu-list{
+    float: left;
+}
+.nav-menu>.nav-menu-list>a{
+    color: #fff;
+}

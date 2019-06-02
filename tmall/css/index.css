@@ -1,0 +1,13 @@
+/* 顶部广告 */
+#ad{
+    background: #fab0cd;
+}
+#ad a{
+    display: block;
+}
+#ad img{
+    display: block;
+    margin: 0 auto;
+}
+
+
