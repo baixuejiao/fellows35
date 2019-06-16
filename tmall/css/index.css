@@ -115,6 +115,7 @@
 }
 /* slider */
 #slider{
+    border-top: 2px solid #ff0036;
     position: relative;
 }
 /* menu */
@@ -123,6 +124,7 @@
     position: absolute;
     top: -36px;
     left: 0;
+    z-index: 2;
 }
 #menu-title{
     width: 200px;
@@ -165,36 +167,61 @@
 .menu-list-blue:hover>a{
     color: #427def;
 }
+.menu-list-purple:hover,
+.menu-list-purple:hover>i,
+.menu-list-purple:hover>a{
+    color: #6347ed;
+}
+.menu-list-orange:hover,
+.menu-list-orange:hover>i,
+.menu-list-orange:hover>a{
+    color: #fa5c5c;
+}
+.menu-list-yelllow:hover,
+.menu-list-yelllow:hover>i,
+.menu-list-yelllow:hover>a{
+    color:#f7a831;
+}
+.menu-list-red:hover,
+.menu-list-red:hover>i,
+.menu-list-red:hover>a{
+    color: #dd2727;
+}
+.menu-list-green:hover,
+.menu-list-green:hover>i,
+.menu-list-green:hover>a{
+    color: #3bc7b0;
+}
 
 .menu-inner{
-    width: 781px;
-    /* height: 500px; */
+    display: none;
+    width: 852px;
     background: #fff;
     position: absolute;
     top: 0;
     left: 200px;
 }
-
+.menu-list:hover .menu-inner{
+    display: block;
+}
 .menu-inner-left{
     float: left;
-    width: 511px;
-    height: 500px;
-}
-
-.menu-type{
+    width: 583px;
+    height: 462px;
     margin: 19px 30px;
 }
 .menu-type-list{
+    padding-top: 10px;
     font-size: 14px;
 }
 .menu-type-list-title{
     float: left;
-    font-weight: 500;
+    font-weight: 462;
     color: #333;
 }
 .menu-type-list-main{
     float: right;
-    width: 380px;
+    width: 513px;
     padding-bottom: 10px;
     border-bottom: 1px dashed rgba(0,0,0,0.1);
 }
@@ -202,22 +229,60 @@
     margin-left: 13px;
     color: #666;
 }
-
-
+.menu-type-list-main .menu-type-list-main-red{
+    color: #e54077;
+}
 .menu-inner-right{
     float: left;
-    width: 250px;
-    height: 500px;
+    width: 189px;
+    height: 462px;
     padding: 10px;
     background: #fafafa;
 }
-
 .menu-inner-right a{
     float: left;
     width: 73px;
     height: 37px;
+    padding: 5px 10px;
     margin: 0 1px 1px 0;
+    background: #fff;
 }
 .menu-inner-right img{
     width: 73px;
+}
+/* 轮播图 */
+#slider-container{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+#slider-img{
+    width: 1230px;
+    height: 100%;
+}
+#slider-img img{
+    display: none;
+    width: 100%;
+}
+#slider-img img.active{
+    display: block;
+}
+#slider-pointer{
+    margin-left: -70px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+}
+#slider-pointer li{
+    float: left;
+    width: 25px;
+    margin: 0 5px;
+    height: 5px;
+    opacity: 0.3;
+    background: #000;
+    cursor: pointer;
+}
+#slider-pointer li.active{
+    background: #fff;
 }
