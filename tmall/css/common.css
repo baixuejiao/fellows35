@@ -103,6 +103,7 @@ li{
     position: absolute;
     top: 32px;
     left: -44px;
+    z-index: 2;
     box-shadow: 0 0 5px #aaa
 }
 .nav-menu-qr-bg{
