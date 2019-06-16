@@ -10,6 +10,12 @@ li{
     list-style: none;
 }
 
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
 /* nav导航条 */
 .nav{
     height: 32px;
