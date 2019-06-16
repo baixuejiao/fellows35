@@ -1,5 +1,5 @@
-/* 顶部广告 */
 #ad{
+    /* 顶部广告 */
     background: #fab0cd;
 }
 #ad a{
@@ -10,4 +10,95 @@
     margin: 0 auto;
 }
 
+/* 搜索 */
+#search{
+    width: 100%;
+}
+#search-wrapper{
+    width: 1230px;
+    height: 130px;
+    margin: 0 auto;
+    position: relative;
+}
+#search-logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#search-container{
+    width: 625px;
+    margin: 0 auto;
+    padding-top: 38px;
+}
+#search-content{
+    /* width: 621px +2 + 2 ; */
+    height: 36px;
+    border: 2px solid #ff0036;
+}
+#search-content input{
+    float: left;
+    width: 481px;
+    height: 26px;
+    padding: 5px;
+    /* 去掉输入框的默认样式 */
+    outline: none;
+    border: none;
+}
+#search-content button{
+    float: left;
+    width: 130px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    background: #ff0036;
+}
+#search-type{
+    margin-top: 5px;
+}
+#search-type a{
+    padding: 0 12px;
+    font-size: 14px;
+    border-right: 1px solid #ccc;
+    color: #999;
+}
+#search-type a:last-child{
+    border-right: none;
+}
+#search-type a:first-child{
+    padding-left: 0;
+}
+#search-type .search-type-red{
+    color: #ff0036;
+}
 
+/* banner */
+#banner{
+    width: 100%;
+}
+#banner-wrapper{
+    width: 1230px;
+    height: 36px;
+    margin: 0 auto;
+}
+
+#banner-wrapper a{
+    float: left;
+    height: 36px;
+    padding: 0 8px;
+    line-height: 36px;
+    color: #333;
+}
+#banner-wrapper a:hover{
+    color: #ff0036;
+}
+#banner-wrapper a:first-child{
+    margin-left: 200px;
+}
+#banner-wrapper img{
+    width: 100px;
+    height: 30px;
+    margin-top: 3px;
+}
