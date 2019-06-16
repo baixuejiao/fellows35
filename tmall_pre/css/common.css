@@ -10,13 +10,19 @@ li{
     list-style: none;
 }
 
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
 /* nav导航条 */
 .nav{
     height: 32px;
     font-size: 12px;
     color: #fff;
     background: #f12f04;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.2); 
 }
 .nav-wrapper{
     width: 1230px;
@@ -58,67 +64,73 @@ li{
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;
-}
-.nav-menu-list:hover .nav-menu-list-arrow{
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-
-    -webkit-transition: all 0.7s ease;
-    transition: all 0.7s ease;
+    /* transition: all 0.5 linear; */
 }
 .nav-menu-list-special:hover{
+    color: #ff0036;
     background: #fff;
 }
 .nav-menu-list-special:hover>a{
     text-decoration: underline;
     color: #ff0036;
 }
-.nav-menu-inner{
+.nav-menu-list:hover .nav-menu-list-arrow{
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.nav-menu-content{
     display: none;
     width: 74px;
     padding: 0 10px;
     border: 1px solid #eee;
     border-top: none;
-    background: #fff;
     position: absolute;
+    background: #fff;
     top: 32px;
     left: -1px;
 }
-.nav-menu-list-special:hover .nav-menu-inner{
-    display: block;
-}
-.nav-menu-inner a{
-    padding-bottom: 10px;
+.nav-menu-content a{
     color: #666;
 }
-.nav-menu-inner li:hover a{
+.nav-menu-content a:hover{
     text-decoration: underline;
     color: #ff0036;
 }
+.nav-menu-list-special:hover .nav-menu-content{
+    display: block;
+}
+
 .nav-menu-qr{
     display: none;
     width: 175px;
     height: 227px;
-    text-align: center;
+    margin-left: -87px;
     position: absolute;
     top: 32px;
-    left: -44px;
-    box-shadow: 0 0 5px #aaa
+    left: 50%;
+    text-align: center;
+    box-shadow: 0 0 5px #aaa;
+    background: #fff;
 }
-.nav-menu-qr-bg{
+.nav-menu-ar-arrow{
+    display: block;
+    width: 0;
+    border: 6px solid #fff;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+}
+.nav-menu-qr-img{
     width: 175px;
     height: 175px;
     background: url('../images/qr.png') 0 0 no-repeat;
 }
-.nav-menu-qr-arrow{
-    display: inline-block;
-    border: 6px solid #fff;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    position: absolute;
-    top: -12px;
-}
-.nav-menu-phone:hover .nav-menu-qr{
+.nav-menu-list-phone:hover .nav-menu-qr{
     display: block;
 }
