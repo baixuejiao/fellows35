@@ -1,0 +1,165 @@
+<!-- DOCTYPE 声明文档类型 html5版本 -->
+<!-- html:5 -->
+<!DOCTYPE html>
+<!-- 根元素 表示文档的开始和结束 -->
+<html>
+<!-- 头部标签  对页面的基本配置 -->
+<head>
+  <!-- 字符编码 gbk gb2312 UTF-8 浏览器根据该编码渲染页面 -->
+  <meta charset="UTF-8">
+  <!-- 移动端响应式开发配置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ie浏览器 ie8及以上浏览器生效 以最高版本渲染页面 -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 设置关键字 搜索引擎 用的 关键字 -->
+  <meta name="keywords" content="花，鲜花">
+  <!-- 网站的描述 搜索引擎用 -->
+  <meta name="description" content="往回走哪个">
+  <!-- 网页标题 -->
+  <title>hello weichuang</title>
+</head>
+<!-- 主体部分 -->
+<body style="height: 3000px;">
+  12345678
+  <!-- 标题 h1~h6 -->
+  <h1>标题1</h1>
+  <h2>标题2</h2>
+  <h3>标题3</h3>
+  <h4>标题4</h4>
+  <h5>标题5</h5>
+  <h6>标题6</h6>
+
+  <!-- p 段落 -->
+  <!-- br 强制换行 -->
+  <p>淘宝网 - 亚洲较大的网上交易平台，<br/>提供各类服饰、美容、家居、数码、话费/点卡充值… 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！</p>
+  <!-- strong 文本加粗 -->
+  <!-- i 斜体 -->
+  <p> <strong>淘宝网</strong> - <i>亚洲较大</i>的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值… 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！</p>
+
+  <!-- 图片
+      src: 图片路径
+      alt: 图片的说明 图片加载失败展示的提示文案
+  -->
+  <!-- 图片路径的引用
+      相对路径
+      绝对路径
+      ../ 上一层级
+      ../../
+  -->
+  <!-- 图片格式
+      png 透明背景的图片
+      jpg/jpeg 图片
+      gif 动图 xxx.gif
+  -->
+  <img src="../images/pic.jpg" alt="图片">
+  <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562479152636&di=7d62effa2fd8609c6a87c6b4cf063915&imgtype=0&src=http%3A%2F%2Ffile.youboy.com%2Fa%2F63%2F26%2F69%2F6%2F7890786.jpg" alt="">
+  <img src="img.jpeg" alt="">
+
+  <!-- 超链接
+      href: 跳转的url
+      target="_blank" 在新的窗口打开页面
+  -->
+  <a href="https://www.baidu.com/">百度</a>
+  <a href="#">超链接</a>
+  <a href="https://www.tmall.com/?spm=a21bo.2017.201859.1.672411d9LBju8g" target="_blank">天猫</a>
+
+  <!-- 无序列表 ul + li  -->
+  <ul>
+    <li>列表1
+      <a href="#"></a>
+    </li>
+    <li>列表2</li>
+  </ul>
+
+  <!-- 有序列表 ol + li -->
+  <ol>
+    <li>列表3</li>
+    <li>列表4</li>
+  </ol>
+
+  <!-- 用来布局的标签 -->
+  <!-- div+css -->
+  <div> div1_淘宝网 - 亚洲较大的网上交易平台</div>
+  <div> div2_淘宝网 - 亚洲较大的网上交易平台</div>
+
+  <span>span标签1</span>
+  <span>span标签2</span>
+
+  <!-- 
+    块级元素
+      单独占一行
+      div h1~h6 p
+    行级元素/行内元素
+      多个元素占一行
+      span a
+  -->
+
+  <!-- 
+    form 表单
+    action 表单提交的动作
+  -->
+  <form action="">
+    <!-- 输入框
+        type: text 普通文本框
+    -->
+    姓名<input type="text" name="nickname"> <br>
+    <!-- 密码框 -->
+    密码<input type="password" name="pwd"> <br>
+
+    <!-- 单选框
+        name：名称
+    -->
+    性别 <input name="sex" type="radio">女 <input name="sex" type="radio">男 <br>
+
+    <!-- 
+      label 将文本与input 关联
+      for属性 等于 input的id
+     -->
+    性别 <input name="sex" type="radio" id="girl"><label for="girl">女</label> <input name="sex" type="radio" id="boy"><label for="boy">男</label><br>
+
+    水果 <input name="friut"type="checkbox"> 香蕉 <input name="friut" type="checkbox"> 葡萄 <br>
+
+    <!-- 
+      下拉列表
+      select + option
+    -->
+    省份
+    <select name="provice" id="">
+      <option value="1">哈尔滨</option>
+      <option value="2">齐齐哈尔</option>
+      <option value="3">牡丹江</option>
+      <option value="4">大庆</option>
+    </select>
+
+    <!-- 文本域 
+      cols 列
+      rows 行
+    -->
+    <textarea name="" id="" cols="100" rows="10"></textarea>
+    
+    <!-- 提交按钮 -->
+    <input type="submit">
+
+    <!-- 按钮 -->
+    <button>搜索</button>
+    
+  </form>
+
+  <!-- 表格
+      tr 行
+      td 列
+      border属性 边框
+  -->
+  <table border="1">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </table>
+
+</body>
+</html>
