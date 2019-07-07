@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>背景</title>
+  <style>
+    div{
+      width: 400px;
+      height: 400px;
+
+      /* 背景色 */
+      background-color: pink;
+      /* 背景图片
+          url('') 引入图片地址
+      */
+      background-image: url('inter.png');
+
+      /* 背景图片是否重复
+          no-repeat 不重复
+          repeat-x x轴方向重复
+          repeat-y y轴方向重复
+      */
+      background-repeat: no-repeat;
+
+      /* 背景图片的位置
+          x y （2个值） 
+          像素 px
+          百分比 %
+          top left right bottom center
+          如果只写一个值，另外一个默认是center
+      */
+      background-position: 20px;
+
+      /* 背景的简写 */
+      background: blue url('inter.png') no-repeat center;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

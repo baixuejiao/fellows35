@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选择器</title>
+  <style>
+    body{
+      height: 2000px;
+    }
+    /* 选择器{} */
+    /* 标签选择器 标签名称 */
+    div{
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+    /* id选择器 #id名称 */
+    #content{
+      width: 200px;
+      height: 200px;
+      /* 背景 */
+      background: blue;
+    }
+    
+    /* 类选择器/class选择器 .类名 */
+    .inner{
+      /* 文本色 */
+      color: green;
+    }
+
+    /* 子代选择器
+      选择亲子代（儿子）
+    */
+    #div1>.span1{
+      color: red;
+    }
+
+    /* 后代选择器
+      选中后代所有符合条件的元素（儿子、孙子....）
+    */
+    #div1 span{
+      color: blue;
+    }
+
+    /* 伪类选择器
+      :表示
+    */
+    a{
+      color: pink;
+    }
+    a:hover{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>111</div>
+  <!-- id -->
+  <div id="content">123456789</div>
+  <!-- 类/class -->
+  <p class="inner">123456789sdfghj</p>
+
+  <ul>
+    <li>1</li>
+    <li>
+      2
+    </li>
+  </ul>
+
+  <div id="div1">
+    <span class="span1">span1</span>
+    <p>
+      <span>span2</span>
+    </p>
+  </div>
+
+  <a href="#">百度</a>
+</body>
+</html>
