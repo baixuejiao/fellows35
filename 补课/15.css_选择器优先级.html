@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选择器优先级</title>
+  <style>
+    /* 
+      id选择器  > class选择器 > 标签选择器
+
+      统一元素的同一个属性 优先级：id选择器  > class选择器 > 标签选择器
+      不同的属性会合并
+      针对同一个元素，选择器优先级相同的情况下， 同一个属性，后面的会把前面的覆盖
+     */
+    div{
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+    #container{
+      background: blue;
+    }
+    .wrapper{
+      color: #fff;
+      background: green;
+    }
+    .content{
+      color: pink;
+    }
+
+    /* 
+      选择器的权重
+      !important 最高
+      style(内联) 1000
+      id         100
+      class      10
+      伪类        10
+      标签        1 
+      伪元素      1  
+     */
+
+    /* 1 */
+    li{
+      color: green!important;
+    }
+
+    /*  100  */
+    #li1{
+      color: red;
+    }
+
+    /* 10 */
+    .list{
+      color: blue;
+    }
+
+    /* 11 */
+    ul>.list{
+      color: orange
+    }
+
+    /* 101 */
+    #main>li{
+      color: bisque;
+    }
+
+    /* 101 */
+    ul>#li1{
+      color: #000;
+    }
+
+    /* 110 */
+    #main>.list{
+      color: #666;
+    }
+
+    /* 111 */
+    #main>li.list{
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+      元素的id必须是唯一的 每个元素有且仅有一个id
+      class 可以有多个，多个之间用空格区分
+   -->
+  <div id="container" class="wrapper content">123456789</div>
+
+  <ul id="main">
+    <li id="li1" class="list">
+      111
+    </li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+  </ul>
+</body>
+</html>

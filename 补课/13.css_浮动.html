@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浮动</title>
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮动</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      div{
+        /* width: 100px;
+        height: 100px; */
+        /* 
+          浮动
+          左浮动：left 按照html结构顺序 从左向右依次排列
+          右浮动：right 按照html结构顺序 从右向左依次排列
+          元素浮动后 空间会释放
+         */
+        /* float: left; */
+      }
+      #container{
+        /* height: 100px; */
+        background: blue;
+        /* 溢出隐藏 */
+        /* overflow: hidden; */
+      }
+      #wrapper1{
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+      }
+      #wrapper2{
+        /* background: pink; */
+      }
+      #wrapper3{
+        /* background: aqua; */
+      }
+
+      #inner{
+        /* 
+          clear 清除浮动   left right both
+         */
+        clear: both;
+      }
+
+      /* :: 伪元素 */
+      .clearfix::after{
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      /* 
+        元素浮动后的塌陷问题
+          父元素设置溢出隐藏 overflow: hidden
+          给父元素设置高度
+          给父元素新增一个子元素（最后一个） 并且清除浮动
+          clearfix 新增伪元素清除浮动
+      */
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="container" class="clearfix">
+      <div id="wrapper1">wrapper1</div>
+    </div>
+    <!-- <div id="wrapper2">wrapper2</div>
+    <div id="wrapper3">wrapper3</div>
+    <p>12345678</p> -->
+  </body>
+  </html>
+</body>
+</html>

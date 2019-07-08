@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>块级元素&行级元素</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    /* 
+      块级元素 
+      不设置width的时候 width 默认是100%
+      不设置height的时候 高被里面内容撑开
+  
+     */
+
+     /* 
+      块级元素
+        单个元素占一行
+        可以设置宽高
+        display : block
+
+      行级元素/行内元素
+        多个元素占一行
+        不可以设置宽高
+        display: inline
+
+      行级块元素
+        多个元素占一行
+        可以设置宽高
+        display: inline-block
+      */
+    div{
+      /* 隐藏 */
+      /* display: none; */
+      width: 200px;
+      height: 100px;
+      /* 
+        块级元素水平居中
+        margin-left = margin-right = auto
+        margin: 20px auto;
+       */
+      margin: 0 auto;
+      background: aqua;
+    }
+    span{
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background: palegreen;
+    }
+
+    img{
+      width: 400px;
+    }
+  
+  </style>
+</head>
+<body>
+  <div>
+    1234567
+  </div>
+
+  <span>12345</span>
+
+  <!-- <img src="inter.png" alt=""> -->
+</body>
+</html>

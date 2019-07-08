@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定位</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 4000px;
+    }
+    #content{
+      width: 100px;
+      height: 100px;
+      background: red;
+      /* 
+        定位 left top right bottom
+        relative 相对定位 相对于元素自身定位 定位后空间不释放
+        absolute 绝对定位 定位后空间释放 相对于最近的已定位的祖先元素进行定位 最后找的是body
+        fixed 固定定位 定位后空间释放 相对于浏览器窗口进行的定位
+       */
+      /* position: absolute;
+      left: 10px;
+      top: 10px; */
+
+      /* position: fixed; */
+      /* bottom: 0; */
+
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      /* 层级 
+        值越大 越在上面
+       */
+      z-index: 2;
+    }
+
+    #wrapper{
+      width: 100px;
+      height: 100px;
+      background: aqua;
+
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+    }
+
+    #container{
+      width: 100px;
+      height: 100px;
+      
+      background: green;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }
+
+    #main{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    #inner{
+      width: 200px;
+      height: 200px;
+      background: green;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 9;
+    }
+
+   
+  
+  </style>
+</head>
+<body>
+  <!-- <div id="parents">
+  </div> -->
+  <!-- <div id="wrapper"></div>
+  <div id="content"></div>
+  <div id="container"></div> -->
+
+
+  <div id="inner">inner</div>
+  <div id="main">main</div>
+</body>
+</html>

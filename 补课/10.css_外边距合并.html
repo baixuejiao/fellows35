@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>外边距合并</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper{
+      width: 200px;
+      height: 200px;
+      /* margin: 50px; */
+      margin-bottom: 50px;
+
+
+      background: red;
+    }
+
+    #content{
+      width: 200px;
+      height: 200px;
+      margin-top: 50px;
+
+      background: blue;
+    }
+
+    #container{
+      width: 200px;
+      height: 200px;
+      margin-top: 50px;
+      background: red;
+      border: 5px solid transparent;
+
+      /* 溢出隐藏 */ 
+      /* overflow: hidden; */
+      /* 定位 */
+      /* position: absolute; */
+      /* 浮动 */
+      /* float: left; */
+    }
+    #inner{
+      width: 100px;
+      height: 100px;
+      margin-top: 20px;
+      background: green;
+
+      /* float: left; */
+
+      /* position: absolute; */
+    }
+
+    #image{
+      /* 172 */
+      width: 168px;
+
+      border: 1px solid transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    外边距合并
+    1.并列关系
+      只给某一个元素设置外边距
+    
+    2.嵌套关系
+      给父元素设置溢出隐藏
+      给父元素设置透明边框
+      给父元素或子元素设置定位 绝对定位 absolute
+      给父元素或子元素设置浮动
+   -->
+  <!-- 
+      container
+      content
+      main
+      wrapper
+      list
+      text desc 
+   -->
+  <!-- <div id="wrapper"></div>
+  <div id="content"></div> -->
+
+
+  <div id="container">
+    <div id="inner"></div>
+  </div>
+
+
+  <div id="image"></div>
+</body>
+</html>
