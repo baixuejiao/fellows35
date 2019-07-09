@@ -64,6 +64,7 @@ li{
   border: 1px solid #3388ff;
   color: #fff;
   background: #3388ff;
+  outline: none;
 }
 
 /* 二维码 */

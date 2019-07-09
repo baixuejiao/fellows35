@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      行级块元素 默认的html结构中的回车换行间距问题
+      1.删除html中的回车换行
+      2.给父元素设置font-size：0
+      3.子元素浮动
+     */
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    form{
+      /* font-size: 0; */
+    }
+    input{
+      float: left;
+      width: 200px;
+    }
+    button{
+      float: left;
+      width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <input type="text">
+    <button>搜索</button>
+  </form>
+</body>
+</html>
