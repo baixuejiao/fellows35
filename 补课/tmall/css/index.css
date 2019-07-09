@@ -1,0 +1,89 @@
+
+/* search */
+.search{
+  width: 100%;
+  height: 130px;
+}
+.search-wrapper{
+  width: 1230px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-logo{
+  position: absolute;
+  top: 0;
+  left: -30px;
+}
+.search-container{
+  padding-top: 38px;
+  text-align: center;
+}
+.search-form{
+  width: 625px;
+  margin: 0 auto 0;
+  border: 2px solid #ff0036;
+  /* text-align: center; */
+}
+.search-form>input{
+  float: left;
+  width:483px;
+  height: 26px;
+  padding: 5px;
+  border: none;
+  /* input 选中态的样式 */
+  outline: none;
+}
+.search-form>button{
+  float: left;
+  width: 132px;
+  height: 36px;
+  border: none;
+  color: #fff;
+  background: #ff0036;
+}
+
+.search-list{
+  margin-top: 4px;
+}
+.search-list>a{
+  padding: 0 12px;
+  font-size: 14px;
+  border-right: 1px solid #ccc;
+  color: #999;
+}
+.search-list>a:last-child{
+  border-right: none;
+}
+.search-list>.search-list-red{
+  color: #ff0036;
+}
+.search-list>a:first-child{
+  margin-left: -50px;
+}
+
+/* banner */
+.banner{
+  width: 100%;
+  border-bottom: 2px solid #ff0036;
+}
+.banner-wrapper{
+  width: 1230px;
+  margin: 0 auto;
+}
+.banner-wrapper>a{
+  float: left;
+  height: 35px;
+  padding: 0 8px;
+  line-height: 35px;
+  color: #333;
+}
+.banner-wrapper>a:hover{
+  color: #ff0036;
+}
+.banner-wrapper img{
+  width: 100px;
+  margin-top: 3px;
+}
+.banner-wrapper>a:first-child{
+  margin-left: 200px;
+}

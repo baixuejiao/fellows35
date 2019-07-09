@@ -11,6 +11,16 @@ a{
   text-decoration: none;
 }
 
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.wrapper{
+  width: 1230px;
+  margin: 0 auto;
+}
 
 /* 顶部导航 */
 .nav{
