@@ -100,7 +100,7 @@
 }
 .menu{
   width: 200px;
-  height: 500px;
+  height: 520px;
   background: rgba(0,0,0,0.55);
   position: absolute;
   top: -36px;
@@ -133,10 +133,40 @@
 .menu-list-pink:hover>a{
   color:#e54077;
 }
+.menu-list-blue:hover,
+.menu-list-blue:hover>i,
+.menu-list-blue:hover>a{
+  color: #427def;
+}
+.menu-list-purple:hover,
+.menu-list-purple:hover>i,
+.menu-list-purple:hover>a{
+  color: #6347ed;
+}
+.menu-list-orange:hover,
+.menu-list-orange:hover>i,
+.menu-list-orange:hover>a{
+  color: #fa5c5c;
+}
+.menu-list-yelllow:hover,
+.menu-list-yelllow:hover>i,
+.menu-list-yelllow:hover>a{
+  color:#f7a831;
+}
+.menu-list-red:hover,
+.menu-list-red:hover>i,
+.menu-list-red:hover>a{
+  color: #dd2727;
+}
+.menu-list-green:hover,
+.menu-list-green:hover>i,
+.menu-list-green:hover>a{
+  color: #3bc7b0;
+}
 .menu-content{
   display: none;
   width: 782px;
-  height: 500px;
+  height: 520px;
   background: #fff;
   position: absolute;
   top: 36px;
@@ -177,15 +207,23 @@
 .menu-right{
   float: right;
   width: 188px;
-  height: 100%;
-  padding: 0 10px;
+  height: 462px;
+  padding: 10px;
   background: #fafafa;
 }
-.menu-right>a{
+.menu-right{
+  float: left;
+  width: 189px;
+  height: 462px;
+  padding: 10px;
+  background: #fafafa;
+}
+.menu-right a{
   float: left;
   width: 73px;
-  margin: 0 0 1px 1px;
+  height: 37px;
   padding: 5px 10px;
+  margin: 0 1px 1px 0;
   background: #fff;
 }
 .menu-right img{
