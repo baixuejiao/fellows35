@@ -15,6 +15,23 @@
       border-right-color: transparent;
       border-bottom-color: transparent;
     }
+    div:hover{
+      border-top-color: #ccc;
+      /* chrome safari */
+      -webkit-transform: rotate(180deg);
+      /* 火狐 */
+      -moz-transform: rotate(180deg);
+      /* 欧朋 */
+      -o-transform: rotate(180deg);
+      /* ie */
+      -ms-transform: rotate(180deg);
+      /* 变换
+          rotate 2d旋转
+      */
+      transform: rotate(180deg);
+
+      transition: all 1s ease;
+    }
   </style>
 </head>
 <body>

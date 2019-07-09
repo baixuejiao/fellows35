@@ -41,21 +41,104 @@ a{
 }
 .nav-menu-list{
   float: left;
-  margin: 0 10px;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 32px;
+  position: relative;
+}
+.nav-menu-specail:hover{
+  background: #fff;
+}
+.nav-menu-specail:hover>a{
+  text-decoration: underline;
+  color: #ff0036;
+}
+.nav-menu-specail:hover>.nav-menu-arrow{
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.nav-menu-line{
+  color:#bbb;
 }
 .nav-menu-list>a{
-  display: block;
-  height: 32px;
-  line-height: 32px;
+  /* display: block; */
+  /* height: 32px; */
   color: #fff;
 }
 .nav-menu-arrow{
-  /* display: inline-block; */
-  float: left;
+  /* display: block; */
+  float: right;
   width: 0;
   height: 0;
-  border: 5px solid #bbb;
+  margin-top: 14px;
+  margin-left: 1px;
+  border: 3px solid #bbb;
   border-left-color: transparent;
   border-right-color: transparent;
   border-bottom-color: transparent;
+}
+.nav-menu-list>i{
+  font-size: 12px;
+}
+.nav-menu-select{
+  display: none;
+  width: 74px;
+  padding: 0 10px;
+  border: 1px solid #eee;
+  border-top: none;
+  background: #fff;
+  position: absolute;
+  left: -1px;
+  top: 32px;
+
+}
+.nav-menu-select>a{
+  display: block;
+  color: #999;
+}
+.nav-menu-select>a:hover{
+  text-decoration: underline;
+  color: #ff0036;
+}
+.nav-menu-list:hover .nav-menu-select{
+  display: block;
+}
+.nav-menu-qr{
+  display: none;
+  text-align: center;
+  border: 1px solid #ddd;
+  background: #fff;
+  position: absolute;
+  left: -44px;
+  top: 32px;
+}
+.nav-menu-qr-bg{
+  width: 175px;
+  height: 175px;
+  background: url('http://img.alicdn.com/tfs/TB1vJ0POwTqK1RjSZPhXXXfOFXa-175-215.png') no-repeat;
+}
+.nav-menu-qr-arrow{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: -6px;
+  border: 6px solid #fff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+}
+.nav-menu-phone:hover>a{
+  color: #ff8907;
+}
+.nav-menu-phone:hover>i{
+  color: #ff8907;
+}
+.nav-menu-phone:hover>.nav-menu-qr{
+  display: block;
 }
