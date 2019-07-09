@@ -87,3 +87,107 @@
 .banner-wrapper>a:first-child{
   margin-left: 200px;
 }
+
+/* 轮播图 */
+.carseoul{
+  width: 100%;
+}
+.carseoul-wrapper{
+  width: 1230px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.menu{
+  width: 200px;
+  height: 500px;
+  background: rgba(0,0,0,0.55);
+  position: absolute;
+  top: -36px;
+  left: 0;
+}
+.menu-title{
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background: #ff0036;
+}
+.menu-title>i{
+  margin-left: 14px;
+}
+.menu-list{
+  height: 32px;
+  padding: 0 14px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #fff;
+}
+.menu-list:hover{
+  background: #fff;
+}
+.menu-list>a{
+  color: #fff;
+}
+.menu-list-pink:hover,
+.menu-list-pink:hover>a{
+  color:#e54077;
+}
+.menu-content{
+  display: none;
+  width: 782px;
+  height: 500px;
+  background: #fff;
+  position: absolute;
+  top: 36px;
+  left: 200px;
+}
+.menu-list:hover>.menu-content{
+  display: block;
+}
+.menu-left{
+  float: left;
+  width: 510px;
+  height: 100%;
+  margin: 19px 30px;
+}
+.menu-left-list>span{
+  float: left;
+  font-size: 14px;
+  color: #333;
+}
+.menu-left-inner{
+  float: right;
+  width: 418px;
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1)
+}
+.menu-left-inner>a{
+  float: left;
+  margin-left: 13px;
+  font-size: 14px;
+  color: #666;
+}
+.menu-left-inner>.menu-left-pink{
+  color:#e54077;
+}
+
+
+
+.menu-right{
+  float: right;
+  width: 188px;
+  height: 100%;
+  padding: 0 10px;
+  background: #fafafa;
+}
+.menu-right>a{
+  float: left;
+  width: 73px;
+  margin: 0 0 1px 1px;
+  padding: 5px 10px;
+  background: #fff;
+}
+.menu-right img{
+  width: 73px;
+}
