@@ -1,319 +1,393 @@
-<!-- 天猫首页 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/iconfont.css">
-    <link rel="stylesheet" href="./css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>天猫tmall.com--理想生活上天猫</title>
+  <!-- 公共样式 -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- 头部广告 -->
-    <div id="ad">
-        <a href="#">
-            <img src="./images/ad.jpg" alt="">
-        </a>
+  <!-- 顶部导航 -->
+  <div class="nav">
+    <!-- 1230px 容器 -->
+    <div class="nav-wrapper">
+      <p class="nav-info">
+        <span>喵，欢迎来到天猫</span>
+        <a href="#">请登录</a>
+        <a href="#">免费注册</a>
+      </p>
+
+      <ul class="nav-menu">
+        <li class="nav-menu-list nav-menu-specail">
+          <a href="#">我的淘宝</a>
+          <span class="nav-menu-arrow"></span>
+          <div class="nav-menu-select">
+            <a href="#">已买到的宝贝</a>
+            <a href="#">已卖出的宝贝</a>
+          </div>
+        </li>
+        <li class="nav-menu-list">
+          <i class="iconfont icon-gouwucheman"></i>
+          <a href="#">购物车</a>
+        </li>
+        <li class="nav-menu-list nav-menu-specail">
+          <a href="#">收藏夹</a>
+          <span class="nav-menu-arrow"></span>
+
+        </li>
+        <li class="nav-menu-list nav-menu-line">
+          |
+        </li>
+        <li class="nav-menu-list nav-menu-phone">
+          <i class="iconfont icon-shouji"></i>
+          <a href="#">手机版</a>
+          <div class="nav-menu-qr">
+            <span class="nav-menu-qr-arrow"></span>
+            <div class="nav-menu-qr-bg"></div>
+            <img src="http://img.alicdn.com/tps/TB1sR93OFXXXXaAXXXXXXXXXXXX-145-30.png" alt="">
+          </div>
+        </li>
+        <li class="nav-menu-list">
+          <a href="#">淘宝网</a>
+        </li>
+        <li class="nav-menu-list nav-menu-specail">
+          <a href="#">商家支持</a>
+          <span class="nav-menu-arrow"></span>
+        </li>
+        <li class="nav-menu-list">
+          <i class="iconfont icon-daohang"></i>
+          <a href="#">网站导航</a>
+        </li>
+      </ul>
+
     </div>
 
-    <!-- 导航条 -->
-    <div class="nav"> 
-        <!-- 1230px 居中展示的容器 -->
-        <div class="nav-wrapper">
-            <div class="nav-main">
-                <span>喵，欢迎来到天猫</span>
-                <a href="#">请登录</a>
-                <a href="#">请注册</a>
+  </div>
+
+  <!-- 搜索框 -->
+  <div class="search">
+    <!-- 1230px  -->
+    <div class="search-wrapper">
+      <img class="search-logo" src="https://img.alicdn.com/tps/i4/TB196aoXAH0gK0jSZPitKavapXa.gif" alt="">
+    
+      <div class="search-container">
+        <form class="search-form clearfix">
+          <input type="text" placeholder="搜索天猫 商品/品牌/店铺">
+          <button>搜索</button>
+        </form>
+        <p class="search-list">
+          <a href="">针织衫</a>
+          <a href="" class="search-list-red">连衣裙</a>
+          <a href="">四件套</a>
+          <a href="" class="search-list-red">摄像头</a>
+          <a href="">客厅灯</a>
+          <a href="">口红</a>
+          <a href="" class="search-list-red">手机</a>
+          <a href="">运动鞋</a>
+          <a href="" class="search-list-red">牛奶</a>
+        </p>
+      </div>
+    
+    </div>
+  </div>
+
+  <!-- 分类入口 -->
+  <div class="banner">
+    <div class="banner-wrapper clearfix">
+      <a href="#">
+        <img src="https://img.alicdn.com/tfs/TB1ztBlaMMPMeJjy1XbXXcwxVXa-200-60.png" alt="">
+      </a>
+      <a href="#">
+        <img src="https://img.alicdn.com/tfs/TB1t5ObaBxRMKJjy0FdXXaifFXa-200-60.png" alt="">
+      </a>
+      <a href="">天猫会员</a>
+      <a href="">电器城</a>
+      <a href="">喵生鲜</a>
+      <a href="">医药馆</a>
+      <a href="">营业厅</a>
+      <a href="">魅力惠</a>
+      <a href="">飞猪旅行</a>
+      <a href="">苏宁易购</a>
+    </div>
+
+  </div>
+
+  <!-- 轮播图 -->
+  <div class="carseoul">
+    <!-- 1230px -->
+    <div class="carseoul-wrapper">
+      <!-- 菜单 -->
+      <div class="menu">
+        <span class="menu-title">
+          <i class="iconfont icon-daohang"></i>
+          商品分类
+        </span>
+        <ul class="menu-wrapper">
+          <li class="menu-list menu-list-pink">
+            <i class="iconfont icon-nvzhuangneiyi"></i>
+            <a href="#">女装</a>
+            /
+            <a href="#">内衣</a>
+            <div class="menu-content">
+              <ul class="menu-left">
+                <li class="menu-left-list clearfix">
+                  <span>当季流行></span>
+                  <div class="menu-left-inner clearfix">
+                    <a href="#" class="menu-left-pink">女装新品</a>
+                    <a href="#" class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#"class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#"class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#">女装新品</a>
+                    <a href="#">商场同款</a>
+                  </div>
+                </li>
+                <li class="menu-left-list clearfix">
+                  <span>当季流行></span>
+                  <div class="menu-left-inner clearfix">
+                    <a href="#" class="menu-left-pink">女装新品</a>
+                    <a href="#" class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#"class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#"class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#">女装新品</a>
+                    <a href="#">商场同款</a>
+                  </div>
+                </li>
+                <li class="menu-left-list clearfix">
+                  <span>当季流行></span>
+                  <div class="menu-left-inner clearfix">
+                    <a href="#" class="menu-left-pink">女装新品</a>
+                    <a href="#" class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#"class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#"class="menu-left-pink">女装新品</a>
+                    <a href="#">商场同款</a>
+                    <a href="#">女装新品</a>
+                    <a href="#">商场同款</a>
+                  </div>
+                </li>
+              </ul>
+              <div class="menu-right">
+                <a href="">
+                  <img src="https://img.alicdn.com/bao/uploaded/TB1B_DcJpXXXXXWXFXXSutbFXXX.jpg_170x120q30.jpg" alt="">
+                </a>
+                <a href="">
+                  <img src="https://img.alicdn.com/bao/uploaded/i4/T1gRqVXk4fXXb1upjX.jpg_170x120q30.jpg" alt="">
+                </a>
+                <a href="">
+                  <img src="https://img.alicdn.com/bao/uploaded/TB1wNJAHFXXXXc7XpXXSutbFXXX.jpg_170x120q30.jpg" alt="">
+                </a>
+                <a href="">
+                  <img src="https://img.alicdn.com/bao/uploaded/TB1w472LFXXXXXwXVXXSutbFXXX.jpg_170x120q30.jpg" alt="">
+                </a>
+              </div>
             </div>
+          </li>
+          <li class="menu-list menu-list-blue">
+              <i class="iconfont icon-nanzhuang"></i>
+              <a href="#">男装</a>
+              /
+              <a href="#">户外运动</a>
+          </li>
+          <li class="menu-list menu-list-purple">
+              <i class="iconfont icon-xie"></i>
+              <a href="#">女鞋</a>
+              /
+              <a href="#">男鞋</a>
+              /
+              <a href="#">箱包</a>
+          </li>
+          <li class="menu-list menu-list-pink">
+              <i class="iconfont icon-meizhuang"></i>
+              <a href="#">美妆</a>
+              /
+              <a href="#">个人护理</a>
+          </li>
+          <li class="menu-list menu-list-purple">
+            <i class="iconfont icon-diamonds"></i>
+            <a href="#">腕表</a>
+            /
+            <a href="#">眼镜</a>
+            /
+            <a href="#">珠宝饰品</a>
+          </li>
+          <li class="menu-list menu-list-blue">
+            <i class="iconfont icon-shouji"></i>
+            <a href="#">手机</a>
+            /
+            <a href="#">数码</a>
+            /
+            <a href="#">电脑办公</a>
+          </li>
+          <li class="menu-list menu-list-orange">
+            <i class="iconfont icon-muyingwanju"></i>
+            <a href="#">母婴玩具</a>
+          </li>
+          <li class="menu-list menu-list-yelllow">
+            <i class="iconfont icon-mian"></i>
+            <a href="#">零食</a>
+            /
+            <a href="#">茶酒</a>
+            /
+            <a href="#">进口食品</a>
+          </li>
+          <li class="menu-list menu-list-yelllow">
+            <i class="iconfont icon-yingtao"></i>
+            <a href="#">生鲜水果</a>
+          </li>
+          <li class="menu-list menu-list-blue">
+            <i class="iconfont icon-jiayongdianqi"></i>
+            <a href="#">大家电</a>
+            /
+            <a href="#">生活电器</a>
+          </li>
+          <li class="menu-list menu-list-red">
+            <i class="iconfont icon-jiajujiancai"></i>
+            <a href="#">家居建材</a>
+          </li>
+          <li class="menu-list menu-list-blue">
+            <i class="iconfont icon-qiche"></i>
+            <a href="#">汽车</a>
+            /
+            <a href="#">配件</a>
+            /
+            <a href="#">用品</a>
+          </li>
+          <li class="menu-list menu-list-yelllow">
+            <i class="iconfont icon-jiafangjiashi"></i>
+            <a href="#">家纺</a>
+            /
+            <a href="#">家饰</a>
+            /
+            <a href="#">鲜花</a>
+          </li>
+          <li class="menu-list menu-list-green">
+            <i class="iconfont icon-yiyaobaojian"></i>
+            <a href="#">医药保健</a>
+          </li>
+          <li class="menu-list menu-list-red">
+            <i class="iconfont icon-kafeibeichabei"></i>
+            <a href="#">厨具</a>
+            /
+            <a href="#">收纳</a>
+            /
+            <a href="#">宠物</a>
+          </li>
+          <li class="menu-list menu-list-green">
+            <i class="iconfont icon-tushuyinxiang"></i>
+            <a href="#">图书音像</a>
+          </li>
+        </ul>
 
-            <ul class="nav-menu">
-                <li class="nav-menu-list nav-menu-list-special">
-                    <a href="#">我的淘宝</a>
-                    <span class="nav-menu-list-arrow"></span>
+      </div>
 
-                    <ul class="nav-menu-inner">
-                        <li><a href="#">已买到的宝贝</a></li>
-                        <li><a href="#">已卖出的宝贝</a></li>
-                    </ul>
-                </li>
-                <li class="nav-menu-list nav-menu-list-yellow">
-                    <i class="iconfont nav-iconfont icon-gouwucheman"></i>
-                    <a href="#">购物车</a>
-                </li>
-                <li class="nav-menu-list nav-menu-list-special">
-                    <a href="#">收藏夹</a>
-                    <span class="nav-menu-list-arrow"></span>
-                </li>
-                <li class="nav-menu-list nav-menu-list-line">|</li>
-                <li class="nav-menu-list nav-menu-list-yellow nav-menu-phone">
-                    <i class="iconfont nav-iconfont icon-shouji"></i>
-                    <a href="#">手机版</a>
-
-                    <div class="nav-menu-qr">
-                        <span class="nav-menu-qr-arrow"></span>
-                        <div class="nav-menu-qr-bg"></div>
-                        <img src="./images/qr_inner.jpg" alt="">
-                    </div>
-                </li>
-                <li class="nav-menu-list nav-menu-list-yellow">
-                    <a href="#">淘宝网</a>
-                </li>
-                <li class="nav-menu-list nav-menu-list-special">
-                    <a href="#">商家支持</a>
-                    <span class="nav-menu-list-arrow"></span>
-                </li>
-                <li class="nav-menu-list nav-menu-list-special">
-                    <i class="iconfont nav-iconfont icon-daohang"></i>
-                    <a href="#">网站导航</a>
-                    <span class="nav-menu-list-arrow"></span>
-                </li>
-            </ul>
+      <!-- 轮播图 -->
+      <div class="swiper">
+        <div class="swiper-content">
+          <img src="images/pic1.jpg" alt="">
+          <img class="active" src="images/pic2.jpg" alt="">
+          <img src="images/pic3.jpg" alt="">
+          <img src="images/pic4.jpg" alt="">
+          <img src="images/pic5.jpg" alt="">
+          <img src="images/pic6.jpg" alt="">
         </div>
-    </div>
+        <ul class="pointer">
+          <li></li>
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
 
-    <!-- 搜索 -->
-    <div id="search">
-        <div id="search-wrapper">
-            <a id="search-logo" href="#">
-                <img src="https://img.alicdn.com/tfs/TB1nK7AcBKw3KVjSZFOXXarDVXa-290-130.gif" alt="">
+
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="wrapper">
+      <ul id="active">
+        <li class="active-list">
+          <div class="active-title">
+            品牌闪购
+            <span class="active-title-en">BRAND SALE</span>
+            <a href="#" class="active-list-more">
+              <img src="http://img.alicdn.com/tfs/TB1B7RoaMMPMeJjy1XcXXXpppXa-36-36.png" alt="">
             </a>
-
-            <div id="search-container">
-                <div id="search-content">
-                    <input type="text" placeholder="搜索 天猫/商铺">
-                    <button>搜索</button>
-                </div>
-
-                <div id="search-type">
-                    <a href="#">针织衫</a>
-                    <a href="#" class="search-type-red">连衣裙</a>
-                    <a href="#">四件套</a>
-                    <a href="#" class="search-type-red">摄像头</a>
-                    <a href="#">客厅灯</a>
-                    <a href="#">口红</a>
-                    <a href="#" class="search-type-red">手机</a>
-                    <a href="#">运动鞋</a>
-                    <a href="#" class="search-type-red">牛奶</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- banner -->
-    <div id="banner">
-        <div id="banner-wrapper">
-            <a href="">
-                <img src="./images/market.png" alt="">
+          </div>
+          <a href="#" class="active-content">
+            <img src="https://img.alicdn.com/tfs/TB15I0OLMHqK1RjSZJnXXbNLpXa-468-644.jpg" alt="">
+          </a>
+        </li>
+        <li class="active-list">
+          <div class="active-title">
+            品牌闪购
+            <span class="active-title-en">BRAND SALE</span>
+            <a href="#" class="active-list-more">
+              更多
+              <img src="http://img.alicdn.com/tfs/TB1B7RoaMMPMeJjy1XcXXXpppXa-36-36.png" alt="">
             </a>
-            <a href="">
-                <img src="./images/inter.png" alt="">
+          </div>
+          <a href="#" class="active-content">
+            <img src="https://img.alicdn.com/tfs/TB1PuSIXq67gK0jSZFHXXa9jVXa-966-644.jpg_970x970q100.jpg_.webp" alt="">
+          </a>
+        </li>
+        <li class="active-list">
+          <div class="active-title">
+            品牌闪购
+            <span class="active-title-en">BRAND SALE</span>
+            <a href="#" class="active-list-more">
+              更多
+              <img src="http://img.alicdn.com/tfs/TB1B7RoaMMPMeJjy1XcXXXpppXa-36-36.png" alt="">
             </a>
-            <a href="">天猫会员</a>
-            <a href="">电器城</a>
-            <a href="">喵生鲜</a>
-            <a href="">医药馆</a>
-            <a href="">营业厅</a>
-            <a href="">魅力惠</a>
-            <a href="">飞猪旅行</a>
-            <a href="">苏宁易购</a>
-        </div>
-    </div>
+          </div>
+          <a href="#" class="active-content">
+            <img src="https://img.alicdn.com/tps/i4/TB1_.jvTgHqK1RjSZJnSuvNLpXa.jpg_970x970q100.jpg_.webp" alt="">
+          </a>
+        </li>
+      </ul>
 
-    <!-- 内容 -->
-    <div id="container">
-        <div id="wrapper">
-            <!-- 轮播图 -->
-            <div id="slider">
-                <!-- 菜单 -->
-                <div id="menu">
-                    <div id="menu-title">商品分类</div>
-                    <ul id="menu-content">
-                        <li class="menu-list menu-list-pink">
-                            <i class="iconfont icon-nvzhuangneiyi"></i>
-                            <a href="#">女装</a>
-                            /
-                            <a href="#">内衣</a>
-
-                            <div class="menu-inner">
-                                <div class="menu-inner-left">
-                                    <ul class="menu-type">
-                                        <li class="menu-type-list clearfix">
-                                            <div class="menu-type-list-title">当季流行 ></div>
-                                            <div class="menu-type-list-main">
-                                                <a href="#" class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#"class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#"class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                            </div>
-                                        </li>
-                                        <li class="menu-type-list clearfix">
-                                            <div class="menu-type-list-title">当季流行 ></div>
-                                            <div class="menu-type-list-main">
-                                                <a href="#" class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#"class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#"class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                            </div>
-                                        </li>
-                                        <li class="menu-type-list clearfix">
-                                            <div class="menu-type-list-title">当季流行 ></div>
-                                            <div class="menu-type-list-main">
-                                                <a href="#" class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#"class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#"class="menu-type-list-main-red">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                                <a href="#">女装新品</a>
-                                                <a href="#">商场同款</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="menu-inner-right">
-                                    <a href="">
-                                        <img src="https://img.alicdn.com/bao/uploaded/TB1B_DcJpXXXXXWXFXXSutbFXXX.jpg_170x120q30.jpg" alt="">
-                                    </a>
-                                    <a href="">
-                                        <img src="https://img.alicdn.com/bao/uploaded/TB1B_DcJpXXXXXWXFXXSutbFXXX.jpg_170x120q30.jpg" alt="">
-                                    </a>
-                                    <a href="">
-                                        <img src="https://img.alicdn.com/bao/uploaded/TB1B_DcJpXXXXXWXFXXSutbFXXX.jpg_170x120q30.jpg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="menu-list menu-list-blue">
-                            <i class="iconfont icon-nanzhuang"></i>
-                            <a href="#">男装</a>
-                            /
-                            <a href="#">户外运动</a>
-                        </li>
-                        <li class="menu-list menu-list-purple">
-                            <i class="iconfont icon-xie"></i>
-                            <a href="#">女鞋</a>
-                            /
-                            <a href="#">男鞋</a>
-                            /
-                            <a href="#">箱包</a>
-                        </li>
-                        <li class="menu-list menu-list-pink">
-                            <i class="iconfont icon-meizhuang"></i>
-                            <a href="#">美妆</a>
-                            /
-                            <a href="#">个人护理</a>
-                        </li>
-                        <li class="menu-list menu-list-purple">
-                            <i class="iconfont icon-diamonds"></i>
-                            <a href="#">腕表</a>
-                            /
-                            <a href="#">眼镜</a>
-                            /
-                            <a href="#">珠宝饰品</a>
-                        </li>
-                        <li class="menu-list menu-list-blue">
-                            <i class="iconfont icon-shouji"></i>
-                            <a href="#">手机</a>
-                            /
-                            <a href="#">数码</a>
-                            /
-                            <a href="#">电脑办公</a>
-                        </li>
-                        <li class="menu-list menu-list-orange">
-                            <i class="iconfont icon-muyingwanju"></i>
-                            <a href="#">母婴玩具</a>
-                        </li>
-                        <li class="menu-list menu-list-yelllow">
-                            <i class="iconfont icon-mian"></i>
-                            <a href="#">零食</a>
-                            /
-                            <a href="#">茶酒</a>
-                            /
-                            <a href="#">进口食品</a>
-                        </li>
-                        <li class="menu-list menu-list-yelllow">
-                            <i class="iconfont icon-yingtao"></i>
-                            <a href="#">生鲜水果</a>
-                        </li>
-                        <li class="menu-list menu-list-blue">
-                            <i class="iconfont icon-jiayongdianqi"></i>
-                            <a href="#">大家电</a>
-                            /
-                            <a href="#">生活电器</a>
-                        </li>
-                        <li class="menu-list menu-list-red">
-                            <i class="iconfont icon-jiajujiancai"></i>
-                            <a href="#">家居建材</a>
-                        </li>
-                        <li class="menu-list menu-list-blue">
-                            <i class="iconfont icon-qiche"></i>
-                            <a href="#">汽车</a>
-                            /
-                            <a href="#">配件</a>
-                            /
-                            <a href="#">用品</a>
-                        </li>
-                        <li class="menu-list menu-list-yelllow">
-                            <i class="iconfont icon-jiafangjiashi"></i>
-                            <a href="#">家纺</a>
-                            /
-                            <a href="#">家饰</a>
-                            /
-                            <a href="#">鲜花</a>
-                        </li>
-                        <li class="menu-list menu-list-green">
-                            <i class="iconfont icon-yiyaobaojian"></i>
-                            <a href="#">医药保健</a>
-                        </li>
-                        <li class="menu-list menu-list-red">
-                            <i class="iconfont icon-kafeibeichabei"></i>
-                            <a href="#">厨具</a>
-                            /
-                            <a href="#">收纳</a>
-                            /
-                            <a href="#">宠物</a>
-                        </li>
-                        <li class="menu-list menu-list-green">
-                            <i class="iconfont icon-tushuyinxiang"></i>
-                            <a href="#">图书音像</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 轮播图主内容 -->
-                <div id="slider-container">
-                    <div id="slider-img">
-                        <img src="./images/slider1.jpg" alt=""class="active">
-                        <img src="./images/slider2.jpg" alt="">
-                        <img src="./images/slider3.jpg" alt="">
-                        <img src="./images/slider4.jpg" alt="">
-                    </div>
-                    <ul id="slider-pointer">
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <ul id="brand" class="clearfix">
+        <li class="brand-list">
+          <div class="brand-list-img">
+            <img src="http://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_200x200q100.jpg_.webp" alt="">
+          </div>
+          <a class="brand-list-cover" href="#">
+            <span>belulu</span>
+            <button>点击进入</button>
+          </a>
+        </li>
+        <li class="brand-list">
+          <div class="brand-list-img">
+            <img src="http://img.alicdn.com/i2/2/TB1D0sLnHSYBuNjSspiXXXNzpXa?abtest=&pos=1&abbucket=&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000_200x200q100.jpg_.webp" alt="">
+          </div>
+          <a class="brand-list-cover" href="#">
+            <span>belulu</span>
+            <button>点击进入</button>
+          </a>
+        </li>
+      </ul>
 
     </div>
+  </div>
+
+
 </body>
 </html>

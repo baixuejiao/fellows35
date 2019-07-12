@@ -95,14 +95,14 @@
 }
 .carseoul-wrapper{
   width: 1230px;
-  height: 500px;
+  height: 512px;
   margin: 0 auto;
   position: relative;
 }
 .menu{
   width: 200px;
   height: 520px;
- 
+  
   position: absolute;
   top: -36px;
   left: 0;
