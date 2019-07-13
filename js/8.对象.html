@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      //面向对象
+      //面向过程
+      var arr = []; // 数组
+      var obj = {}; // 对象
+
+      var person = {
+        // key: value
+        name: 'xiaoming',
+        age: '18',
+        eat: function() {
+          console.log('eat.....');
+        }
+      }
+
+      // console.log(person);
+      // console.log(person.name);
+      // console.log(person['name']);
+      // person.eat();
+
+      // var obj1 = new Object();
+      // obj1['name'] = 'xiaoming';
+      // console.log(obj1);
+
+      // var obj2 = null;
+
+
+      var course = {
+        name: 'html',
+        price: '111',
+        desc: '标签'
+      }
+
+      // for in循环对象
+      for( key in course) {
+        console.log(key);
+        console.log(course[key])
+      }
+
+      // var courseList = [
+      //   {
+      //     name: 'html',
+      //     price: '111'
+      //   },
+      //   {
+      //     name: 'css',
+      //     price: '222'
+      //   },
+      //   {
+      //     name: 'js',
+      //     price: '333'
+      //   }
+      // ]
+
+      // document.write('<ul>');
+      // for(var i =0 ; i< courseList.length; i++){
+      //   document.write('<li class="list">'+courseList[i].name+':'+courseList[i].price+'</li>');
+      //   console.log(courseList[i]);
+      //   console.log(courseList[i].price);
+      // }
+      // document.write('</ul>');
+
+      var cat = {
+        name: 'xiaoming',
+        age: 4
+      }
+
+      var dog = cat;
+      console.log(cat)
+      console.log(dog)
+      console.log('-------');
+      dog.age = 8;
+      console.log(cat)
+      console.log(dog)
+
+      cat.color = 'black';
+      cat['leg'] = 4;
+
+      console.log(cat)
+      // console.log(dog)
+      
+      var day = new Date();
+      var year = day.getFullYear();
+
+      console.log(year);
+       
+
+  </script>
+</body>
+</html>
