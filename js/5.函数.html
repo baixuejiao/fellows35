@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 声明一个 function 方法名
+    //  函数中遇到return关键字，直接返回，后面的内容不会继续执行
+    function sum(num1, num2) {
+    //  接收的地方 叫形参
+      return num3 = num1*1 + num2*1;
+      console.log(888);
+    }
+
+    // 方法调用
+    // 实参：实际参数
+    var num4 = sum('1111',2);
+    // // console.log(111);
+    // // console.log(222);
+    // // console.log(num4);
+
+    // 作用域
+    // 局部变量 全局变量
+    // var aaa = 22;
+    
+    function fun() {
+      // 局部变量
+      var tmp = 111;
+      console.log(aaa);
+    }
+    // // console.log(aaa);
+    // // console.log(tmp);
+
+    // fun();
+
+
+    // 变量提升 只有var关键字定义的 才会出现变量提升
+    console.log(a);
+    var a=1;
+    console.log(a);
+
+    // 
+    // var a;
+    // console.log(a);
+    // a=1;
+    // console.log(a);
+    // var fun1;
+    var fun1;
+    fun1 = function(){
+      console.log('1111')
+    }
+
+    fun1();
+
+    a();
+    function a() {
+      console.log(1234567);
+    }
+
+    b();
+    var b = function() {
+      console.log(234567);
+    }
+    
+  </script>
+</body>
+</html>

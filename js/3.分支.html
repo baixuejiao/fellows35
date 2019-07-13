@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 代码执行顺序
+    // 1. 顺序执行
+    // 2. 分支判断
+    // 3. 循环  
+
+    console.log(1)
+    console.log(2)
+    console.log(3)
+    // 1.单一选择
+    if (false) {
+      console.log('hello world')
+    }
+    // 2.二路选择结构
+    if(1 !== true) {
+      console.log(1)
+    } else {
+      console.log(2)
+    }
+
+    // var msg = window.prompt('请输入年龄');
+    // if (msg <= 18) {
+    //   console.log('青少年');
+    // } else if(msg>18 && msg<=40 ) {
+    //   console.log('中年');
+    // } else {
+    //   console.log('中老年');
+    // }
+
+    // 3.三目运算符 ?:
+    // (条件判断) ？ （true执行的） : （false执行的）
+    var a = 18;
+    var b = a > 10 ? '大于10' : '小于10';
+    console.log(b);
+    
+    var c = 1 !== true ? 1 : 2;
+    console.log(c);
+
+    // 4.多路选择结构（switch）
+    var age = window.prompt('输入一个数字');
+    // window.prompt 输入的内容是字符串
+    console.log(typeof age);
+    console.log(typeof(age*1));
+    switch(age*1) { //switch本来就是跳转的意思（又称为“开关”），所以switch语句就是判断情况，跳到符合的情况开始执行
+      case 4:
+        alert("c的值是4");
+      case 3:
+        alert("c的值肯定大于等于3");
+      case 2:
+        alert("c的值肯定大于等于2");
+        break;
+      case 1:
+        alert("c的值肯定大于等于1");
+    }
+
+    // if(age==4 || age==3 || age==2 || age==1){
+    //   alert("c的值是4");
+    //   alert("c的值肯定大于等于3");
+    //   alert("c的值肯定大于等于2");
+    //   alert("c的值肯定大于等于1");
+    // }
+
+    
+
+    
+  </script>
+</body>
+</html>

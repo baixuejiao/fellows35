@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /*  */
+  </style>
+</head>
+<body>
+
+  <!-- 引用外部文件
+      利用script标签 src属性里写文件路径
+  -->
+  <!-- <script src="index.js"></script> -->
+
+  <!-- 
+    1.写在<script>内部
+    2.写在body 内部 且是最后面
+   -->
+  <script>
+    // js注释方式
+    // 1.单行 //
+    // 2.多行 /* */ 
+    
+    // 在页面输入
+    document.write('<h1>hello world!</h1>');
+
+    // 在控制台输出
+    console.log('hello world!')
+    // 对话框
+    alert('hello world!')
+
+    var msg = window.prompt('请输入你的年龄');
+    console.log(msg);
+   
+  </script>
+</body>
+</html>

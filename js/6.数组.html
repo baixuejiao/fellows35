@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 数组的定义-引用类型
+    // [1,2,3]
+    var arr = [];
+    var arr1 = new Array();
+    console.log(arr);
+    console.log(arr1);
+
+    arr = [1, 2, 3];
+    console.log(arr);
+
+    // 定义了一个数组 参数表示数组的长度 length
+    var arr2 = new Array(4);// [ , , , ]
+    // 参数是多个值，对数组进行了初始化
+    var arr3 = new Array(4,5,6);//[4, 5, 6]
+    console.log(arr2);
+    console.log(arr3);
+
+    // 数组长度 length
+    var arr4 = [1,2,3,4,5,6];
+    console.log(arr4.length);
+    // 数组下标 从0开始 数组的下标是唯一的
+    console.log(arr4[2]);
+
+    for(var i=0; i<=arr4.length; i++){
+      console.log(arr4[i]);
+    }
+    // undefined 数组已经声明过了，但是未赋值
+    console.log(arr4[7]);
+
+    // concat 数组的拼接, 返回一个新的数组
+    var a1 = [1,2];
+    var a2 = [2,3];
+    var a3 = a1.concat(a2);
+    console.log('a3:',a3);
+    console.log('a2:',a2);
+    console.log('a1:',a1);
+
+    // push 在数组的末尾添加 返回的是数组的长度
+    var len = a1.push(3,4);
+    console.log('len:',len);
+    console.log(a1);
+
+    // pop 删除数组的末位 返回的是删除之前的最后一位
+    // [1,2,3,4]
+    var a = a1.pop();
+    console.log(a);
+    console.log(a1);
+    console.log('------');
+    // [1,2,3]
+    var b = a1.pop();
+    console.log(b);
+    console.log(a1);
+
+    // shift 删除数组的第一项，返回的是原数组的第一个值
+    var a2 = [1,2,3,4];
+    var c = a2.shift();
+    console.log(c);
+    console.log(a2);
+
+    // unshift 在数组的开头添加 返回数组的长度
+    console.log('====');
+    var a3 = [2,3,4,5];
+    var d = a3.unshift(1);
+    console.log(d);
+    console.log(a3);
+
+    a3.unshift(3,4);
+    console.log(a3);
+
+    // slice（start, end）
+    // 从数组中提取一部分 从下标start开始到end（不包含end）
+    var a4 = [1,2,3,4,5,6];
+    var a5 = a4.slice(3,4);
+    console.log('a5:',a5);
+    console.log('a4:',a4);
+    var a6 = a4.slice(-3,-2);
+    console.log(a6);
+
+    // splice 像原数组添加或删除，并且会修改原数组
+    var a7 = [1,2,3,4,5];
+    var a8 = a7.splice(0,1);
+    console.log('a6:',a8);
+    console.log('a7:',a7);
+    // [2,3,4,5]
+    var a9 = a7.splice(0,0,9);
+    console.log('a7:',a7);
+    console.log('a9:',a9);
+    // [9,2,3,4,5]
+    var a10 = a7.splice(1,1,100)
+    console.log('a10:',a10);
+    console.log(a7);
+    // [9,100,3,4,5]
+    a7.splice(1,0,[6,7,8]);
+    console.log(a7);
+
+    // reverse 颠倒数组的顺序 并且会修改原数组
+    var b=[1,2,3];
+    b.reverse();
+    console.log(b);
+
+    // sort 排序 会对原数组修改
+    var b1 = ['11','12','24','2','3'];
+    function s1(a,b) {
+      // return a-b  升序排列
+      // return b-a  降序排列
+    }
+    b1.sort(s1)
+    console.log(b1.sort())
+
+    // 数组转字符串 原数组不变
+    var b2 = [1,2,3];
+    var b3 = b2.toString();
+    console.log(b2);
+    console.log(b3);
+    var b4 = b2.join('&');
+    console.log(b4);
+
+    
+  </script>
+</body>
+</html>
