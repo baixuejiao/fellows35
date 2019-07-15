@@ -30,6 +30,19 @@
       return result(n-2)+result(n-1);
     }
 
+    // 方法三
+    var n=window.prompt("请输入数字N的值：")*1;
+    document.write(Fibonaccci(n));
+    function Fibonaccci(x){
+      // var result=0;
+      var arr_fibonacci=[1,1];
+      if(x>=3){
+        for(var i=1;i<x;i++){
+        arr_fibonacci.push(arr_fibonacci[i-1]+arr_fibonacci[i]);
+      }
+    }
+    return arr_fibonacci[x-1];
+
   </script>
 </body>
 </html>
