@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      left: 0;
+    }
+    /* 方法一 */
+    #left1{
+      float: left;
+      width: 200px;
+      height: 300px;
+      background: red;
+    }
+    #right1{
+      margin-left: 200px;
+      height: 300px;
+      background: pink;
+    }
+
+    /* 方法二 */
+    #left2{
+      width: 200px;
+      height: 300px;
+      background: red;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    #right2{
+      margin-left: 200px;
+      height: 300px;
+      background: pink;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 实现一个两列布局 左边固定200像素宽 右侧自适应 -->
+  <!-- 方法一 -->
+  <div id="left1"></div>
+  <div id="right1"></div>
+
+   <!-- 方法二 -->
+   <div id="left2"></div>
+   <div id="right2"></div>
+</body>
+</html>

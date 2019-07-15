@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！“。
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+
+    var week = date.getDay();
+
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    switch(week*1) {
+      case 0:
+        week = '星期日';
+        break;
+      case 1:
+        week = '星期一';
+        break;
+      case 2:
+        week = '星期二';
+        break;
+      case 3:
+        week = '星期三';
+        break;
+      case 4:
+        week = '星期四';
+        break;
+      case 5:
+        week = '星期五';
+        break;
+      case 6:
+        week = '星期六';
+        break;
+      default:
+        week = 'error';
+    }
+
+    var msg = '现在是'+year+'年'+month+'月'+day+'日'+hour+'点'+min+'分'+seconds+'秒（'+week+')，欢迎您的到访！'
+    document.write(msg);
+
+  </script>
+</body>
+</html>

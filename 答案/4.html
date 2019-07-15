@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      top: 0;
+    }
+    .container{
+      width: 300px;
+      height: 300px;
+      margin: 100px auto; 
+      border: 1px solid red;
+    }
+    /*  */
+    .wrap1{
+      text-align: center;
+      line-height: 300px;
+    }
+    .inner{
+      width: 100px;
+      height: 100px;
+      margin: 100px auto;
+      border: 1px solid blue;
+    }
+    /*  */
+    .wrap3{
+      position: relative;
+    }
+    .inner1{
+      width: 100px;
+      height: 100px;
+      margin: -50px 0 0 -50px;
+      background: pink;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
+  </style>
+</head>
+<body>
+  <!-- 元素水平居中 垂直居中 -->
+
+  <!-- 行级元素 -->
+  <div class="container wrap1">
+    <span>hello world</span>
+  </div>
+
+  <!-- 块级元素 -->
+  <div class="container wrap2">
+    <div class="inner"></div>
+  </div>
+
+  <!--  -->
+  <div class="container wrap3">
+    <div class="inner1"></div>
+  </div>
+</body>
+</html>

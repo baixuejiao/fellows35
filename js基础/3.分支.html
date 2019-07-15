@@ -69,9 +69,28 @@
     //   alert("c的值肯定大于等于1");
     // }
 
-    
+    var age = window.prompt('请输入年龄...');
+    age *= 1;
 
-    
+    // 比较case后面的内容 是否与switch后面的内容相等
+    switch(true) {
+      case age<=18:
+        console.log('少年')
+        break;
+      case age>18 && age <= 30:
+        console.log('青年')
+        break;
+      case age>30 && age <=50:
+        console.log('中年')
+        break;
+      case age>50 && age<=75:
+        console.log('中老年')
+        break;
+      case age>75:
+        console.log('老年')
+        break;
+    }
+
   </script>
 </body>
 </html>

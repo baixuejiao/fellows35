@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr1 = "john".split('');  // ['j','o','h','n']
+    var arr2 = arr1.reverse();
+    // ['n','h','o','j']
+    var arr3 = "jones".split(''); 
+    // ['j','o','n','e','s']
+    arr2.push(arr3); 
+    // ['n','h','o','j',['j','o','n','e','s']]
+    // ['n','h','o','j',['j','o','n','e','s']]
+    console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1)); 
+    console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1)); 
+    console.log(arr1.slice(-1)); 
+    
+    // array 1: length=5 last=j,o,n,e,s
+    // 17.html:16 array 2: length=5 last=j,o,n,e,s
+    
+  </script>
+</body>
+</html>
