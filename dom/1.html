@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      height: 3000px;
+    }
+  </style>
+</head>
+<body>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+  <button id="obtn">1111</button>
+  <script>
+    window.document.write('<h1>123</h1>');
+    var a = 1;
+
+    var btn = document.getElementById('obtn')
+
+    btn.onclick = function() {
+      // scrollTo() 滚动条移动到某一位置
+      // scrollBy() 滚动条移动了多少距离
+      window.scrollBy(0,10);
+      window.scrollTo(0,1000);
+    }
+
+    // 对话框 alert(str)
+    alert(123);
+    // 确认框 confirm(str)
+    // 点击按钮后有返回值 true、 false
+    var tag = confirm('确认关闭吗？');
+    // prompt(str, defaultvalue) 返回的类型是一个string
+    prompt('请输入一个number', 1);
+
+    // 间隔某毫秒后执行方法
+    var j=0
+    var t = setTimeout(function(){
+      console.log(1);
+    },0);
+    console.log(2)
+    console.log(3);
+    // clearTimeout(t)
+    
+    // js属于单线程
+    // 同步 异步
+    // setTimeout 是异步
+    // 主线程 任务队列
+    
+    // js先执行主线程的任务，setTimeout属于异步的 会进入到任务队列，等主线程任务执行完毕后，任务队列里的内容会进入到主线程开始执行 
+  
+
+    // 每隔某毫秒执行方法
+    // timer返回类型是number
+    var i=0
+    var timer = setInterval(function(){
+      console.log(i++);
+      if(i == 6) {
+        clearInterval(timer);
+      }
+    },1000)
+
+
+  </script>
+</body>
+</html>

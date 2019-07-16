@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  -webkit-
+  -moz-
+  -ms-
+  navigator.userAgent
+  chome: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+  火狐： Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:67.0) Gecko/20100101 Firefox/67.0
+  safari: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15"
+  iphone: "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
+  andriod: "Mozilla/5.0 (Linux; U; Android 4.3; en-us; SM-N900T Build/JSS15J) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+
+  <script>
+    var ua = navigator.userAgent;
+
+    if(ua.indexOf('iPhone') == -1 ) {
+      console.log(1)
+      setTimeout(function(){
+        console.log(111)
+        location.href = 'https://www.baidu.com';
+      },2000)
+    } else {
+      console.log(2);
+      setTimeout(function(){
+        console.log(2222)
+        location.href = 'https://h5.m.taobao.com/?sprefer=sypc00';
+
+      }, 2000)
+    }
+
+  
+  
+  </script>
+
+
+</body>
+</html>

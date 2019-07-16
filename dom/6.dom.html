@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .inner{
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+  
+  </style>
+</head>
+<body>
+    <div id="content">12345678</div>
+    <div id="content">11111</div>
+
+    <ul id="wraper">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <ul>
+      <li>11</li>
+      <li>22</li>
+      <li>33</li>
+      <li>44</li>
+      <li>55</li>
+    </ul>
+
+    
+    <input type="text" name="username" value="1">
+    <!-- <input type="text" name="username" value="2">
+    <input type="text" name="username" value="3"> -->
+
+    <script>
+      var userinfo = {
+        username: '小明',
+        pws: '1111'
+      }
+      var arr = [1,2,3];
+      console.log(arr);
+
+      // getElementById 根据id获取元素
+      var oDiv = document.getElementById('content');
+      console.log(oDiv);
+
+      // backgournd-color 
+      // font-size fontSize
+      // 设置样式
+      oDiv.style.backgroundColor = '#ff0036';
+      oDiv.index = 1;
+
+      console.log('索引：',oDiv.index);
+      // 给元素设置类名
+      // oDiv.className = 'inner';
+
+      // getElementsByTagName 根据标签名获取元素 返回多个
+      // getElementsByTagName 可以在document上调用 也可以在元素上调用
+      var aLi = document.getElementsByTagName('li');
+      console.log(aLi);
+      // HTMLCollection 类数组 只能获取到length
+
+      var oWraper = document.getElementById('wraper');
+      var aLi1 = oWraper.getElementsByTagName('li');
+      console.log(aLi1);
+      // getElementsByName 根据name参数获取元素 返回多个
+      // NodeList 类数组 length
+      var oInput = document.getElementsByName('username');
+      console.log(oInput);
+
+      for(var i=0; i<oInput.length; i++) {
+        console.log(oInput[i].value);
+      }
+    
+      // 类数组只有length属性 没有数组下的任何方法=>Array
+
+    </script>
+</body>
+</html>

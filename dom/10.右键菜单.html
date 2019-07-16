@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    li{
+      list-style: none;
+    }
+
+    #menu{
+      padding-top: 10px;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .list{
+      width: 100px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color: #333;
+      background: #f3f5f6;
+    }
+    .list:hover{
+      color: #fff;
+      background: aqua;
+    }
+  
+  </style>
+</head>
+<body>
+  <ul id="menu">
+    <li class="list">打开</li>
+    <li class="list">下载</li>
+    <li class="list">分享</li>
+    <li class="list">删除</li>
+  </ul>
+
+  <script>
+    oMenu = document.getElementById('menu');
+    aLi = oMenu.getElementsByTagName('li');
+
+    document.oncontextmenu = function(event) {
+      console.log(event);
+      // 阻止浏览器默认动作
+      // event.preventDefault();
+      oMenu.style.display = 'block';
+
+      var left = event.clientX;
+      var top = event.clientY;
+
+      console.log(left, top);
+
+      oMenu.style.top = top + 'px';
+      oMenu.style.left = left + 'px';
+
+      return false;
+    }
+
+
+    for(var i=0; i<aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onclick = function(event) {
+        // aLi[i].innerHTML
+        console.log( aLi[this.index].innerHTML)
+      }
+    }
+
+    document.onclick = function() {
+      oMenu.style.display = 'none';
+    }
+  
+  
+  </script>
+</body>
+</html>

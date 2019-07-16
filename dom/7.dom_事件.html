@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">点我！</div>
+  <input type="text" id="username" >
+
+  <select name="" id="sel">
+    <option value="">1</option>
+    <option value="">2</option>
+    <option value="">3</option>
+  </select>
+
+  <form action="" onreset="alert('reset')">
+    <input type="reset" id="res">
+  </form>
+
+
+  <script>
+    var oDiv = document.getElementById('wrapper');
+
+    // 单击事件
+    // oDiv.onclick = function(e) {
+    //   console.log(e);
+    //   // 函数体 处理的方法
+    //   console.log('hello world!');
+    // }
+
+    // oDiv.ondblclick = function(){
+    //   console.log('双击666！');
+    // }
+
+    oDiv.onmouseout = function() {
+      oDiv.style.backgroundColor = '#fff';
+    }
+    oDiv.onmouseover = function() {
+      oDiv.style.backgroundColor = 'pink';
+    }
+
+    oDiv.onmousedown = function() {
+      console.log('按下')
+    }
+    oDiv.onmouseup = function() {
+      console.log('松开');
+    }
+
+    oDiv.onmousemove = function() {
+      console.log('move');
+    }
+
+    var oInput = document.getElementById('username');
+
+    // 获得焦点
+    // oInput.onfocus = function() {
+    //   console.log('获得焦点');
+    // }
+
+    // // 失去焦点
+    // oInput.onblur = function() {
+    //   console.log(oInput.value)
+    //   console.log('失去焦点')
+    // }
+
+    // // 内容改变
+    // oInput.onchange = function(event){
+    //   console.log(event)
+    //   console.log('onchange:',oInput.value)
+    // }
+
+    // oInput.onkeydown = function(e) {
+    //   console.log(e.which)
+    //   // console.log('onkeydown')
+    // }
+
+    oInput.onkeypress = function(e) {
+      console.log('onkeypress');
+      return false;
+    }
+
+    // oInput.onkeyup = function() {
+    //   console.log('onkeyup')
+    // }
+
+    var oSel = document.getElementById('sel');
+    oSel.onchange = function() {
+      console.log(123);
+    }
+
+    var oSet = document.getElementById('res');
+    oSet.onreset = function() {
+      console.log('click');
+    }
+  
+  </script>
+
+<script>
+    (function(doc, win) {
+      var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+          recalc = function() {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              if (clientWidth > 540) {
+                  clientWidth = 540;
+              }
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }; //以iPhone6为基准  body 100px rem=size/100 红包页面以iphone6为基准
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+  })(document, window);
+</script>
+</body>
+</html>
