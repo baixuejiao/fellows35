@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;
+    }
+
+    #container{
+      width: 750px;
+      height: 291px;
+      margin: 100px auto 0;
+      position: relative;
+    }
+
+    #slider{
+      width: 100%;
+      height: 100%;
+    }
+
+    #slider>img{
+      display: none;
+      width: 100%;
+    }
+    #slider>.active{
+      display: block;
+    }
+
+    #pointer{
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+    }
+
+    #pointer>li{
+      float: left;
+      width: 22px;
+      height: 22px;
+      margin: 0 5px;
+      text-align: center;
+      line-height: 22px;
+      border-radius: 5px;
+      color: #fff;
+      background: rgba(0,0,0,0.6);
+      /* 鼠标样式 小手状 可点击 */
+      cursor: pointer;
+    }
+
+    #pointer>.selected{
+      background: #ff0036;
+    }
+
+    #left{
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      margin-top: -25px;
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      cursor: pointer;
+    }
+    #left::after{
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-top: 12px;
+      border-right: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+
+    #right{
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      margin-top: -25px;
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      cursor: pointer;
+    }
+    #right::after{
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-top: 12px;
+      border-right: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="slider">
+      <img class="active" src="../images/1.jpg" alt="">
+      <img src="../images/2.jpg" alt="">
+      <img src="../images/3.jpg" alt="">
+      <img src="../images/4.jpg" alt="">
+      <img src="../images/5.jpg" alt="">
+    </div>
+
+    <ul id="pointer">
+      <li class="selected">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+
+    <span id="left"></span>
+    <span id="right"></span>
+
+  </div>
+
+  <script>
+    var aLi = document.getElementsByTagName('li');
+    var aImg = document.getElementsByTagName('img');
+
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+
+    var oContainer = document.getElementById('container');
+    var tag = 0;
+    var Timer;
+
+    for(var i=0; i<aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onclick = function(){
+        changeSlider(this.index);
+
+        tag = this.index;
+        
+        // for(var j=0; j<aLi.length; j++) {
+        //   aLi[j].className = '';
+        //   aImg[j].className = '';
+        // }
+
+        // aLi[this.index].className = 'selected';
+        // aImg[this.index].className = 'active';
+      }
+    }
+    
+    oRight.onclick = function() {
+      tag++
+
+      if(tag == aLi.length) {
+        tag = 0;
+      }
+      // for(var j=0; j<aLi.length; j++) {
+      //   aLi[j].className = '';
+      //   aImg[j].className = '';
+      // }
+
+      // aLi[tag].className = 'selected';
+      // aImg[tag].className = 'active';
+
+      changeSlider(tag)
+    }
+
+    oLeft.onclick = function() {
+      tag--
+      if(tag == -1){
+        tag = aLi.length-1;
+      }
+
+      changeSlider(tag)
+    }
+
+    var changeSlider = function(_tag) {
+      for(var j=0; j< aLi.length; j++) {
+        aLi[j].className = '';
+        aImg[j].className = '';
+      }
+      aLi[_tag].className = 'selected';
+      aImg[_tag].className = 'active';
+    }
+
+    // Timer = setInterval(function(){
+    //   oRight.onclick();
+    // }, 1000)
+
+   
+
+    oContainer.onmouseover = function() {
+      clearInterval(Timer);
+    }
+
+    oContainer.onmouseout = function() {
+      goTimer();
+    }
+
+    var goTimer = function() {
+      Timer = setInterval(function(){
+        oRight.onclick();
+      }, 1000)
+    }
+
+    goTimer();
+  
+  
+  </script>
+
+</body>
+</html>
