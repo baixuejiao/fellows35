@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li{
+      background: red;
+    }
+    ul{
+      background: #ff8907;
+    }
+  
+  </style>
+</head>
+<body>
+  <button>添加</button>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script>
+    var aLi = document.getElementsByTagName('li');
+    var oUl = document.getElementsByTagName('ul')[0];
+
+    var oBtn = document.getElementsByTagName('button')[0];
+
+    oBtn.onclick = function() {
+      var oLi = document.createElement('li');
+      oLi.innerHTML = Math.random();
+      // oLi.onclick = function() {
+      //   console.log(this.innerHTML);
+      // }
+      oUl.appendChild(oLi);
+    }
+
+    for(var i=0; i<aLi.length; i++) {
+      aLi[i].onclick = function() {
+        console.log(this.innerHTML);
+      }
+    }
+
+    oUl.onclick = function(e) {
+      // console.log(e);
+      if(e.target.tagName == 'LI') {
+        console.log(e.target.innerHTML)
+      }
+      // console.log(e.target.tagName)
+      // console.log(123123);
+    }
+
+    // 事件委托 -> 事件冒泡
+    // 动态添加的元素 无法在已进入页面时绑定事件，需要把事件绑定在已存在的父元素上
+
+
+
+
+
+
+  
+  </script>
+
+</body>
+</html>

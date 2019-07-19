@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // js 弱数据类型的语言 / php
+    //  java c c++ go 强数据类型的语言
+    // 变量
+    // var 关键字定一个变量   
+    // 基本数据类型 number string boolean undefined null
+    // typeof 判断数据类型 返回的是一个字符串
+    // undefined 变量声明以后未赋值 typeof -> undefined
+    // null 空对象 typeof -> object
+    // var定义的变量会变量提升
+    
+    // 引用数据类型
+    // array object
+
+    // 数组的定义 数组下标是唯一的
+    var arr = [];
+    // 参数是一个的话 代表数组的长度 [ , , ]
+    var a1 = new Array(3);
+    // 参数长度大于1的话 对数组进行初始化 [1,2,3]
+    var a2 = new Array(1,2,3);
+    // 相当于是一个没有长度的空数组 等价于 var a = []
+    var a3 = new Array;
+    
+    // 数组与类数组
+    // 数组有内置的一些方法 还要一个length属性
+    // 类数组 只有length属性 没有数组的方法
+
+    // 对象 属性是唯一的 key
+    var obj = {}
+    var obj1 = new Object()
+
+    var person = {
+      // key: value
+      name: '',
+      age: '19',
+      code: function() {
+        console.log('coding.....')
+      }
+    }
+    // 获取属性
+    console.log(person.age)
+    // person['age'] => person.age
+    // 调用方法
+    person.code()
+    //  for in 用于循环对象
+    for(ds in person){
+      // ds 对象的key
+      // ds => 'name'
+      // person[ds] 
+      // person['ds'] => person.ds
+      console.log(ds);
+    }
+
+    // 数据存储
+    // 基本数据类型存在 栈
+    // 引用数据类型存在 堆
+
+    var array = [];
+    var obj2 = {}
+    console.log(typeof array) // object
+    console.log(typeof obj2) // object
+
+    // 判断是数组还是对象
+    // 1. obj.constructor => Object Array
+    // 2. arr instanceof Array 判断 arr 是否是 Array的 一个实例化对象
+
+    // 函数
+    function fn(x,y) {
+      // 形参
+    }
+    // 调用 实参 
+    fn(1,2)
+    var fn1 = function() {
+
+    }
+
+    // 全局变量 定义在外部的 函数内函数外都可以获取到
+    // 局部变量 定义在函数内部 尽在函数内能获取到
+
+    var a = 5;
+    function f1() {
+      var a = 2; // 局部变量
+      console.log(a)
+    }
+    f1();
+
+    var a = 5;
+    function f1() {
+      console.log(a) // 5
+      a = 2; // 全局变量
+    }
+    f1();
+    console.log(a); // 2
+    
+    // setTimeout 执行一次 n秒后执行
+    // setInterval 每隔n秒执行一次
+    var timer1 = setInterval(function(){
+      fn()
+    }, 1000)
+
+    clearInterval(timer1)
+    // typeof timer1 -> number
+
+    var Timer2 = setTimeout(function(){
+      console.log(1)
+    }, 0)
+    console.log(2)
+    console.log(3)
+    clearTimeout(Timer2)
+
+    // dom
+    // getElementById -> dom对象
+    // getElementsByTagName -> 类数组 
+    // getElementsByName -> 类数组
+    // getElementsByClassName -> 类数组
+    // 类数组如果没有获取到元素的话 返回[]
+
+    // background-color
+    // oDiv.style.backgroundColor 内联样式
+    // var block = 'block'
+    // oDiv.style.display = block
+    // oDiv.style.display
+    // <div class=""></div>
+    // oDiv.className = ''
+
+    // width
+    // offsetWidth = width + padding + border
+    // offsetHeight = height + padding + border
+    // clientWidth = width + padding
+    // clientHeight = height + padding
+
+    // offsetTop 最近的已定位的祖先元素顶部的距离 最后找的是body
+    // offsetLeft 最近的已定位的祖先元素的左边的距离 最后找的是body
+
+    // 事件
+    oDiv.onclick = function(e){
+      // this
+      e = e || window.event // 浏览器的兼容  ie是window.event
+      // e.clientX
+      // e.clientY
+      e.preventDefault() // 阻止默认事件
+      e.targe // 事件源 谁触发当前事件谁就是事件源
+
+      return false // 阻止默认事件
+    }
+    
+  </script>
+</body>
+</html>

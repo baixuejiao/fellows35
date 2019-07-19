@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div>12345678</div>
+    <script>
+      // 1.函数中 this是 window
+      // 2.定时器 this是 window
+      // 3.对象 this是当前对象
+      // 4.构造函数 this 是实例化对象
+      // 5.事件绑定 this 绑定事件的那个dom对象
+
+      var a = 1;
+      function f1(x, y) {
+        // this -> window
+        console.log(11, this)
+        console.log(x,y)
+      }
+      // window.f1();
+
+      // setTimeout(function(){
+      //   console.log(this);
+      // },1000)
+
+      var obj = {
+        name: 'zs',
+        code: function(){
+          this
+        }
+      }
+
+      function Person(name){
+        this.name = name,
+        this.code = function(){
+          console.log(this)
+        }
+      }
+
+      var p1 = new Person()
+      p1.code();
+
+      var oDiv = document.getElementsByTagName('div')[0];
+      oDiv.onclick = function(){
+        // var _this = this
+        // console.log(this);
+        setTimeout(function(){
+          console.log('this:',this);
+        }.bind(oDiv),0);
+      }
+
+      // call() 方法 改变指针 第一个参数是一个要改变指针的对象，后面的参数是方法需要的参数
+      // apply() 方法 改变指针 第一个参数是一个要改变指针的对象 第二个参数时一个数组，数组里是方法的参数
+      // bind() 方法 改变指针 第一个参数是一个要改变指针的对象，后面的参数是方法需要的参数
+      //  call 和 apply 会自动调用方法 bind需要手动调用方法
+      //  call 、apply 改变this指针并且自动调用方法 bind只是改变了this指针 
+      
+      // f1.call(oDiv,22,33);
+      // f1.apply(obj,[1,2]);
+
+      // f1.bind(oDiv,22,33)();
+      
+    </script>
+
+
+</body>
+</html>

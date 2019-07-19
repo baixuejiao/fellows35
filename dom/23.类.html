@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 对象种类
+    // 1. 自定义对象
+    // 2. 内置对象 Array Date Math Sting
+    // 3. dom
+
+
+
+    // 类： 是具有相同的属性和方法的集合 / 构造方法 构造函数
+    // 类名的首字母要大写
+    // 声明类的时候 属性写在构造函数中，方法写在原型（prototype）中
+    // 原型中的方法被实例化对象所共用
+    function Person(_name, _age, _weight) {
+      this.name = _name,
+      this.age = _age,
+      this.weight = _weight
+      // this.code = function(aaa) {
+      //   console.log(aaa)
+      //   console.log(this.name + 'coding.....');
+      // }
+    }
+
+    // Person.prototype.height = '170';
+    Person.prototype.eat = function() {
+      console.log('eat.....');
+    }
+
+    var arr = new Array();
+    // 实例化一个对象
+    var p1 = new Person('wxc', 90, '123kg');
+    console.log('p1',p1);
+    console.log(p1.height);
+    // p1.code('wxc');
+
+    // 实例化对象 如果传参的话，没有传的参数是undefined
+    var p2 = new Person('zz', 18)
+    console.log('p2',p2)
+    // p2.code();
+
+
+    // 原型
+    // 函数下有一个原型 prototype
+    // 通过原型添加的属性和方法可以被实例化对象所共享
+  
+    // prototype 下有一个constructor 代表的是构造函数
+    
+    console.log(p1.constructor)
+
+    var arr = new Array();
+
+    console.log(arr.constructor);
+    console.log(arr instanceof Array)
+
+    var obj = new Object();
+    console.log(obj.constructor);
+    console.log(obj instanceof Array);
+    
+    
+    
+    
+  </script>
+</body>
+</html>
