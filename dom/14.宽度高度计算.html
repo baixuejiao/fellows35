@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      left: 0;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      margin: 10px;
+      border: 5px solid #ff8907;
+      background: #ff0036;
+    }
+    .wrapper{
+      width: 400px;
+      height: 400px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: aqua;
+      overflow: hidden;
+      margin-left: 50px;
+      position: relative;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div></div>
+  </div>
+
+  <script>
+    var oDiv = document.getElementsByTagName('div')[1];
+    console.log(oDiv);
+
+    // oDiv.style.width 获取元素的内联样式 返回值包含px
+    console.log(oDiv.style.width);
+    console.log(oDiv.style.height);
+
+    // offsetWidth = width + padding + border 返回值就是一个number
+    console.log(oDiv.offsetWidth);
+    // offsetHeight = height + padding + border
+    console.log(oDiv.offsetHeight);
+    
+    // clientWidth = width + padding 返回值就是一个number
+    console.log(oDiv.clientWidth);
+    // clientHeight = height + padding 返回值就是一个number
+    console.log(oDiv.clientHeight);
+
+    // offsetTop 相对于最近的已定位的祖先元素的上边的距离 body
+    console.log('top:',oDiv.offsetTop);
+
+    // offsetLeft 相对于最近的已定位的祖先元素的左边的距离 body
+    console.log('left:',oDiv.offsetLeft);
+
+
+  </script>
+</body>
+</html>

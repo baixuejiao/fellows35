@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    h1{
+      width: 180px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      color: #fff;
+      background: #ff0036;
+    }
+    ul{
+      display: none;
+      width: 178px;
+      border: 1px solid #ccc;
+    }
+    li{
+      list-style: none;
+      height: 40px;
+      padding: 0 10px;
+      line-height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>第一阶段</h1>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JS</li>
+  </ul>
+
+  <h1>第二阶段</h1>
+  <ul>
+    <li>ES6</li>
+    <li>VUE</li>
+    <li>React</li>
+  </ul>
+
+  <script>  
+    var aH1 = document.getElementsByTagName('h1');
+    var oUl = document.getElementsByTagName('ul');
+
+    // for(var i=0; i<aH1.length; i++) {
+    //   aH1[i].index = i;
+    //   aH1[i].onclick =  function() {
+    //     var menu = oUl[this.index];
+    //     if(menu.style.display && menu.style.display == 'block'){
+    //       menu.style.display = 'none';
+    //     } else {
+    //       menu.style.display = 'block';
+    //     }
+
+    //   }
+    // }
+
+    for(var i=0; i<aH1.length; i++) {
+      aH1[i].index = i;
+      aH1[i].flag = false;
+
+      aH1[i].onclick = function() {
+        if(this.flag) {
+          oUl[this.index].style.display = 'block';
+        } else {
+          oUl[this.index].style.display = 'none';
+        }
+        this.flag = !this.flag;
+      }
+    }
+
+
+
+  </script>
+</body>
+</html>
