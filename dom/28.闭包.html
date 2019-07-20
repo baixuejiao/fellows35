@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>闭包</title>
+</head>
+<body>
+  <ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+  </ul>
+  <!-- 
+    闭包
+    1.外部函数里面有一个内部函数（函数套函数）
+    2.内部函数会使用外部函数里的局部变量
+   -->
+   <!-- 
+      优点：
+        1.变量会一直在内存中（闭包里的变量 不会被垃圾回收机制清理，一直在内存里）
+        2.可以拿到索引值（dom练习的例子里的数组的索引）
+      缺点：内存泄露 
+    -->
+
+   <script>
+     function fun1() {
+      var a = 1;
+      // return a;
+      return function(){
+        a++
+        console.log(a);
+      }
+     }
+
+     var aa = fun1();
+    //  console.log(aa);
+     aa();
+     aa();
+
+     function fun2() {
+       var b = 1;
+       b++
+       console.log(b);
+     }
+     fun2();
+     fun2();
+    
+    // 全局作用域 函数作用域
+    // 局部变量 局部变量在函数执行完之后会被垃圾回收机制清理掉
+
+    var aLi = document.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++) {
+      // 函数的立即调用
+      (function(j){
+        aLi[j].onclick = function(){
+          console.log(j)
+        }    
+      })(i);
+    }
+
+    var name = "The Window";
+　　 var object = {
+　　　　name : "My Object",
+　　　　getNameFunc : function(){
+　　　　　　return function(){ // -> window
+　　　　　　　　return this.name;
+　　　　　　};
+　　　　}
+　　};
+　　alert(object.getNameFunc()());
+
+　  var name = "The Window"; // window.name
+　　var object = {
+　　　　name : "My Object",
+　　　　getNameFunc : function(){
+        //this -> object
+　　　　　　var that = this;
+　　　　　　return function(){
+　　　　　　　　return that.name;
+　　　　　　};
+　　　　}
+　　};
+　　alert(object.getNameFunc()());
+   
+   </script>
+</body>
+</html>

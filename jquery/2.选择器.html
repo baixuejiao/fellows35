@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- html 根元素 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="wrapper" lang="CN">
+    <li class="list">1</li>
+    <li class="li1 list">23</li>
+    <li class="list">2</li>
+    <li class="list">3</li>
+    <li class="list">4</li>
+  </ul>
+
+  <h1>12345</h1>
+  <h1>34567</h1>
+
+  <div id="content">
+    <h1>345678</h1>
+    <h2>12345</h2>
+  </div>
+
+  <script src="jquery-1.11.3.js"></script>
+  <script>
+    // jq对象和dom对象可以互相转化
+    // jq -> dom $div[0]
+    // dom -> jq $(oDiv)
+    // jq的方法 只能用于jq对象
+    // dom的方法 只能用于dom对象
+
+    // var $li = $('.list');
+    // console.log($li);
+    // $('.list').css('background', 'red');
+
+    console.log($('#wrapper'))
+    console.log($('#wrapper')[0]);
+    var oUl = document.getElementById('wrapper');
+    console.log(oUl);
+    console.log($(oUl));
+
+    console.log($('li'));
+
+    console.log($('#wrapper,#content'))
+    
+    // even 偶数 odd 奇数
+    $('li:lt(3)').css('color', 'pink')
+    $(':header').css('color', 'blue')
+
+    $('li:not(.li1)').css('background', 'red');
+
+  </script>
+</body>
+</html>

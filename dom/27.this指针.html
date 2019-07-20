@@ -20,12 +20,15 @@
 
       for(var i=0; i<aLi.length; i++) {
         aLi[i].onclick = function() {
+          // this -> aLi[i]
           setTimeout(function(){
+            // this -> window
             console.log(this)
-          }.call(oUl), 1000);
+          }.call(this), 3000); 
         }
       }
-    
+
+      
     </script>
 </body>
 </html>

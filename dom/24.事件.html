@@ -52,7 +52,14 @@
       // e.stopPropagation(); 
       console.log('div2');
     }
+    
+    // var fn = function(){
 
+    // }
+    // oDiv1.onclick = function(){
+
+    // }
+    
     // 事件冒泡 从里向外传播 触发了子元素的事件后 就会冒泡到父元素的事件
     // 事件捕获 从外向里传播
     // 既有冒泡又有捕获  先捕获再冒泡
@@ -72,6 +79,8 @@
     oDiv2.addEventListener('click',function(){
       console.log('冒泡：div2');
     },false);
+
+    // oDiv1.addEventListener()
 
 
     

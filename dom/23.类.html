@@ -63,8 +63,33 @@
     var obj = new Object();
     console.log(obj.constructor);
     console.log(obj instanceof Array);
+
+    var str = 'abc'
+    str = 'abcabcabcabc'
+    function strPush(_str){
+      for(var i=0; i<3;i++){
+        _str += _str
+      }
+
+      return _str;
+    }
+
+    strPush(str);
     
+    str.strPush(str);
+
+
+    String.prototype.strPush =  function(_str) {
+      for(var i=0; i<3;i++){
+        _str += _str
+      }
+      return _str;
+    }
+
+    var str = '123'
+    var str = new String('123');
     
+    str.strPush(str)
     
     
   </script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-1.11.3.js"></script>
+  <script>
+    // 页面中所有的资源加载完成后在执行
+    // 资源 包含 元素 图片 视频 音乐 。。。。
+    // window.onload = function(){
+    //   var oDiv = document.getElementById('div1');
+    //   console.log(oDiv);
+    //   oDiv.onclick = function(){
+    //     console.log('111')
+    //   }
+    // }
+    // 文档就绪函数 元素加载完成之后 就执行里面的代码
+    $(document).ready(function(){
+      console.log(11, $('#div1'))
+      
+    })
+    // 文档就绪函数的简写
+    $(function(){
+
+    });
+     
+  </script>
+</head>
+<body>
+  <div id="div1">1111111</div>
+  
+  <script>
+    // jquery 是一个js类库 提供了一个方法
+    // var oDiv = document.getElementById('div1');
+    // console.log(oDiv);
+
+    // var $div = $('#div1');
+    // console.log($div);
+    
+  </script>
+</body>
+</html>
