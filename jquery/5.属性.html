@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 3000px;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            padding: 15px;
+            /* margin-top: 50px;
+            margin-left: 10px; */
+            background: red;
+            /* overflow: hidden; */
+            /* position: relative; */
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            margin-left:  10px;
+            /* margin-top: 20px; */
+            /* margin-left: 30px; */
+            background: pink;
+        }
+        .show{
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">111</div>
+    </div>
+    <button>toggle</button>
+
+    <script src="./jquery-1.11.3.js"></script>
+    <script>
+        // 添加单个样式
+        // $('#div1').css('background', 'pink');
+        // 添加多个样式
+        // $('#div1').css({
+        //     'background': 'pink',
+        //     'border': '5px solid blue'
+        // });
+
+        // $('#div1').addClass('hide').removeClass('hide');
+    
+    
+        $('button').on('click', function(){
+            $('#div1').toggleClass('hide');
+        })
+
+        // 如果返回的是多个元素 设置属性的时候是全部设置 获取的时候只能获取到第一个
+        // $('div').height(200)
+        console.log($('div').height())
+
+        // innerHeight() = height + padding
+        // innerWidth = width + padding
+
+        // outerWidth = width + padding + border + (margin)
+        // outerHeight = height + padding + border + (margin) margin是可选的
+    
+        // offset 相对于文档的 返回的一个对象
+        console.log($('#div1').offset())
+
+        // position 相对于最近的已定位的祖先元素
+        console.log($('#div2').position())
+
+        console.log($('window'))
+        // $('body').scroll(function(){
+        //     console.log(1234)
+        //     console.log($('window').scrollTop());
+        // })
+
+        $('window').on('scroll', function(){
+            console.log($('window').scrollTop())
+        });
+
+        // $('#target').scroll(function() {
+        //     $('#log').append('<div>Handler for .scroll() called.</div>');
+        // });
+
+    </script>
+</body>
+</html>

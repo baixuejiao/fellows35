@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li class="third-item">list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+
+    <dl>
+        <dt id="term-1">term 1</dt>
+        <dd>definition 1-a</dd>
+        <dd>definition 1-b</dd>
+        <dd>definition 1-c</dd>
+        <dd>definition 1-d</dd>
+        
+        <dt id="term-2">term 2</dt>
+        <dd>definition 2-a</dd>
+        <dd>definition 2-b</dd>
+        <dd>definition 2-c</dd>
+        
+        <dt id="term-3">term 3</dt>
+        <dd>definition 3-a</dd>
+        <dd>definition 3-b</dd>
+    </dl>
+
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        console.log($('ul.first').find('.foo').end())
+        // $('ul.first').find('.foo').css('background-color', 'red')
+        // $('ul.first').find('.foo').css('background-color', 'red')
+        // .end().find('.bar').css('background-color', 'green');
+
+        // $('ul.first').find('.foo').css('background-color', 'red')
+        // .end().find('.bar').css('background-color', 'green');
+
+        $('li.third-item').nextAll().css('background-color', 'red');
+
+        $("#term-2").nextUntil("dt").css("background-color", "red");
+ 
+    </script>
+</body>
+</html>

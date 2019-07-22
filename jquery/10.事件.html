@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">add</button>
+  <button id="btn2">1111</button>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script src="jquery-1.11.3.js"></script>
+  <script>
+    // on 事件委托 需要传入绑定事件的元素
+    $('ul').on('click', 'li' ,function(){
+      console.log($(this).html());
+    })
+
+    $('#btn').on('click', function(){
+      $('ul').append('<li>'+Math.random()+'</li>');
+    })
+
+    $('#btn2').on('click', function(){
+      alert(1);
+    })
+
+    // $('#foo').on('click', function() {
+    //   alert($(this).text());
+    // });
+    $('button').trigger('click');
+  
+  </script>
+</body>
+</html>

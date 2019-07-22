@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <button id="show">show</button>
+  <button id="hide">hide</button>
+  <button id="toggle">toggle</button>
+  <button id="animate">animate</button>
+  <button id="stop">stop</button>
+  <button id="fadein">fadein</button>
+  <div>111</div>
+
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+    $('#show').on('click', function(){
+      $('div').show(1000);
+    }); 
+    
+    $('#hide').on('click', function(){
+      $('div').hide(1000);
+    }); 
+
+    $('#toggle').on('click', function(){
+      $('div').toggle(1000);
+    })
+
+    $('#animate').on('click', function(){
+      $('div').animate({
+        width: '400',
+        opacity: 0.5
+      },3000, function(){
+        console.log(11211);
+      })
+
+      // $('div').animate({
+      //   height: '400'
+      // },3000)
+    })
+
+    $('#stop').on('click', function(){
+      $('div').stop(false,true);
+    })
+
+    $('#fadein').on('click', function(){
+      $('div').fadeIn();
+    })
+
+    $('li').each(function(index, elem){
+
+    })
+    $.each($('li'), function(index, elem){
+
+    })
+
+    var obj1 = {
+      name: 'zs'
+    }
+
+    var obj2 = {
+      name: '111',
+      age: '18'
+    }
+
+    console.log($.extend(obj1, obj2))
+
+    console.log($('button')[0])
+
+  </script>
+</body>
+</html>

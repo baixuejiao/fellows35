@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" autocomplete="on" novalidate="true">
+    <input type="text" placeholder="请输入。。。">
+    <!-- 邮件地址 -->
+    邮箱地址：<input type="email">
+    <br/>
+
+    <!-- url地址 -->
+    地址: <input type="url">
+    <br/>
+
+    <!-- number类型
+      max 最大值
+      min 最小值
+      step 步数
+    -->
+      number：<input type="number" max="10" min="1" step="3" value="5">
+      <br>
+
+      range：<input type="range" min="1" max="10" step="3">
+      <br>
+
+      <!-- 日期 -->
+      date: <input type="datetime-local">
+      <br>
+
+      <!-- 搜索框 -->
+      search: <input type="search">
+      <br/>
+
+      <!-- 颜色选择器 -->
+      color: <input type="color">
+
+      <!-- 拨号键盘/数字键盘
+         适用于移动端
+      -->
+      tel: <input type="tel">
+      <br/>
+
+      <!-- input + datalist 待选项的列表 -->
+      Webpage: <input type="url" list="url_list" name="link" />
+      <datalist id="url_list">
+        <option label="W3School" value="http://www.W3School.com.cn" />
+        <option label="Google" value="http://www.google.com" />
+        <option label="Microsoft" value="http://www.microsoft.com" />
+      </datalist>
+
+    <br>
+    <!-- 选择文件
+      multiple="multiple"  多选
+      accept 文件类型 只适用于 file类型的input
+    -->
+    <input type="file" multiple="multiple" accept="image/png">
+
+    <br>
+    <input type="submit">
+  </form>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选项卡</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    li{
+      list-style: none;
+    }
+
+    .clearfix::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    #container{
+      width: 300px;
+      margin: 50px auto 0;
+    }
+
+    #menu>li{
+      float: left;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      color: #ff8900;
+    }
+    #menu>li.selected,
+    #content>div.active{
+      color: #fff;
+      background: #ff8900;
+    }
+    #content{
+      position: relative;
+    }
+    #content>div{
+      display: none;
+      width: 300px;
+      height: 300px;
+      color: #ff8907;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #content>div.active{
+      display: block;
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="container">
+    <ul id="menu" class="clearfix">
+      <li class="selected">菜单1</li>
+      <li>菜单2</li>
+      <li>菜单3</li>
+    </ul>
+    <div id="content">
+      <div class="active">内容1</div>
+      <div>内容2</div>
+      <div>内容3</div>
+    </div>
+  </div>
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+      $('#menu li').on('click', function(){
+        // this -> dom对象
+        $(this).addClass('selected').siblings().removeClass('selected');
+        // $(this).index() 索引
+        var _index = $(this).index()
+        $('#content div').eq(_index).addClass('active').siblings().removeClass('active');
+      })
+  
+  </script>
+
+
+
+</body>
+</html>
