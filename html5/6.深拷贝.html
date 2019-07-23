@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var person = {
+        name: 'wxc',
+        height: '170cm',
+        weight: '123kg', 
+        score: {
+          math: 59,
+          english: 77,
+          sport: {
+            run: 0,
+            sleep: 100
+          }
+        },
+        hobby: [1,2,3]
+      }
+
+      var a = [1,2,3]
+
+      // Object.prototype.deepClone =  function(){
+
+      // }
+      // 深克隆
+      function deepClone(obj) {
+        var tmp = {}
+        for(key in obj) {
+          if(tyepof(obj[key]) === 'object'){
+            tmp[key] = deepClone(obj[key])
+          } else {
+            tmp[key] = obj[key]
+          }
+        }
+        return tmp
+      }
+
+      var p = deepClone(person)
+      console.log(p);
+
+      // person.name = 'xcc';
+      // console.log(person);
+      // console.log(p);
+
+      person.score.english = 50;
+      person.score.sport.sleep = 200;
+
+      console.log(person);
+      console.log(p);
+
+      
+    
+    
+  </script>
+</body>
+</html>

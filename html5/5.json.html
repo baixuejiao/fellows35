@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str = ''
+    var p = {
+      name: 'xw',
+      weight: '123kg'
+    }
+    // 前后端数据交互的类型 json 是一个字符串
+    var person = '{name: "xw", weight: "123kg"}'
+
+    // JSON.parse 字符串转对象
+    // JSON.stringify 对象转字符串
+
+    var p1 = JSON.stringify(p)
+    console.log(p);
+    console.log(p1);
+
+    var p2 = JSON.parse(p1);
+    console.log(p2);
+
+    var p3 = JSON.stringify(p);
+    console.log(p3);
+
+    p3 = JSON.parse(p3);
+    console.log(p3);
+    p.name = 'wxc';
+    console.log(p)
+    console.log(p3);
+
+    // 浅拷贝/浅克隆 对象A赋值给对象B 修改对象A的内容 对象B也会修改
+    
+    // 深拷贝/深克隆 对象A赋值给对象B 修改对象A的内容 对象B不会改变
+    // JSON.stringify() JSON.parse()
+    // deepClone()
+
+
+
+  </script>
+</body>
+</html>
