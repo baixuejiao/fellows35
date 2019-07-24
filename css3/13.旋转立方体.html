@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      rotateX 在正的一侧看 顺时针是+ 逆时针是-
+      rotateY 在正的一侧看 顺时针是+ 逆时针是-
+      rotateZ 在正的一侧看 顺时针是+ 逆时针是-
+            -y
+
+      -x          +x
+
+            +y
+     */
+    *{
+      margin: 0;
+      left: 0;
+    }
+    body{
+      perspective: 800px;
+      background: #000;
+    }
+    #cotainer{
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      position: relative;
+      transform-style: preserve-3d; 
+      /* border: 1px solid red;
+
+      /* transform-origin: -25% 0 ; */
+      /* perspective: 800px; */
+
+      animation: run 2s linear infinite;
+    }
+
+    @keyframes run{
+      50%{
+        transform:  rotateY(180deg);
+      }
+      100%{
+        transform:  rotateY(360deg) rotateZ(360deg);
+      }
+    }
+
+    #cotainer>div{
+      width: 200px;
+      height: 200px;
+      font-size: 40px;
+      text-align: center;
+      line-height: 200px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* 
+      旋转 
+      x轴 往上是正的  往下是负的
+    
+     */
+    #one{
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    #two{
+      transform: translateZ(100px);
+    }
+
+    #three{
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    #four{
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    #five{
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    #six{
+      transform: rotateX(-90deg) translateZ(100px) ;
+    }
+  </style>
+</head>
+<body>
+  <div id="cotainer">
+    <div id="one">1</div>
+    <div id="two">2</div>
+    <div id="three">3</div>
+    <div id="four">4</div>
+    <div id="five">5</div>
+    <div id="six">6</div>
+  </div>
+</body>
+</html>

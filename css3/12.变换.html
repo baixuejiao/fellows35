@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+   .wrapper{
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      /* 位移如果是百分比的话 是本身宽高的百分比 */
+      /* transform: translateX(50%) translateY(50%); */
+      /* transform: ; */
+      /* position: relative; */
+
+      -webkit-perspective: 800px;
+      perspective: 800px;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background: red;
+
+      /* 水平居中垂直居中 */
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+
+      /* transform: rotate(-45deg); */
+      /* 旋转中心点 */
+      /* transform-origin: 200px 0; */
+
+      /* transform: skew(30deg); */
+
+      transform: scale3d(0.5, .5, .5);
+
+      
+      
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="inner"></div>
+  </div>
+
+</body>
+</html>
