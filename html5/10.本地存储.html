@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 本地存储
+    // cookie 存储大小为4K 可以设置过期时间，如果不设置关闭浏览器窗口就没了
+    // localStorage 可存数据大小为5M 会永久的存储在浏览器中 除非手动删除
+    // sessionStorage 可存储的大小为5M 浏览器窗口关闭之后就没了 
+  -->
+
+  <script>
+    // localStorage 可存数据大小为5M 会永久的存储在浏览器中 除非手动删除
+    // 设置 
+    // 1.localStorage.key = value
+    // 2.localStorage.setItem(key, value)
+    // 获取
+    // 1.localStorage.key
+    // 2.localStorage.getItem(key)
+
+
+    localStorage.name = 'zs';
+    localStorage.setItem('age', 18)
+
+    console.log(localStorage.name)
+    console.log(localStorage.getItem('name'));
+
+    // sessionStorage 可存储的大小为5M 浏览器窗口关闭之后就没了 
+    sessionStorage.weight = '123kg';
+    sessionStorage.setItem('height', '170cm');
+
+    // 获取
+    // sessionStorage 返回一个对象
+    console.log(sessionStorage);
+    console.log(sessionStorage.weight);
+    console.log(sessionStorage.getItem('height'))
+
+
+    
+  </script>
+</body>
+</html>

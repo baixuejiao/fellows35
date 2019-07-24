@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    /* @font-face
+      定义网络字体  -> iconfont
+    */
+
+    p{
+      width: 200px;
+      height: 100px;
+      /* 单行文本溢出隐藏 */
+
+      /* 溢出溢出隐藏*/
+      overflow: hidden;
+      /* 超出部分显示... */
+      text-overflow: ellipsis;
+      /* 强制一行显示 不换行 */
+      white-space: nowrap;   
+
+      /* 保留文本的空格 */
+      /* white-space: pre;  */
+      white-space: pre-line;
+    }
+
+    p{
+      text-shadow: 3px 3px 3px red;
+    }
+  
+  </style>
+</head>
+<body>
+  
+  apple
+  <p>这是一句非
+    常非常长的话         ，被用来做text-overflow属性测试。这是一句非常非常长的话，被用来做text-overflow属性测试。这是一句非常非常长的话，被用来做text-overflow属性测试。这是一句非常非常长的话，被用来做text-overflow属性测试。</p>
+
+  <p>qwertyuiasdfghjkl;xcvbnm,.fghjkl;fghjkl</p>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 选择器
+      1.基本选择器
+      2.关系选择器
+      3.属性选择器
+      4.伪类选择器
+      5.伪元素选择器
+     */
+    body{
+      height: 3000px;
+    }
+    /* 紧邻的兄弟 */
+    .list + li{
+      /* background: red; */
+    }
+
+    /* 后面所有的兄弟  */
+    .list ~ li{
+      color: blue;
+    }
+
+    /* li[class]{
+      color: green;
+    } */
+
+    li[class|="cc"]{
+      background: pink;
+    }
+
+    /* input:focus{
+      background: aqua
+    } */
+
+    p:not(.abc) {
+      /* color: #f00; */
+    }
+
+    /* li:first-child{
+      background: green;
+    }
+
+    li:only-child {
+      color: #f00;
+    } */
+
+    li:nth-child(1){
+      background: #000;
+    }
+
+    p:empty {
+      height: 25px;
+      border: 1px solid #ddd;
+      background: #eee;
+    }
+
+    #demo:target{
+      color:#f00;
+    }
+
+    #inenr{
+      font-size: 40px;
+    }
+    #inenr::after{
+      content: '元';
+      font-size: 16px;
+      color: #ff8907;
+    }
+    #inenr::before{
+      content: '¥';
+
+    }
+
+    input{
+      font-size: 20px;
+      color: #333;
+    }
+    input::placeholder{
+      font-size: 14px;
+      color: #ff8907;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="aa-accc" index=1>1</li>
+    <li class="aa">2</li>
+    <li class="cc-alist">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <input type="text">
+
+  <!-- <p class="abc">否定伪类选择符 E:not(s)</p>
+  <p id="abc">否定伪类选择符 E:not(s)</p>
+  <p class="abcd">否定伪类选择符 E:not(s)</p>
+  <p>否定伪类选择符 E:not(s)</p> -->
+
+  <div class="test">
+    <p>结构性伪类选择符 E:empty</p>
+    <p><!--我是一个空节点p，请注意我与其它非空节点p的外观有什么不一样--></p>
+    <p>   
+    </p>
+    <p>结构性伪类选择符 E:empty</p>
+    
+  </div>
+
+
+
+  <ul>
+    <li><input type="text" value="可用状态" /></li>
+    <li><input type="text" value="可用状态" /></li>
+    <li><input type="text" value="禁用状态" disabled /></li>
+    <li><input type="text" value="禁用状态" disabled="disabled" /></li>
+  </ul>
+
+  <div id="demo">
+    <p>E:target伪类使用方法</p>
+  </div>
+
+
+  <div id="inenr">1000</div>
+
+  <input type="text" placeholder="请输入名字">
+</body>
+</html>
