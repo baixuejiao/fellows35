@@ -1,0 +1,110 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+header,
+h4,
+footer{
+  width: 960px;
+  height: 80px;
+  margin: 20px auto;
+  font-size: 18px;
+  text-align: center;
+  line-height: 80px;
+  background: #ccc;
+}
+
+.box{
+  width: 960px;
+  margin: 0 auto;
+}
+
+.box>img{
+  display: none;
+  width: 100%;
+}
+
+.box>.large{
+  display: block;
+}
+
+.container{
+  width: 960px;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+
+.left{
+  float: left;
+  width: 630px;
+  height: 300px;
+  background: green;
+
+  display: table;
+}
+.left>p{
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.right{
+  float: right;
+  width: 300px;
+  height: 300px;
+  background: blue;
+}
+
+@media screen and (max-width: 980px){
+  header,
+  h4,
+  footer{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+  }
+  
+  .box{
+    width: 100%;
+  }
+
+  /* .box>.large,
+  .box>.small{
+    display: none;
+  } */
+
+  .box>img{
+    display: none;
+  }
+
+  .box>.middle{
+    display: block;
+  }
+
+  .container{
+    width: 100%;
+  }
+
+  .left{
+    width: 66%;
+  }
+  .right{
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .box>.large,
+  .box>.middle{
+    display: none;
+  }
+
+  .box>.small{
+    display: block;
+  }
+
+  .left,.right{
+    width: 100%;
+  }
+}
