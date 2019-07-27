@@ -69,12 +69,8 @@ footer{
     width: 100%;
   }
 
-  /* .box>.large,
+  .box>.large,
   .box>.small{
-    display: none;
-  } */
-
-  .box>img{
     display: none;
   }
 

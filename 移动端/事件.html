@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background: green;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="div1"></div>
+
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <script>
+      var oDiv = document.querySelector('#div1');
+      // oDiv.onclick = function(){
+      //   console.log(1234567);
+      // }
+
+      // $('#div1').on('click', function(){
+      //   console.log('click');
+      // })
+
+      // tap 移动端点击事件 zepto特有封装的 为解决点击事件的300ms延迟情况 
+      // $('#div1').on('tap', function(){
+      //   console.log('tap')
+      // })
+
+      // $('#div1').on('singleTap', function(){
+      //   console.log('singleTap')
+      // })
+
+      // $('#div1').on('doubleTap', function(){
+      //   console.log('doubleTap')
+      // })
+
+      // $('#div1').on('longTap', function(){
+      //   console.log('longTap')
+      // })
+
+      // $('#div1').on('swipe', function(){
+      //   console.log('swipe')
+      // })
+
+      $('#div1').on('touchstart', function(){
+        console.log('touchstart')
+      })
+      $('#div1').on('touchmove', function(){
+        console.log('touchmove')
+      })
+
+      $('#div1').on('touchend', function(){
+        console.log('touchend')
+      })
+
+
+
+
+  </script>
+</body>
+</html>
