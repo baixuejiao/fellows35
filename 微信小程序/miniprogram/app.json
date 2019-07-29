@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/base/base"
+  ],
+  "window": {
+    "backgroundColor": "#FF0000",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0000",
+    "navigationBarTitleText": "hello",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,24 @@
+/* pages/base/base.wxss */
+/* 用@inport引入外部样式 */
+/* @import "common.wxss"; */
+#box{
+  /* iphone6里1rpx = 0.5px
+      rpx可以理解为rem
+   */
+  width: 600rpx;
+  height: 600rpx;
+  background: red;
+}
+
+#box2{
+  /* iphone6里1rpx = 0.5px
+      rpx可以理解为rem
+   */
+  width: 400rpx;
+  height: 400rpx;
+  background: blue;
+}
+
+#imgs{
+  height: 800rpx;
+}
