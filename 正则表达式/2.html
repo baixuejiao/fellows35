@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.匹配收手机号 13xx 14xx 15xx 17xx 18xx  11位
+    var reg1 = /^1[34578]\d{9}$/
+    var reg1 = /^1[34578][0-9]{9}$/
+    var reg1 = /^(13|14|15|17|18|19)[0-9]{9}$/
+
+    // 2.匹配邮箱 xx@xx.nnn xx可以是字母数字_ . -  nnn 字母
+
+    reg2 = /^[\w._-]+\@[a-zA-Z0-9._-]+\.[A-z]{2,4}$/
+
+    // 3.匹配身份证号 15位全数字 或 18位最后一位可以是X
+    reg3 = /^\d{15}$|^\d{17}[X0-9]$/
+
+    reg3 = /^(\d{14}|\d{17})[X\d]$/
+       
+    // 4.匹配用户名正则，4到16位（字母，数字，下划线，减号）
+    reg4 = /^[A-z0-9_-]{4,16}$/
+    
+  </script>
+</body>
+</html>

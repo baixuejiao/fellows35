@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 正则表达式的定义 严格校验大小写
+    // var reg = /abc/;  
+    // var reg1 = new RegExp('abc');
+
+    // var str = 'abcdefg';
+    // var str2 = '2345678abc';
+    // var str3 = 'aaaaa';
+
+    // reg.exec(str) 如果能匹配到的话返回一个array 
+    // 第0项返回的是匹配的内容 index 表示的是索引
+    // 如果没有匹配成功返回 null
+    // console.log(reg1.exec(str));
+    // console.log(reg.exec(str2));
+    // console.log(reg.exec(str3));
+
+    // reg.test(str) 匹配字符串 如果匹配成功返回true 匹配失败返回false
+    // console.log(reg.test(str));
+    // console.log(reg.test(str3));
+
+    // c{n} n个连续的C
+    // var reg = /c{2}/
+    // var str = 'xiaocccaci'
+    // console.log(reg.exec(str));
+
+    // c{m,n} 大于等于m小于等于n，连续的c
+    // var reg = /c{3,4}/
+    // var str = 'ccccaaac'
+    // console.log(reg.exec(str));
+
+    // c{n,} 大于等于n个连续的C
+    // var reg = /c{5,}/
+
+    // c* 大于等于0个连续的c 等与c{0,}
+    // var reg = /a*/
+    // var str = 'abcdefaa'
+    // console.log(reg.exec(str))
+
+
+    // c+ 大于等于1个连续的c 等价于c{1,}
+    // var reg = /c+/
+    // var str = 'Cxiaoccainiao'
+    // console.log(reg.exec(str));
+
+    // c? 大于等于0个小于等于1个 满足0个就算成功,返回一个空字符串 c{0,1}
+    // var reg = /c?/
+    // var str = 'acacs'
+    // console.log(reg.exec(str));
+
+    // ? 非贪婪 尽可能少的匹配
+    // a?? 第一个？表示的是数量{0,1} 第二个？表示 非贪婪
+    // var reg = /a??/  //  => a{0,1}?
+    // var str = 'aaaaaaaaavbhbj' // a
+    // var str = 'baaaaaaaaavbhbj' // ''
+    // console.log(reg.exec(str))
+
+    // ^c 以c开头的 
+    // reg = /^ccc/;
+    // str='cc维生素c';
+    // console.log(reg.exec(str))
+
+    // c$ 以c结尾
+    // reg = /c$/;
+    // str='cc维生素';
+    // console.log(reg.exec(str))
+
+    // . 表示的是除\n之外的所有的字符
+    // var reg = /^./
+    // var str = '\nxiaocainiao'
+    // console.log(reg.exec(str))
+
+    // b|c 匹配b或者c
+    // reg = /^b|c.+/;
+    // str='aluebcidea';
+    // console.log(reg.exec(str))
+
+    // （）先判断括号内部的
+    // reg = /^(b|c).+/;
+
+    // [abc] 匹配[]内的任意一个字符
+    // reg = /^[abc]/;
+    // str='sbbs.blueidea.com';
+    // console.log(reg.exec(str))
+
+    // [a-z]小写字母
+    // [A-Z]大写字母
+    // [0-9]数字
+    // [a-zA-Z0-9]表示字母和数字
+    // xx@xxx.com
+
+    // [^a-z] 非小写字母 ^[a-z] 以小写字母开头
+    // [^A-z] 非字母
+    // ^在字符集合中表示的是非
+
+    // \b边界
+    // \b 匹配字符的边界，也就是它匹配的是一个位置，而不是一个真正的字符。
+    // 此位置一侧是字符，另一侧是非字符或者字符串边界（开始或者结束位置）
+
+    // reg = /\bc/;
+    // str='维生素c';
+    // console.log(reg.exec(str))
+
+    // \B 非边界
+    // \d 数字  [0-9]
+    // \D 非数字
+    // \n 换行
+    // \s 单个空格 \S 非空格
+    // reg = /\s.+/;
+    // str='This  is a test String.';
+    // console.log(reg.exec(str))
+
+    // \w 字母和数字 => [A-Za-z0-9]
+    // \W 非字母和数字 => [^A-Za-z0-9]
+
+    // reg = /(\w)(\w)/;
+    // str='blueidea';
+    // console.log(reg.exec(str))
+
+    // reg = /(\w)(\w)\2\1/;
+    // str='woow';
+    // console.log(reg.exec(str))
+
+    // reg = /^(?:b|c).+/;
+    // str='bbs.blueidea.com';
+    // console.log(reg.exec(str))
+
+    // reg = /^(?:b|c)\1/;
+    // str='bbs.blueidea.com';
+    // console.log(reg.exec(str))
+
+    // reg = /c*/ 
+    // reg1 = /c\*/ // 'c*'
+
+    // reg = /c/
+    // str = 'Cainiao'
+    // console.log(reg.exec(str))
+
+    // var reg = /b/;
+    // var str = 'bbs.blueidea.com';
+    // console.log(reg.lastIndex)
+    // console.log(reg.exec(str))
+    // console.log(reg.lastIndex)
+    // console.log(reg.exec(str))
+
+    // var str = 'hello world'
+    // console.log(str.search('e'))
+
+    var str="Visit Microsoft!"
+    document.write(str.replace(/Microsoft/, "aaa"))
+
+
+
+    // 1.匹配收手机号 13xx 14xx 15xx 17xx 18xx 
+    reg1 = /^1[345789]\d{9}$/
+   
+    // 2.匹配邮箱 xx@xx.nnn xx可以是字母数字_ . -  nnn 字母
+    reg2 = /^[\w\.\-]+\@[\w\.\-]+\.[a-zA-z]{2,4}$/
+
+    // 3.匹配身份证号 15位全数字 或 18位最后一位可以是x
+    reg3 = /^(\d{14}|\d{17})(\d|x)$ /
+
+    // 4.匹配用户名正则，4到16位（字母，数字，下划线，减号）
+    reg4 = /^[A-z0-9_-]{4,16}$/
+
+  </script>
+</body>
+</html>
