@@ -1,0 +1,38 @@
+/* pages/mine/mine.wxss */
+
+#container{
+  width: 750rpx;
+  height: 500rpx;
+  position: relative;
+}
+
+#container image{
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+#avatar-img{
+  border-radius: 50%;
+}
+
+#avatar{
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: -100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+}
+
+#nickname{
+  width: 750rpx;
+  text-align: center;
+  font-size: 48rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 80rpx;
+  color: #fff;
+}

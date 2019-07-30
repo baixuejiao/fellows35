@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/base/base",
+    "pages/cloud/cloud",
+    "pages/xiaocai/xiaocai"
+  ],
+  "window": {
+    "backgroundColor": "#FF0000",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0000",
+    "navigationBarTitleText": "hello",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ff0000",
+    "list": [{
+      "pagePath": "pages/base/base",
+      "text": "基础",
+      "iconPath": "images/movie.png",
+      "selectedIconPath": "images/movie_active.png"
+    },
+    {
+      "pagePath": "pages/cloud/cloud",
+      "text": "云开发",
+      "iconPath": "images/profile.png",
+      "selectedIconPath": "images/profile_active.png"
+    },
+    {
+      "pagePath": "pages/xiaocai/xiaocai",
+      "text": "云函数",
+      "iconPath": "images/profile.png",
+      "selectedIconPath": "images/profile_active.png"
+    }]
+  }
+}

@@ -1,0 +1,6 @@
+<!--pages/cloud/cloud.wxml-->
+<!-- <view>数据库操作</view> -->
+<button bindtap="add">添加一条信息</button>
+<button bindtap="update">修改一条信息</button>
+<button bindtap="search">查询一条信息</button>
+<button bindtap="del">删除一条信息</button>

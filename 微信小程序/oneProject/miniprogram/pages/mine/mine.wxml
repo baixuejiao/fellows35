@@ -1,0 +1,14 @@
+<!--pages/mine/mine.wxml-->
+<view id="container">
+  <!-- 背景图片 -->
+  <image src="/images/bg.jpeg"></image>
+  
+  <view id="avatar">
+    <open-data id="avatar-img" type="userAvatarUrl"></open-data>
+  </view>
+
+  <view id="nickname">
+    <open-data type="userNickName"></open-data>
+  </view>
+  
+</view>

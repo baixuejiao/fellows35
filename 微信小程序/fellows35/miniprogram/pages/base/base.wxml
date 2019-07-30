@@ -1,0 +1,69 @@
+<!-- 双向数据绑定 -->
+<!-- 用{{}}来绑定数据 -->
+<text>{{msg}}</text>
+
+<input value="{{inputValue}}"/>
+
+<button type="warn" size="mini" bind:tap="getValue">getvalue</button>
+
+<!-- wx:for 循环指令 可以循环一个数组 -->
+<view wx:for="{{list}}" wx:key="{{index}}">
+  {{index}}:{{item}}
+</view>
+
+<!-- wx:if 条件判断
+      wx:if
+      wx:elif  (相当于elseif)
+      wx:else
+ -->
+<view wx:if="{{isLogin}}"> 用户名：小菜鸟 </view>
+<view wx:else>请登录</view>
+
+<view wx:if="{{true}}">
+  <view> view1 </view>
+  <view> view2 </view>
+</view>
+
+<!-- block 不会渲染在页面里 但会执行属性中的指令 -->
+<block wx:if="{{true}}">
+  <view> view1 </view>
+  <view> view2 </view>
+</block>
+
+<!-- 相当于div -->
+<view id="box" data-index="1" bind:tap="click1">
+  div1
+  <view id="box2" capture-catch:tap="click2">div2</view>
+
+</view>
+
+<!-- 相当于span -->
+<text>1234567</text>
+
+<!-- img -->
+<image id="imgs" src="/images/111.jpg"></image>
+
+<!-- 按钮 -->
+<!-- bindtap 给元素绑定一个点击事件
+      bind:tag = functionname
+      bindtap = functionname
+ -->
+<button size="defalut" bind:tap="clickBtn">按钮</button>
+
+<!-- 复选框 -->
+<checkbox></checkbox>
+
+<input placeholder="123456"/>
+
+
+<!-- 
+  事件绑定
+  bindtap 有事件冒泡
+      bind:tag = functionname
+      bindtap = functionname
+  catchtap 没有事件冒泡
+      catch:tag = functionname
+      catchtap = functionname
+  capture-bind 支持事件捕获
+  capture-catch 中断捕获阶段和取消冒泡阶段
+ -->

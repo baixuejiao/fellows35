@@ -1,0 +1,12 @@
+<!--pages/xiaocai/xiaocai.wxml-->
+<button catchtap="add">add方法</button>
+
+
+<button bindtap="getInfo">获取信息</button>
+
+
+<button bindtap="removeAll">删除所有</button>
+
+<button bindtap="chooseImg">上传图片</button>
+
+<button bindtap="downloadimg">下载图片</button>
