@@ -1,0 +1,40 @@
+/* pages/comment/comment.wxss */
+.details-content{
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+}
+.details-bg{
+  width: 100%;
+  height: 100%;
+  filter: blur(15px);
+}
+.details-info{
+  display: flex;
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.details-img{
+  width: 300rpx;
+  height: 400rpx;
+  margin: 50rpx;
+}
+.details-wrapper{
+  flex-grow: 1;
+  margin-top: 50rpx;
+
+  color: #fff;
+}
+.details-title{
+  font-size: 46rpx;
+}
+.details-score,.details-lang,.details-directors{
+  margin-top: 20rpx;
+}
+.details-intro{
+  padding: 40rpx;
+  font-size: 24rpx;
+}

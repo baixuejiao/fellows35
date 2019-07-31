@@ -1,2 +1,21 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="list" wx:for="{{moveList}}" wx:key="{{item.id}}">
+<!-- index item -->
+  <image class="list-img" src="{{item.images.small}}"></image>
+
+  <view class="list-info">
+    <view class="list-title">{{item.title}}</view>
+    <view class="list-wrapper">评分：
+      <text class="list-score">{{item.rating.average}}</text>
+    </view>
+    <view class="list-wrapper">上映时间：
+      <text class="list-date">{{item.mainland_pubdate}}</text>
+    </view>
+    <view class="list-wrapper">主演：
+      <text wx:for="{{item.casts}}" wx:key="{{index}}">{{item.name}} </text>
+    </view>
+  </view>
+
+  <view class="list-btn" >
+    <van-button data-id="{{item.id}}"  bind:click="tap" round type="danger" size="mini" class="list-btn-inner">评价</van-button>
+  </view>
+</view>

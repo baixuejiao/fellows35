@@ -1,0 +1,41 @@
+<!--pages/comment/comment.wxml-->
+<view class="details-content">
+  <image class="details-bg" src="{{details.images.medium}}"></image>
+
+  <view class="details-info">
+    <image class="details-img" src="{{details.images.small}}"></image>
+    <view class="details-wrapper">
+      <view class="details-title">{{details.title}}</view>
+      <view class="details-score">评分：{{details.rating.average}}</view>
+      <view class="details-lang">
+        语言：
+        <text wx:for="{{details.languages}}" wx:key="{{index}}">{{item}} </text>
+      </view>
+
+      <view class="details-directors">
+        导演：
+        <text wx:for="{{details.directors}}" wx:key="{{index}}">{{item.name}} </text>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class="details-intro">{{details.summary}}</view>
+
+<van-field
+  value="{{ comment }}"
+  placeholder="请输入评价"
+  border="{{ true }}"
+  bind:change="onInputChange"
+/>
+<van-rate value="{{ score }}" bind:change="onRateChange" />
+
+<van-button size="normal" type="danger" bind:click="upload">上传图片</van-button>
+
+<view>
+  <image wx:for="{{files}}" src="{{item}}" wx:key="{{index}}"></image>
+</view>
+
+<van-button size="large" bind:click="submit">提交评价</van-button>

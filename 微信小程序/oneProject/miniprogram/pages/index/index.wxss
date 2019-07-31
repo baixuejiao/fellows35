@@ -1,1 +1,36 @@
 /* pages/index/index.wxss */
+.list{
+  display: flex;
+  width: 100%;
+  height: 300rpx;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.list-img{
+  width: 200rpx;
+  height: 100%;
+  margin-right: 20rpx;
+}
+.list-info{
+  flex-grow: 1;
+  font-size: 30rpx;
+}
+.list-title{
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.list-wrapper{
+  margin-top: 20rpx;
+}
+.list-score{
+  color: #ff8900;
+}
+.list-date{
+  color: rgba(0, 0, 255, 0.4)
+}
+
+.list-btn{
+  width: 150rpx;
+  margin-top: 100rpx;
+
+}
