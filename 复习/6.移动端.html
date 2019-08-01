@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html{
+      font-size: 100px;
+    }
+
+    #wrapper{
+      width: 2rem;
+      height: 2rem;
+      background: antiquewhite;
+      position: relative;
+    }
+
+    #wrapper::after{
+      content: '';
+      display: block;
+      width: 200%;
+      height: 200%;
+      border: 1px solid #333;
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+      transform-origin:  0 0;
+      /* position: absolute;
+      top: 0;
+      left: 0; */
+    }
+    button{
+      width: 1rem;
+      height: .6rem;
+      background: pink;
+      position: relative;
+      z-index: 1;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 
+      0.页面使用rem iphone6的手机里 750px 一个ui稿
+      1.一个div容器 里面有个按钮 div 是400px * 400px 按钮100px*60px
+      2. div需要设置一个绝对的1px边框 
+      3. 按钮点击alert('hello world')
+   -->
+  <div id="wrapper">
+    <button>点击</button>
+  </div>
+
+  <script>
+    var oBtn = document.querySelector('button');
+    oBtn.onclick = function(){
+      alert('hello world');
+    }
+  </script>
+
+  
+</body>
+</html>

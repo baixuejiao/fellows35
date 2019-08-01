@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #btn{
+      width: 400px;
+      height: 400px;
+
+      background: red;
+    }
+
+    #div2{
+      width: 200px;
+      height: 200px;
+      background: aqua;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 1.事件绑定
+    oDiv.onclick = function() {}
+    oDiv.addEventListener('click', function(){})
+
+    addEventListener 绑定多个相同的事件 所有事件都可以执行
+    onclick 绑定多个事件 执行最后一个
+
+  -->
+
+  <!-- 2.变量提升
+      var关键字定义的变量会出现变量提升
+  -->
+
+  <!-- 3. 事件 事件源 事件处理函数
+      事件：onclick 
+      事件源：触发事件的元素
+      事件处理函数：function 
+      this: oDiv 给谁绑定的事件 谁就是this 
+  -->
+
+  <!-- 4. 事件冒泡 & 事件捕获
+    事件冒泡： 从里向外
+    事件捕获: 从外向里
+
+    addEventListener(事件类型，处理函数， boolean)
+      boolean: true 事件捕获
+      booleam: false 事件冒泡
+  -->
+
+  <!-- 5.事件委托
+      事件委托：动态生成的元素需要绑定事件的话，需要绑定在已存在的父元素上
+      应用的是事件冒泡的原理
+  -->
+
+  <!-- 6.定时器
+    setInterval 每隔一段时间执行一次
+    setTimeout 等待一段时间之后执行
+
+    setTimeout(function(){
+      console.log(1)
+    },0)
+    主线程的任务执行完成后，立马执行
+    setTimeout 是异步的操作 会进入到任务队列里
+  -->
+
+  <!-- 7.闭包
+    1.外部函数里有一个内部函数
+    2.内部函数里会使用外部函数的局部变量
+    闭包会造成内存泄漏
+  -->
+
+  <!-- 8.switch case
+    case里的判断条件是否满足switch里的条件
+  -->
+
+  <!-- 9.this指针
+    对象下的 this -> 当前对象
+    构造函数/类 this -> 实例化对象
+    函数 this -> window
+    定时器 this -> window
+    dom对象绑定的事件里 this -> dom对象
+  -->
+
+  <!-- 10.this指针改变
+    bind() 多个参数 第一个参数是需要改变的指针 后面是函数需要的参数
+    apply()两个 第一个参数是需要改变的指针 第二个参数是数组 数组里是函数需要的参数
+    call() 多个 第一个参数是需要改变的指针 后面是函数需要的参数
+  
+    bind 需要手动调用
+    apply 和 call 会自动调用
+  -->
+
+  <ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+  </ul>
+
+  <script>
+    // 全局变量 和 局部变量
+    // 函数里的是局部变量
+
+    // 闭包的一个应用
+    var aLi = document.querySelectorAll('li');
+    for(var i=0; i<aLi.length; i++) {
+      (function(index){
+        aLi[index].onclick = function() {
+          setTimeout(function(){
+            console.log(this.innerHTML)
+          }.bind(this), 3000)
+        }
+      })(i)
+    }
+    console.log(i);
+
+    // 事件：onclick 
+    // 事件源：触发事件的元素
+    // 事件处理函数：function 
+    // this: oDiv 给谁绑定的事件 谁就是this 
+    
+
+    // switch(num){
+    //   case 1:
+    //     console.log('a')
+    //     break;
+    //   case 2:
+    //     console.log('b')
+    //     break;
+    //   case 3:
+    //     console.log('c')
+    //     break;
+    //   default:
+    //     console.log('default')
+    // }
+
+    // switch(true){
+    //   case age<12:
+    //     console.log('a')
+    //     break;
+    //   case age>=12 & age<18:
+    //     console.log('b')
+    //     break;
+    //   case age>=18:
+    //     console.log('c')
+    //     break;
+    //   default:
+    //     console.log('default')
+    // }
+
+
+    // var obj = {
+    //   name: 'wx',
+    //   data: {
+    //     movlist: []
+    //   },
+    //   wight: '123kg',
+    //   height: '160cm',
+    //   eating: function(){
+    //     // this -> obj
+    //     this.data.movlist
+    //   }
+    // }
+
+    // // 类/构造方法/构造函数
+    // function Person(_name){
+    //   this.name = _name
+    //   // this -> 实例化对象
+    // }  
+
+    // var p1 = new Person()
+
+    // oDiv.onclick = function(){
+    //   // this -> oDiv
+    // }
+
+    // // window.setTimeout
+    // setTimeout(function(){
+    //   // this -> window
+    // },1000)
+
+    // var fun = function(){
+    //   // this -> window
+    // }
+
+    // var a 
+  
+  
+  </script>
+</body>
+</html>

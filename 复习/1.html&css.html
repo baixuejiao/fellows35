@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      height: 3000px;
+    }
+    h1{
+      height: 200px;
+      background: red;
+    }
+    div{
+      height: 100px;
+      background: aqua;
+      position: sticky;
+      top: 0;
+      left: 0;
+      /* bottom: 0; */
+    }
+    p{
+      height: 200px;
+      background: pink;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 1.html语义化
+    html中的每个标签都有特定含义，在适当的位置选用适当的标签
+    比如H1-H6代表标题、p代表段落、img代表图片、包括html5中新增的一些标签：header、footer、nav这些标签都有特定的含义
+    语义化就是让我们在适当的位置用适当的标签 以更好的让人和机器都一目了然 换句话说 就是在没有css的情况下依然能够很好的呈现内容结构
+    好处：
+      别人阅读你的代码的时候能够根据标签才出来你的用意，有利于程序员阅读，便于团队开发和维护
+      浏览器读取方便
+      有利于搜索引擎优化（SEO：Search Engine Optimization）（比如说会根据标签来搜索，可能重点会搜索h1）
+      有一些标签默认会有一些样式，如果浏览器禁止了CSS样式还可以达到突出样式的效果，比如h1
+  -->
+
+  <!-- 2.html5新的标签
+    header footer nav section aside article
+    video audio 
+    canvas
+  -->
+
+  <!-- 3.html5 input新增属性
+    number date email url range search color datalist multiple 
+    tel file
+  -->
+
+  <!-- 4.行级元素/块级元素/行级块元素
+    行级元素： 多个元素占一行 不可以设置宽高 不可以嵌套块级元素 display: inline
+    块级元素： 单个元素占一行 可以设置宽高 可以嵌套块级元素和行级元素 p标签除外 display: block
+    行级块元素： 多个元素占一行 可以设置宽高  display: inline-block
+  -->
+
+  <!-- 5.css选择器
+      标签 id class
+      分组 后代 子代
+      伪类 伪元素
+      通配符*
+   -->
+
+   <!-- 6.css选择器的权重
+      标签 1
+      class 10
+      id 100
+      伪类 10
+      伪元素 1
+      内联样式 1000
+      important 最高
+    -->
+
+  <!-- 7.定位 position
+    relative 相对定位 相对于元素本身定位 定位后空间不释放
+    absolute 绝对定位 相对与已定位的最近的祖先元素 定位后空间释放
+    fixed 固定定位 相对于浏览器窗口定位 定位后空间释放
+    sticky 粘性定位 relative + fixed
+  -->
+
+  <!-- 8.浮动
+      按照html结构的顺序 一个一个浮动 浮动后空间释放 父元素会塌陷
+      解决：
+        给父元素设置高度
+        .clearfix::after{
+          content: '';
+          display: block;
+          clear: both; // 清除浮动  clear: left right both
+        }
+        父元素：overflow: hidden
+        给父元素最后面加一个子元素 设置清除浮动
+  -->
+
+  <!-- 9.盒模型 
+    element padding border margin
+
+    标准盒模型 元素实际的宽 =  width(element) + padding + border
+    怪异盒模型 width =  element + padding + border  (button 本身属于怪异盒模型)
+    box-sizing 两种盒模型相互转化
+
+    外边距合并
+      并列
+        给一个元素设置外边距
+      嵌套
+        给父元素设置一个边框 
+        父元素设置overflow:hidden
+        父元素或子元素设置绝对定位
+        父元素或子元素浮动
+  -->
+
+  
+
+
+  
+</body>
+</html>

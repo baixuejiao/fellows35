@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      left: 0;
+    }
+    .container{
+      width: 100%;
+      height: 300px;
+    }
+    .left{
+      float: left;
+      width: 100px;
+      height: 300px;
+      background: red;
+    }
+    .right{
+      float: left;
+      width: calc(100% - 100px);
+      height: 300px;
+      background: aquamarine;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 1.JSON
+    字符串
+    var obj = "{name: 'xiaoming', age: 18}"
+    JSON.parse() 字符传转对象
+    JSON.stringify() 对象转字符串
+    可以实现深拷贝
+   -->
+
+  <!-- 2. 深拷贝 & 浅拷贝
+    浅拷贝：把一个变量a 赋值给变量 b 变量a改变之后 变量b也会随之改变 
+    深拷贝：把一个变量a 赋值给变量 b 变量a改变之后 变量b不改变
+
+    实现深拷贝
+      1.JSON.stringify() JSON.parse()
+      2.deepClone()封装一个深克隆的方法 遍历引用数据类型中的每一项 得到一个基本数据类型 将基本数据类型进行赋值
+  -->
+
+  <!-- 3.本地存储
+    cookie : 存储大小为4k 可以设置过期时间 不设置的话关闭窗口就会失效
+    localStorage: 存储大小为5M 存在浏览器里 需要手动删除
+    sessionStorage: 存储大小为5M 浏览器关闭会失效
+
+    localStorage.name = 'xiaoming'
+    localStorage.setItem('name','xiaoming') localStorage.getItem('name')
+  -->
+
+  <!-- 4.数据属性 data-*
+    // 获取 dataset设置的属性
+    // oDiv.dataset.xxx
+    // oDiv.dataset 返回的是一个对象
+    // 在js里获取属性的话 item-key => itemKey
+
+    // oP.dataset.item-key => itemKey
+    console.log(oP.dataset);
+
+    // 给一个dom元素设置自定义属性的方法
+    // 1. oDiv.key = value
+    // 2. oDiv.setAttribute(key, value)
+    // 3. oDiv.dataset.key = value
+    // 4. <div data-key=value > </div>
+
+    // 获取dom元素自定义属性方法
+    // 1. oDiv.getAttribute(key)
+    // 2. oDiv.key
+    // 3. oDiv.dateset.key key需要用驼峰写法
+
+    // 区别
+    // setAttribute/dataset 可以在html中看到
+    // oDiv.key 在html中看不到
+
+    // dataset 自定义数据属性的一个实例 —— 图片懒加载
+    <img src="" data-src="">
+
+  -->
+
+  <!-- 5.css3 常用属性
+    border-radius
+    opacity
+    transform: scale()/ rotate() / translate() 2d/3d
+    tranisition
+    filter
+    display:flex布局
+    box-shadow
+    rem 单位 相对于根元素
+    em 单位 字体相对根元素 其他属性相对于当前的font-size 
+    rgba
+  -->
+
+  <!-- 6.动态计算宽度
+    width: calc(100% - 100px); 
+    设置的宽度永远都是父元素的宽度减去100px
+  -->
+
+  <div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

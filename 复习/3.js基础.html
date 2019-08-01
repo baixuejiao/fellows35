@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 1.变量定义 var -->
+  <!-- 2.基本数据类型
+      number string boolean undefined null
+      typeof undefined => undefined
+      typeof null => object
+    
+      undefined 声明了一个变量但是未赋值
+      null 空对象
+  -->
+
+  <!-- 3.基本数据类型的运算
+      + 字符串拼接 加法计算
+      - * / 先进行类型转换 Number() NAN 
+  -->
+
+  <!-- 4.引用数据类型
+      Array  Object
+      定义一个数组
+        var arr1 = []
+        var arr2 = new Array => []
+        var arr3 = new Array(3) => 长度为3的一个数组 每一项是空
+        var arr4 = new Array(1,2,3) => [1,2,3]
+
+      定义一个对象
+        var obj1 = {}
+        var obj2 = new Object => {}
+        var obj3 = new Object({
+          name: 'zs'
+        })
+        var obj4 = {
+          name: 'zs'
+        }
+
+
+      typeof array => object
+      typeof object => object
+  -->
+
+  <!-- 5.数据类型的存储
+      基本数据类型村在栈里
+      引用数据类型存在堆里 栈里存地址
+  -->
+
+  <!-- 6.判断数组和对象
+      a.constructor
+      a instanceof array
+  -->
+
+
+  <!-- 7.获取元素的方法
+      getElementById => 返回一个
+      getElementsByTagName => 返回类数组
+      getElementsByClassName => 返回类数组
+      getElementsByName => 返回类数组
+      querySelector => 返回第一个
+      querySelectorAll => 返回所有的
+      类数组 只有length属性 没有数组内置的方法
+  -->
+  
+  <script>
+    var obj1 = {
+      name: 'xiaoming',
+      age: 2
+    }
+    var obj2 = obj1
+    console.log(obj1)
+    console.log(obj2)
+
+    obj1 = {
+      name: 'xiaocai',
+      age: 20
+    } 
+    console.log(obj1)
+    console.log(obj2)
+    
+  </script>
+</body>
+</html>
