@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+  </ul>
+  <script>
+    // es6新增定义变量的方式 let
+
+    /*
+      let 与 var 的区别
+      1.let 声明的变量不存在变量提升
+      2.let 声明的变量不可以重复声明
+      3.let 声明的变量在块级作用域内，在定义的作用域外部获取不到对应的变量
+      4.暂时性死区 在块作用域内 let声明的变量 会形成一个封闭性的死区 只能在声明之后调用，否则就会报错
+    */
+
+    // 全局作用域
+    // 局部作用域 -> 函数内
+    console.log(tmp); //undefined 
+    var tmp = 123;
+    var tmp = 'hello';
+    console.log(tmp);
+
+    
+    // console.log(a); // 报错 不存在变量提升
+    let a = 123;
+    // let a = 'hello';
+    // console.log(a); // 保存 不可以重复声明
+
+    var aLi = document.querySelectorAll('li');
+    
+    // var 定义的 i => window.i 全局变量 
+    // for(var i=0; i<aLi.length; i++) {
+    //   aLi[i].index = i
+    //   aLi[i].onclick = function(){
+    //     console.log(i);
+    //     console.log(this.index)
+    //   }
+    // }
+
+    // console.log(i);
+
+    // es6新增加了块级作用域 {} 代码块内部的
+    for(let j=0; j<aLi.length; j++){
+      console.log(j);
+    }
+    // console.log(j);
+
+  for(var i=0; i<aLi.length; i++) {
+    (function(i){
+      aLi[i].onclick = function(){ // 内部作用域调用了外部作用域中的变量
+        console.log(i);
+      }
+    })(i)
+  }
+
+  for(let m=0; m<aLi.length; m++) {
+    aLi[m].onclick = function(){
+      console.log(m); // m  内部块级作用域调用了外部的块级作用域中的变量 m 会存在内存中
+    }
+  }
+
+  {
+    var k = 2;
+    let w = 3;
+  }
+  // console.log(k);
+  // console.log(w);
+
+  var b = 10
+  function fun(){
+    console.log(b); //undefined 变量提升
+    // var b = 5;
+    b = 5;
+    console.log(b);
+  }
+  fun();
+
+
+  var c = 8;
+  function fun1(){
+    console.log(c);
+    let c = 7;
+  }
+  fun1();
+
+
+
+
+  </script>
+</body>
+</html>

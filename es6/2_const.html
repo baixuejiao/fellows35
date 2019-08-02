@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // const 关键字定义常量 
+      // const 定义的变量不可以二次赋值 且必须在声明时就直接赋值
+
+      /*
+        1.const 声明的变量不存在变量提升
+        2.const 声明的变量不可以重复声明
+        3.const 声明的变量在块级作用域内，在定义的作用域外部获取不到对应的变量
+        4.暂时性死区 在块作用域内 const声明的变量 会形成一个封闭性的死区 只能在声明之后调用，否则就会报错
+      */
+      
+      // const a = 1;
+
+      // const b;
+      // b = 2;
+
+      // const obj = {
+      //   name: 'xiaoming',
+      //   age: '2'
+      // }
+      // console.log(obj)
+      // obj.name = 'wx';
+      // console.log(obj);
+      // const 定义引用类型的常量 栈里存储的指针地址是常量不可以修改 但是堆里对应的具体的内容是可以修改的
+
+      // obj = {
+      //   name: 'wx',
+      //   age: '18'
+      // }
+      // console.log(obj) // 会报错 因为重新赋值会修改指针 const不允许修改指针
+
+     
+      const obj = {
+        name: 'xiaoming',
+        age: '2'
+      }
+      // 冻结
+      Object.freeze(obj) 
+      obj.name = 'wx'; // obj冻结以后可以重新赋值，但因为进行了冻结，所以不会生效 也不会报错
+      console.log(obj);
+      
+
+      // 定义变量 var let const
+      // 全局作用域 局部作用域 块级作用域（let）
+
+  </script>
+</body>
+</html>

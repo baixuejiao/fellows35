@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let a = 1;
+    // let b = 2;
+    // let c = 3;
+    // 从数组和对象中提取值，对变量进行赋值，这被称为解构
+
+    // 数组的解构 按照对应顺序一次赋值
+    let [a,b,c] = [1,2,3]
+    console.log(a,b,c);
+    
+    let [d,e,[f,g],h] = [1,2,[3,4],5]
+    console.log(d,e,f,g,h)
+
+    let [i,j,k,l,m] = [1,2,[3,4],5]
+    console.log(i,j,k,l,m)
+
+    // 对象的解构 按照key 进行赋值的 如果不希望用原来的key作为变量名需要用key:x的方式起一个别名
+    // obj = {name: 'xm', age: 4}
+    // let {age:x, name} = {name: 'xm', age: 4}
+    // console.log(name, x)
+
+    // 字符串的解构 是把字符串中的每一个字符提取出来分别进行赋值
+    let [n,p,q] = 'hello'
+    console.log(n,p,q)
+
+    // let x = 2;
+    // let y = 3;
+    // y=2 x=3
+
+    // [y,x] = [x,y]
+
+    // let tmp = y;
+    // y=x;
+    // x=tmp;
+
+    function fun([x,y,z=4]){ // 设置默认值 只有是undefined的时候才会使用默认值
+      console.log(x,y,z)
+    }
+    fun([1,2,null])
+
+
+    let obj1 = {
+      name: 'xm',
+      age: '4',
+      eating: function(){
+        console.log('eating')
+      }
+    }
+    let {name,age,eating} = obj1;
+    console.log(name,age,eating)
+    eating();
+    
+    
+  </script>
+</body>
+</html>
