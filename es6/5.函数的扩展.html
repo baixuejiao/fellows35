@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>11</li>
+    <li>22</li>
+  </ul>
+  <script>
+    // fun.length 获取没有设置默认值的形参的个数
+    // fun.name 获取方法名
+    function fun(x,y=1) {
+      console.log(x,y)
+    }
+    console.log(fun.length)
+    console.log(fun.name)
+
+    // 箭头函数
+    var fun1 = function(){
+      console.log(this); // window
+      setTimeout(function(){
+        console.log(this) // window
+      }, 10);
+    }
+    var fun2 = () => {
+      console.log('hello')
+    }
+
+    // fun1();
+
+    let aLi = document.querySelectorAll('li');
+    for(let i=0; i<aLi.length; i++){
+      aLi[i].onclick = function(){
+        console.log(this) // aLi[i]
+        setTimeout(() => {
+          console.log(this)  //aLi[i]
+        },20)
+      }
+    }
+
+    let person = {
+      name: 'wx',
+      age: '20',
+      weight: '123kg',
+      eating: () => {
+        console.log('wxzs')
+        console.log(111,this)
+        setTimeout(() => {
+          console.log(this);
+        },10)
+      }
+    }
+    // person.eating();
+
+    // 箭头函数中的this指向的是父作用域中的this
+
+    
+    
+
+  // let page = {
+  //   data: {
+  //     movieList: []
+  //   },
+  //   getList: () => {
+  //     // this => page
+  //     // this.data.movieList
+  //     let obj = {
+  //       success: () => {
+  //         // this => obj
+  //         this.data.movieList
+  //       }
+  //     }
+  //   }
+  // }
+
+  // 箭头函数中不可以使用arguments获取参数,可以使用rest获取参数
+  var fun3 = (...rest) => {
+    console.log(rest)
+    rest[0]
+  }
+
+  fun3(1,2,3)
+
+  // var fun4 = () => {
+  //   console.log(arguments)
+  // }
+
+  // fun4(1,2,3)
+
+  // 箭头函数里如果只有一行语句 可以把{}省略
+
+  
+
+
+  </script>
+</body>
+</html>

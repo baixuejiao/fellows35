@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+  </ul>
+  <script>
+    //...扩展运算符
+    let array = [1,2,3]
+    var a1 = [...array]; // 复制一个数组 可以实现数组的深拷贝
+    console.log(a1); //[1,2,3]
+
+    let a2 = [...array,'a','b'] //作为数组的一部分
+    console.log(a2);//[1,2,3,'a','b']
+
+    let a3 = array;
+    console.log(a3) //[1,2,3]
+    array[0] = 4;
+    console.log(a3) //[4,2,3]
+    console.log(a1); //[1,2,3]
+
+    let a4 = [4,5,6]
+    let a5 = [...array,...a4] // 数组的合并
+    console.log(a5)
+    console.log(array)
+    console.log(a4)
+
+    let a6 = [1,2,3]
+    let a7 = [4,5,6]
+    console.log('-----')
+    console.log(a6.concat(a7))
+    console.log(a6)
+    console.log(a7)
+
+    let p1 = {
+      name: 'xm',
+      age: '4'
+    }
+    let p2 = {
+      weight: '8kg',
+      age: '2'
+    }
+
+    let p3 ={...p2,...p1} // 对象的合并 不同的属性会合并，相同的属性 后面的会把钱前面的覆盖
+    console.log(p3);
+    
+    let aLi = document.querySelectorAll('li'); //NodeList
+    console.log(aLi);
+
+    let b = [];
+    for(let c = 0; c<aLi.length; c++){
+      b[c] = aLi[c]
+    }
+    console.log(b)
+
+    let aList = [...aLi]; // 可以将类数组转换成数组
+    console.log(aList);
+    aList.push('wxc');
+    console.log(aList);
+    let b1 = document.getElementsByTagName('li'); //HTMLCollection
+    console.log(b1)
+
+    //  rest 剩余的
+    function fun(x,...rest){
+      console.log(x);
+      console.log(rest);
+    }
+    fun(1,2,3,4)
+
+    console.log('----------')
+    function fun1(){
+      // arguments.callee 当前方法
+      console.log(11111)
+      // arguments.callee() 递归调用
+    }
+    fun1(1,2,3,4)
+
+
+    
+  </script>
+
+</body>
+</html>

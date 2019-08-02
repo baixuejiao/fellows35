@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // Number.isFinite 判断是否是数字 => boolean
+      console.log(Number.isFinite(7))
+
+      // Number.isNaN 判断是否是NaN => boolean
+      console.log(Number.isNaN(NaN))
+
+      // Number.isInteger 判断是否是正数 => boolean
+      console.log(Number.isInteger('5'))
+
+      // Number.isInteger 保留小数部分
+      // Number.parseInt 保留正数部分
+      console.log(Number.parseInt('5.1!@#$%^'))
+    
+      // Math.trunc 返回整数部分
+      console.log(Math.trunc(2.78))
+
+      // 整数 1 负数 -1 零 0 其他NaN
+      console.log(Math.sign('67')) // => 1
+
+  </script>
+</body>
+</html>

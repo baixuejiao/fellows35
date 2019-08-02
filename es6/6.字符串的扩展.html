@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 模版字符串 字符串放在``中， 变量用${}表示
+    let _start = 0;
+    let _count = 10;
+    let url = 'https://douban.uieee.com/v2/movie/in_theaters?start=' + _start + '&count=' + _count;
+    console.log(url);
+    let _url = `https://douban.uieee.com/v2/movie/in_theaters?start=${_start}&count=${_count}`
+    console.log(_url);
+
+
+    let inner = 'hello world'
+    let oDiv = '<div class="wrapper">'+inner+'</div>';
+    let oDiv1 = `<div class="wrapper">${inner}</div>`;
+    console.log(oDiv1);
+
+
+    // 检索字符串 有返回索引 没有返回-1
+    let str = 'hello world'
+    console.log(str.indexOf('n'))
+
+    // 检索字符串 有返回true 没有返回false
+    let str1 = 'wxzs';
+    console.log(str1, str1.length)
+    console.log(str1.includes('x'))
+
+    // 检索参数字符串是否在字符串的头部 => boolean
+    console.log(str1.startsWith('xz')); 
+
+    // 检索参数字符串是否在字符串的尾部 => boolean
+    console.log(str1.endsWith('w')); 
+
+    //在字符串的开头补全字符串 返回一个新的字符串
+    console.log(str1.padStart(3,'so'));
+
+    //在字符串的结尾补全字符串 返回一个新的字符串
+    console.log(str1.padEnd(8), str1.length)
+
+    // 重复字符串 返回一个新的字符串
+    console.log(str1.repeat(8))
+
+
+    let ua = navigator.userAgent;
+    console.log(ua);
+
+
+    if (ua.includes('iPhone') ){
+      console.log(111)
+      // location.href = 'https://baidu.com'
+    } else {
+      console.log(2222)
+      // location.href = 'https://tmall.com'
+    }
+
+  </script>
+</body>
+</html>

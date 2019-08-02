@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+  </ul>
+  <script>
+    // Array.from() 把类数组转换成数组  
+    var aLi = document.querySelectorAll('li') 
+    console.log(aLi);
+    console.log(Array.from(aLi))
+
+    let arrayLike = {
+      '0': 'a',
+      '1': 'b',
+      '2': 'c',
+      length: 3
+    };
+    console.log(arrayLike)
+    console.log(Array.from(arrayLike))
+
+    // Array.of 把值转换成数组
+    console.log(new Array(3)) // 长度为3的空数组
+    console.log(Array.of(4)) // => var arr = [4]
+    console.log(Array.of(4,5,6)) // => [4,5,6]
+
+    // copyWithin 替换数组的内容
+    let arr = [1,2,3,4,5,6,7,8,9,10]
+    console.log(arr.copyWithin(0,2,3))
+    console.log(arr)
+    // [3, 4, 5, 4, 5, 6, 7, 8, 9, 10]
+    // [3, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    // 返回第一个符合判断条件的内容
+    let arr1 = [1,2,5,2,7,8]
+    
+    let a1 = arr1.find(function(val, index ,arr){
+      return val>3
+    })
+
+    console.log(a1)
+
+    let p = [
+      {
+        name: 'xiaoming',
+        age: 4
+      },
+      {
+        name: 'wx',
+        age: 3
+      },
+      {
+        name: 'wxc',
+        age: 9
+      }
+    ]
+
+    let a2 = p.find(function(value, index){
+      return value.age > 4
+    })
+    console.log(a2)
+
+    // [1, 4, -5, 10].find((n) => n < 0)
+    
+    // let a3 = [1, 4, -5, 10]
+    // a3.find((n) => n < 0)
+    
+    // a3.find((n) => n<0)
+
+    // 数组的补全
+    console.log(new Array(3).fill(7))
+
+    // 从索引1开始用7补全到索引4之前结束
+    console.log(['a', 'b', 'c', 'd', 'e', 'f'].fill(7, 1, 4))
+    // ["a", 7, 7, 7, "e", "f"]
+
+    // includes() 判断数组是否包含某一个值 => boolean
+    // console.log([1,2,3,5].includes(4))
+
+    // for of 循环数组
+    // keys() 数组的索引
+    // values() 值
+    // entries() 返回的是[index,value]
+    let a3 = [1,2,4]
+    for(value of a3.entries()){
+      console.log(value); 
+    }
+
+    for(obj of p){
+      console.log(obj)
+    }
+
+    console.log('-----')
+    p.forEach(function(value, key){
+      console.log(value)
+      console.log(key)
+    })
+
+    // filter 过滤所有符合条件的内容 返回的是一个数组，数组里是所有符合条件的元素
+    let a4 = [1,2,3,4,5,6]
+    let a5 = a4.filter(function(value, key){
+      return value > 4
+    })
+    console.log(a5)
+
+    
+    let a6 = p.filter((value, key) => {
+      return value.age>4
+    })
+
+    console.log(a6)
+
+
+  
+  </script>
+</body>
+</html>
