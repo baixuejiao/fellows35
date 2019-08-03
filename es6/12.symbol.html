@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // 基本数据类型：number string boolean undefined null symbol(es6)
+      // Symbol 独一无二的值
+      let a = Symbol()
+
+      console.log(a)
+      console.log(typeof a)
+
+      let obj = {
+        name: 'wx',
+        age: 20
+      }
+
+      obj.size = 'xxx'
+      obj.name = 'xxxxxx'
+
+      let height = Symbol()
+
+      obj[height] = '180cm'
+
+      let weight = Symbol()
+
+      console.log(height === weight)
+
+      // console.log(obj)
+
+      obj[weight] = '80kg'
+
+      console.log(obj)
+
+      for( key in obj){
+        console.log(key)
+      }
+
+      obj[Symbol()] = 'eat'
+
+      console.log(obj)
+
+      // 对象下的属性如果是Symbol 不会在for in 循环中 循环出来
+    
+  </script>
+</body>
+</html>

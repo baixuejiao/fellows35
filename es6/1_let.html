@@ -39,13 +39,13 @@
     var aLi = document.querySelectorAll('li');
     
     // var 定义的 i => window.i 全局变量 
-    // for(var i=0; i<aLi.length; i++) {
-    //   aLi[i].index = i
-    //   aLi[i].onclick = function(){
-    //     console.log(i);
-    //     console.log(this.index)
-    //   }
-    // }
+    for(var i=0; i<aLi.length; i++) {
+      // aLi[i].index = i
+      aLi[i].onclick = function(){
+        console.log(i);
+        // console.log(this.index)
+      }
+    }
 
     // console.log(i);
 

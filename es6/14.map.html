@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let p1 = new Map() // 类对象 size表示长度
+    console.log(p1)  
+
+    let p2 = {
+      name: 'aa'
+    }
+
+    let p3 = new Map()
+    // p.set(key, value) 设置一个值
+    p3.set('name', 'aa')
+    p3.set('age', 1)
+    console.log(p2)
+    console.log(p3)
+    // p.get(key) 获取一个值
+    console.log(p3.get('name'))
+    console.log(p3.has('name'))
+    console.log(p3)
+
+    // 类对象 => 对象
+    let p4 = {}
+    p3.forEach(function(value, key){
+      console.log(value)
+      console.log(key)
+      p4[key] = value
+    })
+    console.log(p4)
+
+    let p5 = {}
+    for(item of p3){
+      console.log(item) //["name", "aa"]
+      p5[item[0]] = item[1]
+    }
+    console.log(p5)
+    console.log('------for in--------')
+    for(item in p5){
+      console.log(item)
+    }
+    console.log('------forEach--------')
+    [{},{}]
+   
+
+    
+  </script>
+</body>
+</html>

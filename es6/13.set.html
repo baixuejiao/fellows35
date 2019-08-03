@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a1 = [1,2,3,4,2,2,5,3]  
+    console.log(a1)
+
+    var a2 = new Set(a1) // 类数组
+    console.log(a2) // a2.size 长度
+
+    let a3 = Array.from(a2)
+    console.log(a3)
+    let a5 = [...a2]
+    console.log(a5)
+
+    // 数组的去重
+    let a4 = []
+    for(let i=0; i<a1.length;i++){
+      let tmp = a1[i]
+      if(!a4.includes(tmp)){
+        a4.push(tmp)
+      }
+    }
+
+    let b = new Set();
+    
+    b.add(1)
+    b.add(2)
+    b.add(3)
+    b.clear()
+    console.log(b)
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      name: 'ss',
+      age: 18
+    }  
+
+    let p1 = {...obj}
+
+    console.log(p1)
+
+    obj.name = 'xxx';
+
+    console.log(obj)
+    console.log(p1)
+
+    /*
+      对象的深拷贝
+      1. JSON.stringify() JSON.parse()
+      2. deepClone()
+      3. ... 扩展运算符
+    */
+
+    /*
+      数组的深拷贝
+      1. ... 扩展运算符
+      2. deepClone()
+    */
+    
+  </script>
+</body>
+</html>

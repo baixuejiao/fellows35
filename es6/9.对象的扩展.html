@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let name = 'zs'
+    let age = 18
+    
+    let obj = {
+      name, // 属性的简写
+      age,
+      eating() { // 方法的简写
+        console.log(this.name)
+      }
+    }
+    // console.log(obj)
+    obj.eating();
+    obj.eating = function(){
+      console.log(this.age)
+    }
+    obj.eating();
+
+    obj.age = 4;
+   
+    obj['name'+'_first'] = 'aaa'
+    // console.log(obj)
+
+    // console.log(Object.is('22',22))
+
+    // console.log(NaN===NaN) // false
+    // console.log(Object.is(NaN,NaN)) // true
+    
+    console.log(+0===-0) //true
+    console.log(Object.is(+0,-0)) //false
+
+    // Object.assign(obj1, obj2); 
+    var obj1 = {
+      name: 'wx',
+      age: 20
+    }
+    var obj2 = {
+      height: '170cm',
+      weight: '123kg'
+    }
+
+    // Object.assign(obj1, obj2);
+
+    // console.log(obj1)
+    // console.log(obj2)
+
+    // obj1.height = '160cm'
+   
+    // console.log(obj1)
+    // console.log(obj2)
+
+    var obj3 = Object.assign({}, obj1, obj2)
+    console.log(obj1)
+    console.log(obj2)
+    console.log(obj3)
+    
+    var obj4 = {...obj1,...obj2}
+    console.log(obj4)
+
+    console.log(Object.entries(obj4))
+
+//     Object.keys(obj4) => ['name', 'age']
+// ,
+//     let {keys, values, entries} = Object ;
+
+    var arr3 = ['name', 'age', 'height', 'weight']
+    for (let k of arr3) {
+      console.log(k); 
+      console.log(obj4[k])
+
+    }
+
+    // console.log('aaa' in obj4)
+
+    // var b1 = [1,2,3,4]
+    // console.log(1 in b1)
+
+   
+  </script>
+</body>
+</html>
