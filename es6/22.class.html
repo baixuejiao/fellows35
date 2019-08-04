@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function Person(_name, _age){
+    //   this.name = _name;
+    //   this.age = _age;
+    //   this.eat = function(){
+    //     console.log('eating...')
+    //   }
+    // }
+    // Person.prototype.say =  function(){
+    //   console.log('say...')
+    // }
+
+    class Person {
+      constructor(_name, _age){
+        this.name = _name;
+        this.age = _age;
+      }
+      static say() {
+        console.log('hello')
+      }
+    }
+  
+    Person.prototype.lalalal = function(){
+      console.log(123456789)
+    }
+
+    class Student extends Person {
+      constructor(_name,_age) {
+        super(_name,_age); // 调用父类的constructor(x, y)
+      }
+      say(){
+        super.say()
+      }
+    }
+
+    let p1 = new Student('aa',1)
+    console.dir(p1)
+
+
+    // class Person1{
+    //   constructor(_name, _age){
+    //     this.name = _name;
+    //     this.age = _age;
+    //   }
+    //   say() {
+    //     console.log('hello')
+    //   }
+    // }
+
+    // class Student1 extends Person1 {
+    //   constructor(_name,_age) {
+    //     super(_name,_age); // 调用父类的constructor(x, y)
+    //   }
+    //   say(){
+    //     super.say()
+    //   }
+    // }
+    // let p2 = new Student1('aa',1)
+    // console.dir(p2)
+    
+  </script>
+</body>
+</html>

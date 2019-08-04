@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // p 是一个 Object
+    let p = new Promise((resolve, reject) => {
+      if(true){
+        reslove() //成功的回调
+      } else {
+        reject() // 失败的回调
+      }
+    }).then( (res) => {
+      // success
+    }).catch( err => {
+      // fail
+    })
+
+    // p 是一个 Object
+    let p = new Promise((resolve, reject) => {
+      if(true){
+        reslove() //成功的回调
+      } else {
+        reject() // 失败的回调
+      }
+    }).then( (res) => {
+      // success
+    }, err => {
+      // fail
+    })
+
+    // let p1 = new Promise(function(reslove, reject){
+    //   // reslove 成功的回调
+    //   // reject 失败的回调
+    //   setTimeout(function(){
+    //     // reslove()
+    //     reject()
+    //   },100)
+    // }).then(function(){
+    //   console.log('1-success')
+    // }).catch(function(){
+    //   console.log('1-fail')
+    // })
+
+    // let p1 = new Promise(function(reslove, reject){
+    //   // reslove 成功的回调
+    //   // reject 失败的回调
+    //   setTimeout(function(){
+    //     // reslove()
+    //     reject()
+    //   },100)
+    // }).then(function(){
+    //   console.log('1-success')
+    // }, function(){
+    //   console.log('1-fail')
+    // })
+
+
+    let p1 = new Promise(function(reslove, reject){
+      setTimeout(function(){
+        console.log('1-success')
+        // reslove()
+        reject()
+      })
+    }).then(function(){
+      console.log('1-success-doing')
+      return new Promise(function(reslove, reject){
+        setTimeout(function(){
+          console.log('2-success')
+          reslove()
+        },2000)
+      })
+    }, function(){
+      console.log('1-fail')
+    }).then(function(){
+      console.log('2-success-doing')
+    })
+
+    // let p2 = new Promise(function(reslove, reject){
+
+    // }).then(function(){
+    //   console.log('success')
+    // }).catch(function(){
+    //   console.log('fail')
+    // })
+    // console.log(p2)
+
+    // console.dir(p2)
+
+
+    db.collection('todos').doc('todo-identifiant-aleatoire').get({
+      success: function(res) {
+        // res.data 包含该记录的数据
+        console.log(res.data)
+      },
+      fail: function(){
+        
+      }
+    })
+    db.collection('todos').doc('todo-identifiant-aleatoire').get().then(res => {
+      // res.data 包含该记录的数据
+      console.log(res.data)
+    }).catch(()=>{
+
+    })
+
+    
+  </script>
+</body>
+</html>

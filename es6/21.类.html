@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(_name, _age){
+      this.name = _name;
+      this.age = _age;
+      this.eat = function(){
+        console.log('eating...')
+      }
+    }
+    Person.prototype.say =  function(){
+      console.log('say...')
+    }
+
+    var p1 = new Person('aa', 18)
+    // var p2 = new Person('cc', 4)
+
+    console.dir(Person)
+    console.dir(p1)
+    // console.dir(p2)
+
+    function Student(_name, _age){
+      Person.call(this,_name, _age)
+      bbb = function(){
+        console.log(123456789)
+      }
+    }
+
+    Student.prototype = new Person()
+    // Student.prototype.aaa = function(){
+    //   console.log(12345678)
+    // }
+    Student.prototype.constructor = Student;
+
+
+
+    var s = new Student('wx', 18)
+    console.dir(Student)
+    console.dir(s)
+    
+    
+  </script>
+
+
+
+</body>
+</html>

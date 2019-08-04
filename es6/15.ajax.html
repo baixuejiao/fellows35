@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 通过ajax可以不刷新页面请求服务端的数据
+    // 1.创建XMLHttpRequest对象
+    var xmlhttp;
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    } else {// code for IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    // 2.请求
+    xmlhttp.open("GET","getData.json",true);
+    xmlhttp.send();
+
+    // 3.相应
+    xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        console.log(xmlhttp.responseText); // string
+        console.log(JSON.parse(xmlhttp.responseText))
+      }
+    }
+    /*
+      0: 请求未初始化
+      1: 服务器连接已建立
+      2: 请求已接收
+      3: 请求处理中
+      4: 请求已完成，且响应已就绪
+    */
+
+    /*
+      200: ok
+      304: Not Modified  客户端有缓存的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。
+      400: Bad Request 请求出现语法错误
+      404: 找不到资源
+      500: 服务器错误
+      505: HTTP Version Not Supported 服务器不支持请求中所指明的HTTP版本
+    */
+
+   
+
+
+
+
+    // 异步&同步
+    // 异步是 前者开始执行，后者继续执行
+    // 同步 一个接着一个执行 前者执行完之后才会执行后者
+
+    // get:'https://douban.uieee.com/v2/movie/in_theaters?start=0&count=10'
+// 
+    
+    
+  </script>
+</body>
+</html>

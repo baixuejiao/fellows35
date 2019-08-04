@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let p1 = new Promise(function(reslove, reject){
+      setTimeout(function(){
+        console.log('1-success')
+        reslove();
+        // reject()
+      }, 400)
+    })
+    
+    let p2 = new Promise(function(reslove, reject){
+      setTimeout(function(){
+        console.log('2-success')
+        // reslove();
+        reject()
+      }, 100)
+    })
+
+    let p3 = new Promise(function(reslove, reject){
+      setTimeout(function(){
+        console.log('3-success')
+        reslove();
+      }, 600)
+    })
+
+    // 判断所有的
+    // Promise.all([p1, p2, p3]).then(function(){
+    //   console.log('all-success')
+    // }).catch(function(){
+    //   console.log('fail')
+    // })
+
+    // 判断最快的
+    Promise.race([p1,p2,p3]).then(function(){
+      console.log('race-success')
+    }).catch(function(){
+      console.log('race-fail')
+    })
+    
+    
+  </script>
+</body>
+</html>
