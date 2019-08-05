@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      name: 'xm',
+      age: 2
+    }
+    // 拦截对象
+    let pro = new Proxy(obj,{
+      set: (target, key, property) => {
+        // target 目标对象
+        // key 表示的是修改的key
+        // property 想要修改的值
+        // console.log(target, key, property)
+        // console.log('set function')
+        target[key] = property;
+
+        target[key] = '23456789'
+      },
+      get: (target, key, property) => {
+        console.log(target, key, property)
+        return target[key];
+        // console.log('get function')
+      }
+    })
+    // pro.name = 'jiujiu'
+    // console.log(pro)
+    // console.log(pro.name)
+   
+    let fn = function(data){
+      return data
+    }
+    let handler =  {
+      apply(target, ctx, arg){
+        let data = {
+          name: 'xxx',
+          age: '111zz'
+        }
+        // console.log(target, ctx, arg)
+        console.log(1234567)
+        console.log(target, ctx, arg)
+        return data
+      }
+    }
+
+    let pp = new Proxy(fn,handler)
+    console.log(pp('data'));
+    // console.log(pp());
+
+    function request (){
+      let data;
+      $.ajax({
+        success(res){
+          data = res
+          console.log(res)
+        }
+      })
+      return data
+    }
+    
+  </script>
+</body>
+</html>

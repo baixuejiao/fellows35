@@ -1,0 +1,91 @@
+// $定义变量
+$color: #ff0000;
+// !default定义默认变量
+$color: #ff8907!default;
+// 特俗变量
+$bg: '../images/1.jpg';
+$height_max: 'height';
+$width: 200px;
+
+body{
+  width: $width;
+  color: $color;
+}
+
+div{
+  #{$height_max}: 200px;
+  background: url(#{$bg}) center no-repeat
+}
+
+// 选择器嵌套
+ul{
+  width: 100%;
+
+  li{
+    height: 20px;
+    a{
+      color: #ff0000;
+
+      &:hover{
+        color: blue;
+      }
+    }
+  }
+}
+.clearfix{
+  &::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+div{
+  // 属性嵌套
+  padding: {
+    top: 10px;
+    left: 20px;
+  }
+  font: {
+    size: 20px;
+    weight: blod;
+  }
+}
+
+//定义混合宏
+@mixin orangeBtn($width:120px, $height:50px, $font:20px) {
+  width: $width;
+  height: $height;
+  font-size: $font;
+  line-height: $height;
+  text-align: center;
+  color: #fff;
+  background: #ff8907;
+}
+/* 确认按钮 */
+.confirm-btn{
+  @include orangeBtn(100px, 40px ,16px);
+}
+
+.cancel-btn{
+  @include orangeBtn()
+}
+
+// 继承
+.submit-btn{
+  @extend .confirm-btn;
+  border-radius: 5px;
+}
+
+// 注释的写法
+// 1. 双斜杠// 编译后不会显示在css文件中
+// 2. /* */  编译后会显示在css文件中
+
+// 占位符
+%wrapper{
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+#wrapper{
+  @extend %wrapper;
+}

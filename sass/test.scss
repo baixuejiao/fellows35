@@ -1,0 +1,19 @@
+$color: #ff8907;
+$width: 120px;
+
+body{
+  color: $color;
+}
+
+div{
+  width: $width;
+
+  span{
+    width: $width;
+  }
+}
+
+
+span{
+  color: $color;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Person{
+      constructor(_name, _age){
+        // 属性
+        this.name = _name;
+        this.age = _age;
+      }
+      eat(){
+        console.log('eating....')
+      }
+      static coding(){ // 静态函数 不能被实例化对象调用
+        console.log('coding...')
+      }
+    }
+
+    /* es6 定义类的方式：
+    class 类名{
+      constructor(){
+        // 属性
+      }
+      // 方法
+      fun(){
+        //
+      }
+    }
+    */
+
+    
+    let p1 = new Person('xm',2)
+    console.log(p1)
+
+    // p1.coding();
+
+    // 继承
+    class Student extends Person{
+      constructor(_name, _age){
+        super(_name, _age)
+      }
+    }
+
+    console.log('----')
+    Student.coding()
+
+    let s1 = new Student('zz',1)
+    console.log(s1)
+    s1.eat()
+    
+  </script>
+</body>
+</html>

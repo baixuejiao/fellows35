@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(_name, _age){
+      this.name = _name;
+      this.age = _age;
+    }
+
+    Person.prototype.eat = function(){
+      console.log('eating....')
+    }
+    console.dir(Person);
+    
+    let p1 = new Person('xm',2);
+    console.log(p1)
+
+
+    function Student(_name, _age){
+      // this -> s1
+      Person.call(this, _name, _age); // 继承父类的属性
+    }
+    Student.prototype = new Person();
+    Student.prototype.constructor = Student;
+    console.dir(Student);
+    let s1 = new Student('jj',1)
+    console.log(s1)
+    s1.eat()
+
+    /*
+    1. 在子类中 通过父类.call() 继承父类的属性 把实例化对象传给父类
+    2. 子类的prototype等于父类的实例化对象
+    3. 子类prototype下的constructor 指向子类
+    */
+
+    
+  </script>
+</body>
+</html>

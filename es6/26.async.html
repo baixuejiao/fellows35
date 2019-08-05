@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    async function fun(){
+      console.log('start..')
+      let data = await request();
+      console.log(data)
+
+      let aaa = await req1(data);
+      console.log(aaa)
+
+      console.log('end....')
+    }
+
+    function request(){
+      return new Promise(function(resolve, reject){
+        setTimeout(()=>{
+          console.log('1-success')
+          let obj = {
+            name: 'xm',
+            age: 2
+          }
+          resolve(obj);
+        },1000)
+      })
+    }
+
+    function req1(_tmp){
+      console.log(_tmp)
+      return new Promise(function(resolve, reject){
+        setTimeout(()=>{
+          console.log('2-success')
+          resolve('success~~~~~');
+        },1000)
+      })
+    }
+    fun().then(res => {
+      console.log(234567890)
+    });
+  </script>
+</body>-
+</html>
