@@ -1,5 +1,9 @@
+// @import 引入外部文件
+@import './common.scss';
+@import './reset.scss';
+
 // $定义变量
-$color: #ff0000;
+// $color: #ff0000;
 // !default定义默认变量
 $color: #ff8907!default;
 // 特俗变量
@@ -14,6 +18,7 @@ body{
 
 div{
   #{$height_max}: 200px;
+  // #{}
   background: url(#{$bg}) center no-repeat
 }
 
@@ -45,13 +50,31 @@ div{
     top: 10px;
     left: 20px;
   }
+  // padding-top
+  // padding-left
   font: {
     size: 20px;
     weight: blod;
   }
+  // background: {
+  //   image: url();
+  //   color: '';
+  //   repeat: no-repeat;
+  // }
 }
 
 //定义混合宏
+@mixin border($color:#ddd) {
+  border-bottom: 1px solid $color;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+div{
+  @include border();
+  width: 200px;
+  height: 100px;
+}
+
 @mixin orangeBtn($width:120px, $height:50px, $font:20px) {
   width: $width;
   height: $height;
@@ -85,7 +108,50 @@ div{
   max-width: 1230px;
   margin: 0 auto;
 }
-
 #wrapper{
   @extend %wrapper;
+}
+
+#common-btn{
+  @include commonBtn();
+}
+
+// 自定义方法 @function 定义 @return 返回值
+@function addWidth($w1, $w2){
+  @return $w1 / $w2;
+}
+// 自定以方法的调用 方法名()
+#container{
+  width: addWidth(100%,7);
+  height: floor(5.6);
+
+}
+
+// @if 指令 
+// @if 判断条件 {设置的属性}
+p{
+  @if 1+1 == 2 {border: 1px solid red;}
+  @if 5 < 3 {border: 2px solid blue;}
+}
+
+/* from through */
+@for $i from  1 through 3{
+  .item-#{$i}{
+    width: 100px;
+    height: 200px;
+  }
+}
+
+/* from to */
+@for $i from  1 to 3{
+  .item-#{$i}{
+    width: 100px;
+    height: 200px;
+  }
+}
+
+@each $i in list, age, aaa {
+  .item-#{$i}{
+    color: #fff;
+  }
 }

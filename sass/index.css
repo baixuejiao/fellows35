@@ -1,7 +1,139 @@
 @charset "UTF-8";
+/*CSS Reset*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+header,
+hgroup,
+nav,
+section,
+article,
+aside,
+footer,
+figure,
+figcaption,
+menu,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size-adjust: none;
+  -webkit-text-size-adjust: 100% !important;
+  -webkit-touch-callout: none;
+}
+
+body {
+  font-family: "PingFangSC-Regular","Microsoft Yahei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #000;
+  background-color: #f8f8f8;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+}
+
+button {
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+}
+
+a {
+  -webkit-touch-callout: none;
+  text-decoration: none;
+}
+
+:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+.hide {
+  display: none;
+}
+
 body {
   width: 200px;
-  color: #ff0000;
+  color: #ff8907;
 }
 
 div {
@@ -38,6 +170,14 @@ div {
   font-weight: blod;
 }
 
+div {
+  border-bottom: 1px solid #ddd;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  width: 200px;
+  height: 100px;
+}
+
 /* 确认按钮 */
 .confirm-btn, .submit-btn {
   width: 100px;
@@ -66,4 +206,62 @@ div {
 #wrapper {
   max-width: 1230px;
   margin: 0 auto;
+}
+
+#common-btn {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  background: #ff0036;
+}
+
+#container {
+  width: 14.28571%;
+  height: 5;
+}
+
+p {
+  border: 1px solid red;
+}
+
+/* from through */
+.item-1 {
+  width: 100px;
+  height: 200px;
+}
+
+.item-2 {
+  width: 100px;
+  height: 200px;
+}
+
+.item-3 {
+  width: 100px;
+  height: 200px;
+}
+
+/* from to */
+.item-1 {
+  width: 100px;
+  height: 200px;
+}
+
+.item-2 {
+  width: 100px;
+  height: 200px;
+}
+
+.item-list {
+  color: #fff;
+}
+
+.item-age {
+  color: #fff;
+}
+
+.item-aaa {
+  color: #fff;
 }

@@ -1,0 +1,11 @@
+$commonColor: #ff8907;
+
+@mixin  commonBtn($w: 100px, $h: 20px, $f:20px) {
+  width: $w;
+  height: $h;
+  line-height: $h;
+  font-size: $f;
+  text-align: center;
+  color: #fff;
+  background: #ff0036;
+}
