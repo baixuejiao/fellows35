@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div id="btn">{{number}}</div>
+    <!-- v-on 事件绑定 -->
+    <button v-on:click="add">点击</button>
+    <!-- v-on:click => @click -->
+    <button @click="add">点击</button>
+
+  </div>
+  <script src="./vue.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        number: 0
+      },
+      // 事件/方法
+      // $event 事件对象
+      methods: {
+        add($event){
+          console.log($event);
+          // console.log(this.number)
+          this.number++
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>

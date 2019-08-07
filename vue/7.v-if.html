@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 
+        v-if
+        v-else-if
+        v-else
+     -->
+    <p v-if="tag == 2"> 你好，xxx</p>
+    <p v-else-if="tag == 1">12345678</p>
+    <p v-else>请登录</p>
+
+    <div v-show="isLogin">v-show</div>
+    <!-- 
+        v-show 会生成html结构 隐藏或显示
+        v-if 如果不满足条件 不会生成html结构
+     -->
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        isLogin: false,
+        tag: 9
+      }
+    })
+  
+  </script>
+</body>
+</html>

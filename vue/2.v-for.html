@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <!-- v-for 循环  -->
+      <li v-for="item in arr">{{item}}</li>
+    </ul>
+    <p v-for="(value, key) in list">{{ key=='name' ? value : ''}}</p>
+
+    <ul>
+      <!-- 
+          item: 数组中的每一项
+          index: 索引
+      -->
+      <li v-for="(item, index) in list1">
+        <p>{{item.name}}:{{item.age}}</p>
+        {{key}}
+      </li>
+    </ul>
+  </div>
+  <!-- 
+      wx: 20
+      wxc: 18
+   -->
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        arr: [1,2,3],
+        list: {
+          name: 'wxc',
+          age: 20,
+          height: '160cm'
+        },
+        list1: [
+          {
+            name: 'wxc',
+            age: 20,
+            height: '160cm'
+          },
+          {
+            name: 'wx',
+            age: 18,
+            height: '150cm'
+          }
+        ]
+
+      }
+    })
+    vm.arr.push(4)
+
+  </script>
+</body>
+</html>

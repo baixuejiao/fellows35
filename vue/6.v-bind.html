@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper{
+      color: #ff0036;
+    }
+    .content{
+      background: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- v-bind 属性绑定 
+        v-bind: class => :class (简写)
+    -->
+    <span v-bind:class="spanStyle">123456789</span>
+
+    <span :class="spanStyle">123456789</span>
+
+    <!-- :class="{ classname: boolean }" -->
+    <p :class="{wrapper: isA, content: isB}">12345678</p>
+
+    <p :class="['list', isA?'active':'']">12345678</p>
+    <!-- font-size  => fontSize -->
+    <div :style="{fontSize: size + 'px' }">
+      asdfghjkl;
+    </div>
+
+    <!-- <img v-bind:src="img" alt=""> -->
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        spanStyle: 'wrapper',
+        ss: 'content',
+        img: 'https://cn.vuejs.org/images/logo.png',
+        isA: true,
+        isB: true,
+        size: '100'
+      }
+    })
+  
+  </script>
+</body>
+</html>

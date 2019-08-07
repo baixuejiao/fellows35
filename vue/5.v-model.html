@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- v-model 绑定在表单元素 -->
+    <input type="text" v-model="msg">
+    <span>{{msg}}</span>
+    <br/>
+    <input type="radio"  v-model="sex1" value="boy"> 男
+    <input type="radio"  v-model="sex1" value="girl"> 女
+
+    <input type="checkbox" v-model="fruit" value="apple">苹果
+    <input type="checkbox" v-model="fruit" value="banana">香蕉
+    <input type="checkbox" v-model="fruit" value="watermelon">西瓜
+  </div>
+  <script src="./vue.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '1234567',
+        sex1: 'boy',
+        fruit: ['apple', 'banana']
+      }
+    })
+
+
+  
+  </script>
+</body>
+</html>

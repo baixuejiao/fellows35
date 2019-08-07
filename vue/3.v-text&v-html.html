@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #conetent{
+      color: #333;
+    }
+    #content span{
+      color: #ff0036;
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- {{}} 插入文本 -->
+    <p>{{inner}}</p>
+
+    <!-- v-text 插入文本 -->
+    <p v-text="inner"> </p>
+
+    <!-- v-html 插入一段html代码 -->
+    <p v-html="inner"> </p>
+
+    <div id="content" v-html="desc"></div>
+
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        msg: 'hello',
+        inner: '<a href="#">百度</a>',
+        desc: '234567<span>89</span>sdfg<br/>hjkl;'
+      }
+    })
+  
+  </script>
+</body>
+</html>

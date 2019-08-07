@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in arr">{{item}}</li>
+    </ul>
+
+    <p v-for="(value, key) in list">{{key}}: {{value}}</p>
+
+    <button @click="change">button</button>
+
+    <button @click="changeObj">changeObj</button>
+
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        arr: [1,2,3],
+        list: {
+          name: 'wx',
+          age: '18'
+        }
+      },
+      methods:{
+        change(){
+          console.log(this.arr)
+          // this.arr[0] = 4
+          // Vue.set 修改数组值
+          // 第一个参数 修改的数组
+          // 第二个参数 数组的索引下标
+          // 第三个参数 修改的内容
+          Vue.set(this.arr, 0 ,4)
+
+          this.arr.push(6)
+        },
+        changeObj(){
+          console.log(this.list)
+          this.list = {
+            name: '1111',
+            age: '89',
+            height: '34567'
+          }
+
+          Object.assign()
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>
