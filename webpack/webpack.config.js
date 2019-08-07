@@ -1,18 +1,11 @@
 // 导入path模块
 const path = require('path')
-
 const HtmlPlugin = require('html-webpack-plugin');
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 const glob = require('glob');
-
 const PurifyCSSWebpack = require('purifycss-webpack');
-
 const webpack = require('webpack')
-
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
 module.exports = {
   // 设置开发环境 
   mode: 'development', // development/production

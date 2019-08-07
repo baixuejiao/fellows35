@@ -8,3 +8,5 @@ let str = 'hello world';
 let fn = () => {
   console.log('123');
 }
+
+$('div')
