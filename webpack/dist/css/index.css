@@ -1,0 +1,18 @@
+/*! 别抄我代码！！！！ */
+div {
+  width: 100px;
+  height: 100px;
+  color: #ff0036;
+}
+
+body {
+  color: #333;
+  background: url(http://localhost:8089/images/4e31f163918dfade90c63e7afc2f5d98.jpg);
+}
+
+img {
+  /* transform: rotate(45deg); */
+  /* transform: scale(0.5); */
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}

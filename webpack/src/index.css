@@ -1,0 +1,14 @@
+body{
+  color: #333;
+  background: url('./img.jpg')
+}
+
+img{
+  /* transform: rotate(45deg); */
+  /* transform: scale(0.5); */
+  transition: all 0.5s ease;
+}
+
+.aa{
+  width: 100%;
+}
