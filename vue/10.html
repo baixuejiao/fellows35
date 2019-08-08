@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #app{
+      height: 4000px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>{{msg}}</h1>
+
+    <ul>
+      <li v-for="item in arr">
+        {{item}}
+      </li>
+    </ul>
+
+    <!-- <ul>
+      <li v-for="(item, index) in arr">
+        {{index}}:{{item}}
+      </li>
+    </ul>
+
+    <ul>
+      <li v-for="(value, key) in obj">
+        {{value}} {{key}}
+      </li>
+    </ul> -->
+
+    <!-- <p>{{inner}}</p> -->
+    <!-- <p v-text="inner"></p>
+    <p v-html="inner"></p> -->
+
+    <button v-on:click="clickfun('hello',$event)">按钮</button>
+    <!-- <input @keyup="keyupfun()" v-model="value">
+
+    <input type="radio" v-model="sex" value="boy">男
+    <input type="radio" v-model="sex" value="girl">女 -->
+
+    <br>
+    <!-- <input type="checkbox" v-model="friut" value="apple"> apple
+    <input type="checkbox" v-model="friut" value="banana"> banana
+    <input type="checkbox" v-model="friut" value="watermenlo"> watermenlo -->
+
+    <!-- <input type="checkbox" v-model="aaaa" value="llll"> watermenlo -->
+
+    <!-- <div index="1"></div> -->
+    <!-- <div v-bind:class="{content: Tag}"></div> 
+
+    <span v-if="isLogin">你好，xxx</span>
+    <span v-else>请登录</span>
+
+
+    <span v-show="isLogin">show</span> -->
+
+   
+
+
+  </div>
+ 
+  <script src="./vue.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'qwertyui',
+        arr: [1,2,3,4],
+        obj: {
+          name: 'aaa',
+          age: 18
+        },
+        inner: '<a href="#">链接</a>',
+        value: '123456',
+        sex: 'boy',
+        friut: ['apple'],
+        aaaa: 'llll',
+        className: 'wrapper',
+        Tag: true,
+        isLogin: false,
+        tmp: 1
+      },
+      methods: {
+        clickfun() {
+          // this.value = '8888'
+          // // console.log($event)
+          // console.log(event)
+          // this.arr[2] = 8888
+
+          // Vue.set(this.arr, 2, 888)
+          this.arr.push(2222)
+        },
+        keyupfun() {
+          console.log(345)
+        }
+      }
+    })
+
+    vm.msg = '1234567'
+   
+  </script>
+</body>
+</html>

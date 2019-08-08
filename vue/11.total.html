@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0
+    }
+    h2{
+      width: 400px;
+      margin: 50px auto 0;
+    }
+    #wrapper{
+      width: 400px;
+      margin: 0 auto;
+    }
+    .list{
+      height: 50px;
+      padding: 0 10px;
+      margin-top: 10px;
+      line-height: 50px;
+      list-style: none;
+      background: pink;
+    }
+    .selected{
+      background: red;
+    }
+    .list-name{
+      float: left;
+    }
+    .list-price{
+      float: right;
+    }
+    h3{
+      width: 400px;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>商品列表</h2>
+    <ul id="wrapper">
+      <li :class="['list', item.isSelectd?'selected':'']" v-for="(item, index) in list" @click="change(item)">
+        <span class="list-name">{{item.name}}</span>
+        <span class="list-price">{{item.price}}</span>
+      </li>
+    </ul>
+    <!-- <h3>total: {{sum}}</h3> -->
+    <h3>total: {{total()}}</h3>
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        sum: 0,
+        list: [
+          {
+            name: "衣服",
+            price: 200,
+            isSelectd: false
+          },
+          {
+            name: "裤子",
+            price: 323,
+            isSelectd: false
+          },
+          {
+            name: "鞋",
+            price: 122,
+            isSelectd: false
+          },
+          {
+            name: "香水",
+            price: 780,
+            isSelectd: false
+          }
+        ]
+      },
+      methods: {
+        change(_item) {
+          _item.isSelectd = !_item.isSelectd
+          console.log(_item)
+
+          // if(_item.isSelectd){
+          //   this.sum += _item.price
+          // } else {
+          //   this.sum -= _item.price;
+          // }
+        },
+        total(){
+          let count = 0;
+          this.list.forEach((item, index) => {
+            if (item.isSelectd) {
+              count += item.price;
+            }
+          })
+          return count;
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>

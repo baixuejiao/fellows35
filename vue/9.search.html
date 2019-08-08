@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      color: #ff66ff;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <input type="text" v-model="value" @keyup="filter">
+      <button @click="add">添加</button>
+    </div>
+
+    <ul>
+      <li v-for="(item, index) in arrList" :class="{active: item.isActive}" @click ="changeClass(item)">
+        <span>{{item.content}}</span>
+        <!-- 事件冒泡 修饰符 .stop 表示阻止事件冒泡 -->
+        <button @click.stop="del(index)">删除</button>
+      </li>
+    </ul>
+
+
+  </div>
+  <script src="./vue.js"></script>
+  <!-- 
+      arr: [1,2,3]
+
+      arr: [
+        {
+          value: 1,
+          tag: false
+        }
+      ]
+
+   -->
+
+
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        arr: [], // 存储结果
+        value: '',
+        isActive: false,
+        arrList: [] // 用于展示
+      },
+      methods: {
+        // arr = [11,12,2]
+        // arr = [11,12,99]
+        add() {
+          this.arr.push({
+            content: this.value,
+            isActive: false
+          })
+          this.value = '';
+          this.arrList = [...this.arr]
+        },
+        del(_index){
+          this.arr.splice(_index,1)
+          this.arrList = [...this.arr]
+        },
+        changeClass(_item) {
+          _item.isActive = !_item.isActive;
+        },
+        filter() {
+          this.arrList = this.arr.filter((item, key) => {
+            return item.content.includes(this.value)
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>
