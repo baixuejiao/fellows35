@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{add()}}</p>
+    <p>{{add()}}</p>
+
+    <p>{{sum}}</p>
+    <p>{{sum}}</p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        a: 1,
+        b: 2
+      },
+      // 计算属性
+      computed: {
+        // 计算属性执行过一次后 结果会缓存，再次调用不回执行，除非结果改变
+        sum() {
+          return this.a + this.b
+        },
+        del(){
+
+        }
+      },
+      methods: {
+        // 每调用一次就会执行一次
+        add(){
+          return this.a + this.b
+        }
+      },
+      // 实时监听属性的改变
+      watch: {
+        a: function(newVal, oldVal){
+          console.log('newVal:', newVal)
+          console.log('oldVal:', oldVal)
+          console.log(aaa)
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>
