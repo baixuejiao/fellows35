@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <mytpl></mytpl>
+    <mydialg></mydialg>
+    <!-- 父组件调用子组件 通过绑定属性的方式传值  -->
+    <tempp :title="content1"></tempp>
+    <tempp title="你好" key-index="1" indexKey="111"></tempp>
+  </div>
+
+  <div id="container">
+    <mytpl></mytpl>
+  </div>
+
+  <!-- 第三种定义组件的方式 -->
+  <template id="temp">
+    <p>{{title}}</p>
+  </template>
+
+  <script src="./vue.js"></script>
+  <script>
+    // 创建一个组件
+    // 第一个参数是一个string => 组件名称
+    // 第二个参数是一个object 配置组件的模版内容
+    Vue.component('mytpl',{ //全局组件
+      template: '<h1>hello world</h1>'
+    })
+
+    let xm = new Vue({
+      el: '#app',
+      data: {
+        content1: 'hello'
+      },
+      components: { // 局部组件
+        'mydialg': {
+          template: '<p>明天放假～</p>'
+        },
+        'tempp': {
+          template: '#temp',
+          // key-index => keyIndex
+          props: ['title','keyIndex', 'indexKey'], //在子组件内通过props属性接收父组件的传参 props是一个array
+        }
+      }
+    })
+
+    let xm1 = new Vue({
+      el: '#container',
+      data: {
+
+      }
+    })
+  
+  
+  </script>
+</body>
+</html>
