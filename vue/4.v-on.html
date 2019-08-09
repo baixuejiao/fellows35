@@ -10,7 +10,7 @@
   <div id="app">
     <div id="btn">{{number}}</div>
     <!-- v-on 事件绑定 -->
-    <button v-on:click="add">点击</button>
+    <button v-on:click="add($event)">点击</button>
     <!-- v-on:click => @click -->
     <button @click="add">点击</button>
 
@@ -27,6 +27,8 @@
       // $event 事件对象
       methods: {
         add($event){
+          // event 事件对象
+          console.log(event);
           console.log($event);
           // console.log(this.number)
           this.number++

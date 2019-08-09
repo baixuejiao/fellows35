@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <ul>
+      <li v-for="(item, index) in list">
+        {{item.name}}
+        {{item.age}}
+      </li>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello',
+        list: []
+      },
+      methods: {
+        getList(){
+          let obj = [
+            {
+              name: 'wx',
+              age: 19
+            },
+            {
+              name: 'wxc',
+              age: 40
+            }
+          ]
+          this.list = obj
+          // setTimeout(()=>{
+          // },0)
+        }
+      },
+      beforeCreate(){
+        // this.getList();
+      },
+      created(){
+        // this.getList();
+      },
+      beforeMount(){
+        // this.getList();
+      },
+      mounted(){
+        this.getList();
+        console.log(this.list)
+      }
+    })
+  
+  </script>
+</body>
+</html>

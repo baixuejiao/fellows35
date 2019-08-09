@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+    <button @click="change">change</button>
+    <button @click="destroy">destroy</button>
+  </div>
+ 
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello world!'
+      },
+      methods: {
+        change(val) {
+          console.log('qwerty')
+          this.msg = val || '666'
+        },
+        destroy() {
+          this.$destroy();
+          console.log(1111)
+        }
+      },
+      // 实例创建之前
+      beforeCreate(){
+        console.log('------beforeCreate-------');
+        console.log('el:',this.$el) // undefined
+        console.log('data:',this.$data) // undefined
+      },
+      // 实例创建成功
+      created(){
+        console.log('------created-------');
+        console.log('el:',this.$el) // undefined
+        console.log('data:',this.$data) // 可以拿到
+      },
+      // 数据中的 data 在模版中先占一个位置
+      beforeMount() {
+        console.log('------beforeMount-------');
+        console.log('el:',this.$el)  //元素已经挂载上了 但是内容还没有填充进去 会有一个占位
+        console.log('data:',this.$data) 
+      },
+      // 模版中的 data 数据直接显示出来了
+      mounted(){
+        console.log('------mounted-------');
+        console.log('el:',this.$el)  
+        console.log('data:',this.$data) 
+      },
+      // 数据更改之前 虚拟dom里的内容会更新 真实dom里不会更新
+      beforeUpdate() {
+        console.log('------beforeUpdate-------');
+        console.log('el:',this.$el)  
+        console.log('data:',this.$data)
+        console.log('dom innerHTML:',document.getElementById('app').innerHTML)
+      },
+      // 数据更改完成 虚拟dom里的内容会更新 真实dom里也会更新
+      updated() {
+        console.log('------updated-------');
+        console.log('el:',this.$el)  
+        console.log('data:',this.$data) 
+        console.log('dom innerHTML:',document.getElementById('app').innerHTML)
+      },
+      // 在 vue 实例销毁之前调用，此时实例任然可用
+      beforeDestroy() {
+        this.msg = '12345678'
+        this.change('777')
+        console.log('------beforeDestroy-------');
+        console.log('el:',this.$el)  
+        console.log('data:',this.$data) 
+      },
+      // 在 vue 实例销毁之后调用，vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁
+      destroyed() {
+        // this.msg = '34567890-'
+        console.log('------destroyed-------');
+        console.log('el:',this.$el)  
+        console.log('data:',this.$data) 
+      }
+
+    }) 
+  
+  </script>
+</body>
+</html>

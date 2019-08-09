@@ -19,6 +19,7 @@
     <!-- v-bind 属性绑定 
         v-bind: class => :class (简写)
     -->
+    <span class="wrapper" :class="aaa"></span>
     <span v-bind:class="spanStyle">123456789</span>
 
     <span :class="spanStyle">123456789</span>
@@ -32,7 +33,8 @@
       asdfghjkl;
     </div>
 
-    <!-- <img v-bind:src="img" alt=""> -->
+    <img v-bind:src="img" alt="">
+    <div :index="1"></div>
   </div>
 
   <script src="./vue.js"></script>
