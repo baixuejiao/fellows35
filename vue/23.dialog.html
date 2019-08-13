@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    #container{
+      width: 300px;
+      height: 200px;
+      margin: 20px auto 0;
+      border: 1px solid #ff00ff;
+    }
+    #title{
+      height: 40px;
+      padding: 0 10px;
+      line-height: 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    #title span{
+      float: right;
+      cursor: pointer;
+    }
+    #content{
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button>注册</button>
+    <button @click="showlogin">{{logintext}}</button>
+    <pop v-show="status" :title="logintext" :closefun="close" @hide="close" ></pop>
+  </div>
+
+  <template id="mydialog">
+    <div id="conntainer">
+      <header>
+        {{title}}
+        <span @click="$emit('hide')">X</span>
+      </header>
+      <div id="content">
+        <p>
+          用户名： <input type="text">
+        </p>
+        <p>
+          密码： <input type="text">
+        </p>
+        <button @click="closefun('12345678')">{{title}}</button>
+      </div>
+
+    </div>
+  </template>
+  <script src="./vue.js"></script>
+  <script>
+   
+    new Vue({
+      el: '#app',
+      data: {
+        logintext: '登陆',
+        status: false,
+      },
+      components: {
+        'pop': {
+          template: '#mydialog',
+          props: ['title','closefun']
+        }
+      },
+      methods: {
+        showlogin() {
+          this.status = true;
+        },
+        close(desc){
+          console.log(desc)
+          this.status = false;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

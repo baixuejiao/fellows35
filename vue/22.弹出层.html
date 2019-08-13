@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    #container{
+      width: 300px;
+      height: 200px;
+      margin: 20px auto 0;
+      border: 1px solid #ff00ff;
+    }
+    #title{
+      height: 40px;
+      padding: 0 10px;
+      line-height: 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    #title span{
+      float: right;
+      cursor: pointer;
+    }
+    #content{
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="login()">{{loginTitle}}</button>
+    <button @click="register()">{{registerTitle}}</button>
+
+    <popdialog :title="loginTitle" v-show="loginStatus" @hide="close" >
+      <p>
+        用户名： <input type="text">
+      </p>
+      <p>
+        密码： <input type="password">
+      </p>
+    </popdialog>
+    <popdialog :title="registerTitle" v-show="registerStatus" :hide-dia="hideDia">
+      <p>
+        用户名： <input type="text">
+      </p>
+      <p>
+        密码： <input type="password">
+      </p>
+      <p>
+        确认密码： <input type="password">
+      </p>
+    </popdialog>
+
+  </div>
+
+  <template id="dialog">
+    <div id="container">
+      <header id="title">
+        {{title}}
+        <!-- $emit() 调用父组件的方法
+            第一个参数： 事件名称
+            之后的参数： 方法里需要的参数
+        -->
+        <span @click="$emit('hide','123456','8888')">X</span>
+      </header>
+      <div id="content">
+        <slot></slot>
+        <button @click="hideDia()">{{title}}</button>
+      </div>
+
+    </div>
+  </template>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        loginTitle: '登陆',
+        registerTitle: '注册',
+        loginStatus: false,
+        registerStatus: false
+      },
+      components: {
+        'popdialog': {
+          template: '#dialog',
+          props:['title','hideDia']
+        }
+      },
+      methods: {
+        login(){
+          this.loginStatus = true;
+          this.registerStatus = false;
+        },
+        register(){
+          this.loginStatus = false;
+          this.registerStatus = true;
+        },
+        close(_data, _item) {
+          console.log(_data,_item)
+          this.loginStatus = false;
+          this.registerStatus = false;
+        },
+        hideDia(){
+          this.loginStatus = false;
+          this.registerStatus = false;
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>
