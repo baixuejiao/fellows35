@@ -18,6 +18,7 @@
   export default {
     data(){
       return {
+        // 当前选中的菜单信息
         cur: {
           name: '电影',
           path: '/movie',
@@ -62,6 +63,18 @@
       this.navList.forEach((item) => {
         if(item.path == this.$route.path){
           this.cur = item
+        } else if (this.$route.path == '/musiclist') {
+          this.cur = {
+            name: '音乐',
+            path: '/music',
+            bgColor: '#ff00ff'
+          }
+        } else if (this.$route.path.includes('/photodetails')) {
+          this.cur = {
+            name: '图片',
+            path: '/photo',
+            bgColor: '#ff8907'
+          }
         }
       })
     }

@@ -67,6 +67,7 @@ export default {
       })
     },
     goDetails(_data) {
+      // '/path/111'
       this.$router.push(`/details/${_data.id}`)
     }
   },
