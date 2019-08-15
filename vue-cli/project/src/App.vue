@@ -30,15 +30,22 @@
     <transition name="fade">
       <router-view/>
     </transition>
+
+    <tpl :title="msg" @change="changeMsg" :changefun="changeMsg"></tpl>
   </div>
 </template>
 
+
 <script>
+  import hello from '@/components/hello.vue'
   export default {
     data() {
       return {
-        msg: '1234567'
+        msg: '放假啦'
       }
+    },
+    components: {
+      tpl: hello
     },
     methods: {
       gopage() {
@@ -50,6 +57,9 @@
       back(){
         this.$router.go(-4)
         // this.$router.back() // this.$router.go(-1)
+      },
+      changeMsg() {
+        this.msg = 'wxbufangjia'
       }
     }
 }

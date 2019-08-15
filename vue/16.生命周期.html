@@ -9,8 +9,9 @@
 <body>
   <div id="app">
     {{msg}}
-    <button @click="change">change</button>
+    <button @click="change(111)">change</button>
     <button @click="destroy">destroy</button>
+    <img v-if="arr.length>0" :src="arr[0]" alt="">
   </div>
  
 
@@ -19,7 +20,8 @@
     let vm = new Vue({
       el: '#app',
       data: {
-        msg: 'hello world!'
+        msg: 'hello world!',
+        arr: []
       },
       methods: {
         change(val) {
@@ -36,12 +38,14 @@
         console.log('------beforeCreate-------');
         console.log('el:',this.$el) // undefined
         console.log('data:',this.$data) // undefined
+        console.log('dom innerHTML:',document.getElementById('app').innerHTML)
       },
       // 实例创建成功
       created(){
         console.log('------created-------');
         console.log('el:',this.$el) // undefined
         console.log('data:',this.$data) // 可以拿到
+        console.log('dom innerHTML:',document.getElementById('app').innerHTML)
       },
       // 数据中的 data 在模版中先占一个位置
       beforeMount() {

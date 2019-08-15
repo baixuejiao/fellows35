@@ -1,6 +1,6 @@
 <template>
   <div class="photo">
-    <img v-for="(item, index) in list" :key="index" :src="item.src" alt="" @click="goDetails(index)">
+    <img v-for="(item, index) in photoarr" :key="index" :src="item.src" alt="" @click="goDetails(index)">
   </div>
 </template>
 
@@ -12,21 +12,29 @@ import {mapMutations} from 'vuex'
 export default {
   data() {
     return{
-      list: this.$store.state.photoList
+      list: []
+    }
+  },
+  computed: {
+    photoarr() {
+      return this.$store.state.photoList
     }
   },
   created() {
-    axios.get('data/photodata.json')
-      .then(res => {
-        console.log(res)
-        if(res.status *1 === 200) {
-          this.list = res.data.photoData
-          // this.setPhotoList(res.data.photoData)
-        }
-      })
-      .catch(err => {
+    // this.$axios.get()
 
-      })
+
+    // axios.get('data/photodata.json')
+    //   .then(res => {
+    //     console.log(res)
+    //     if(res.status *1 === 200) {
+    //       this.list = res.data.photoData
+    //       // this.setPhotoList(res.data.photoData)
+    //     }
+    //   })
+    //   .catch(err => {
+
+    //   })
   },
   methods: {
     ...mapMutations(['setPhotoList']),

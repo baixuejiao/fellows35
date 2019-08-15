@@ -1,7 +1,7 @@
 <template>
   <div class="cover">
     <v-touch v-on:swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
-      <img v-if="photoList.length>0" :src="photoList[index].src" alt="">
+      <img v-if="photoarr.length>0" :src="photoarr[index].src" alt="">
     </v-touch>
 
   </div>
@@ -21,6 +21,11 @@ export default {
       index: this.$route.params.index
     }
   },
+  computed: {
+    photoarr() {
+      return this.$store.state.photoList
+    }
+  },
   methods: {
     onSwipeLeft() {
       // console.log(this.index)
@@ -37,17 +42,17 @@ export default {
     }
   },
   created() {
-    axios.get('/data/photodata.json')
-      .then(res => {
-        console.log(res)
-        if(res.status *1 === 200) {
-          // this.photoList = res.data.photoData
-          this.photoList = res.data.photoData
-        }
-      })
-      .catch(err => {
+    // axios.get('/data/photodata.json')
+    //   .then(res => {
+    //     console.log(res)
+    //     if(res.status *1 === 200) {
+    //       // this.photoList = res.data.photoData
+    //       this.photoList = res.data.photoData
+    //     }
+    //   })
+    //   .catch(err => {
 
-      })
+    //   })
   }
 }
 </script>

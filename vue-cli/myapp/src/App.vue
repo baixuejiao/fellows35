@@ -15,6 +15,10 @@
   import commonHeader from '@/components/CommonHeader.vue'
   import commonFooter from '@/components/CommonFooter.vue'
 
+  import axios from 'axios'
+
+  import {mapMutations} from 'vuex'
+
   export default {
     data(){
       return {
@@ -45,10 +49,12 @@
             path: '/photo',
             bgColor: '#ff8907'
           }
-        ]
+        ],
+        plist: []
       }
     },
     methods: {
+      ...mapMutations(['setPhotoList']),
       selectNav(_data) {
         console.log(_data)
         this.cur = _data
@@ -77,6 +83,19 @@
           }
         }
       })
+
+      axios.get('/data/photodata.json')
+        .then(res=>{
+          if(res.status * 1 === 200){
+            this.plist =  res.data.photoData
+            this.setPhotoList(this.plist)
+          } else {
+            alert(res.statusText)
+          }
+        })
+        .catch(err => {
+          alert('error')
+        })
     }
   }
 

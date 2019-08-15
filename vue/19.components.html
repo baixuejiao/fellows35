@@ -30,7 +30,8 @@
     // 第一个参数是一个string => 组件名称
     // 第二个参数是一个object 配置组件的模版内容
     Vue.component('mytpl',{ //全局组件
-      template: '<h1>hello world</h1>'
+      template: '<h1>hello world</h1>',
+      props: ['aaa']
     })
 
     let xm = new Vue({
@@ -47,7 +48,8 @@
           template: '#temp',
           // key-index => keyIndex
           props: ['title','keyIndex', 'indexKey'], //在子组件内通过props属性接收父组件的传参 props是一个array
-        }
+        },
+        commonHeader: commonHeader
       }
     })
 

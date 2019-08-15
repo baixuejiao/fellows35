@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+
+    <ul>
+      <li v-for="(item, index) in list">
+        {{item.name}}
+        {{item.age}}
+      </li>
+    </ul>
+
+    <p v-for="item in arr" @click="funname" >
+      {{item}}
+    </p>
+
+    <input type="text" v-model="value">
+
+    <!-- <input type="radio" v-model="sex" value="boy">
+    <input type="radio" v-model="sex" value="girl"> -->
+
+    <!-- <input type="checkbox" v-model="tag"> -->
+
+    <!-- tag1[] -->
+    <!-- <input type="checkbox" v-model="tag1" value="aaa">
+    <input type="checkbox" v-model="tag1" value="bbb"> -->
+
+    <p :index="tag">12345</p>
+    <p index="1">{{ sum }}</p>
+    <p index="1">{{ total() }}</p>
+
+    <div v-for="ds in arr">
+      <h1>{{ds}}</h1>
+      <p>{{ds}}</p>
+    </div>
+
+    <template v-for="ds in arr">
+      <h1>{{ds}}</h1>
+      <p>{{ds}}</p>
+    </template>
+
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        tag: '1',
+        msg: '放假啦',
+        arr: [1,2,3],
+        list: [
+          {
+            name: 'zzz',
+            age: '1234'
+          },
+          {
+            name: 'zx',
+            age: 1
+          },
+          {
+            name: 'wx',
+            age: 2
+          }
+        ],
+        value: 1
+      },
+      computed: {
+        sum() {
+          return 1
+        }
+      },
+      methods: {
+        total(){
+          return 1
+        },
+        fun: () => {
+          // this ->window  
+        },
+        fun1() {
+          // this => vm
+          // this.$el
+          // this.$data
+          console.log(this.msg)
+          
+        },
+        funname(e) {
+          console.log(e)
+        }
+      },
+      watch: {
+        value: function(newval, old){
+          console.log(newval)
+        }
+      },
+      mounted() {
+        // item 数组里的每一项
+        // index 索引
+        this.list.forEach((item, index) => {
+          console.log('item:',item)
+          // console.log('index:', index)
+        })
+
+        
+      }
+    })
+
+    
+  
+  
+  </script>
+</body>
+</html>

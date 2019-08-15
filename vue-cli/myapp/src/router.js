@@ -21,6 +21,7 @@ export default new Router({
     },
     {
       path: '/movie',
+      name: 'movie',
       component: Movie
     },
     {
