@@ -26,7 +26,16 @@ export default new Router({
     },
     {
       path: '/details/:id',
-      component: Details
+      alias: '/ccc',
+      component: Details,
+      // children: [
+      //   {
+      //     path: '/details/a'
+      //   },
+      //   {
+      //     path: 'a'
+      //   }
+      // ]
     },
     {
       path: '/music',
@@ -47,6 +56,9 @@ export default new Router({
     {
       path: '/photodetails/:index',
       component: PhotoDetails
+    },
+    {
+      path: '/*'
     }
   ]
 })

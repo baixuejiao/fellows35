@@ -40,6 +40,12 @@ export default {
     ...mapMutations(['setPhotoList']),
     goDetails(_index) {
       this.$router.push(`/photodetails/${_index}`)
+      this.$router.push({
+        name: 'details',
+        params: {
+          id: _index
+        }
+      })
     }
   }
 }

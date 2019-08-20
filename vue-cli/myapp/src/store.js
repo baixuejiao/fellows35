@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    photoList: []
+    photoList: [],
+    a: 1,
+    b: 2,
+    list: []
   },
+
   mutations: {
     setPhotoList(state, _data) {
       console.log(111,_data)
@@ -14,6 +18,13 @@ export default new Vuex.Store({
     }
   },
   actions: {
-
+    getList() {
+      commit('setPhotoList', data)
+    }
+  },
+  getters: {
+    sum(){
+      return  state.a + state.b
+    }
   }
 })
