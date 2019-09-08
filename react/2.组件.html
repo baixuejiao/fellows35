@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <script src="./browser.min.js"></script>
+
+  <script type="text/babel">
+    // 函数式 无状态的 只能展示内容
+    // 组件名称首字母必须大写
+    // return一段内容
+    const Welcome = () => {
+      return <h1>hello xxx</h1>
+    } 
+    // props参数是一个obj 取到父组件的传值
+    const Com = (props) => {
+      return (
+        <div>
+          <h1>{props.name}</h1>  
+          <p>world</p>
+          <span>{props.title}</span>
+          {props.children}
+        </div>
+      )
+    }
+    ReactDOM.render(
+      // <Welcome/>,
+      <Com name="hello1111" title="aaaaa">
+        <input type="text"/>
+      </Com>,
+      document.getElementById('app')
+    )
+  
+  </script>
+</body>
+</html>

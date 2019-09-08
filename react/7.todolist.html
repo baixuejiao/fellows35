@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <script src="./browser.min.js"></script>
+
+  <script type="text/babel">
+    class List extends React.Component{
+      render() {
+        return(
+          <ul>
+            {
+              this.props.todos.map((value,index) => {
+                return <li key={index}>{value}</li>
+              })
+            }
+          </ul>
+        )
+      }
+    }
+    class InputTpl extends React.Component{
+      constructor(params){
+        super(params)
+        this.add = this.add.bind(this)
+      }
+      add() {
+        if(this.myInput.value){
+          this.props.addFun(this.myInput.value)
+          this.myInput.value = ''
+          // console.log(this.myInput.value)
+        }
+      }
+      render() {
+        return(
+          <div>
+            <input type="text" ref={input => this.myInput = input}/>  
+            <button onClick={this.add}>add</button>
+          </div>
+        )
+      }
+    }
+    class Main extends React.Component{
+      constructor(params){
+        super(params)
+        this.state = {
+          todos: [1,2,3]
+        }
+        this.addFun = this.addFun.bind(this)
+      }
+      addFun(_value) {
+        let todos = [...this.state.todos]
+        // let todos = this.state.todos
+        todos.push(_value)
+        this.setState({
+          todos
+        })
+      }
+      render() {
+        return(
+          <div>
+            <h1>TO DO LIST</h1>  
+            <InputTpl addFun={this.addFun}/>
+            <List todos={this.state.todos}/>
+          </div>
+        )
+      }
+    }
+   
+    ReactDOM.render(
+      <Main></Main>,
+      document.getElementById('app')
+    )
+
+    // ReactDOM.render(
+    //   <div>
+    //     <Main></Main>
+    //     <List/>
+    //     <InputTpl/>
+    //   </div>,
+    //   document.getElementById('app')
+    // )
+  
+  </script>
+</body>
+</html>

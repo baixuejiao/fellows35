@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <script src="./browser.min.js"></script>
+
+  <script type="text/babel">
+    class Solider extends React.Component{
+      constructor(params){
+        super(params)
+        this.change = this.change.bind(this)
+      }
+      change() {
+        console.log(this.props.name)
+        this.props.changeFun(this.props.name)
+      }
+      render() {
+        // <button onClick={
+        //       () => {
+        //         this.props.changeFun(this.props.name)
+        //       }
+        // }>调兵</button>
+        return (
+          <div>
+            <p>将军{this.props.name}有士兵：{this.props.num}</p>  
+            <button onClick={this.change}>调兵</button>
+          </div>
+        )
+      }
+    }
+
+    class Main extends React.Component{
+      constructor(params){
+        super(params)
+        this.state = {
+          total: 120,
+          numA: 100,
+          numB: 80,
+          nameA: 'A'
+        }
+        this.changeFun = this.changeFun.bind(this)
+      }
+      changeFun(_tag) {
+        if (this.state.total <=0) {
+          alert('士兵数量不足！')
+        } else {
+          this.setState({
+            total: this.state.total - 20,
+            [`num${_tag}`]: this.state[`num${_tag}`] + 20
+          })
+        }
+      }
+      render() {
+        return (
+          <div>
+            <h1>剩余士兵数量{this.state.total}</h1> 
+            <Solider name="A" num={this.state.numA} changeFun={this.changeFun}></Solider>
+            <Solider name="B" num={this.state.numB} changeFun={this.changeFun}></Solider>
+          </div>
+        )
+      }
+    }
+ 
+    ReactDOM.render(
+      <Main/>,
+      document.getElementById('app')
+    )
+  
+  </script>
+</body>
+</html>

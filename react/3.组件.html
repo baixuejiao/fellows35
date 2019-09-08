@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <script src="./browser.min.js"></script>
+
+  <script type="text/babel">
+   // class方式定义一个组件
+  //  父组件的传值 通过props参数接收  使用的时候this.props.xxxx
+    class Com extends React.Component{
+      render() {
+        return (
+          <div>
+            <h1>hello</h1>  
+            <p>{this.props.name}</p>
+            <span>{this.props.title}</span>
+            {this.props.children}
+            <Wel/>
+          </div>
+        )
+      }
+    }
+    class Wel extends React.Component{
+      render() {
+        return (
+          <a href="#">click</a>
+        )
+      }
+    }
+   
+    ReactDOM.render(
+      <Com name="WXC" title="aaa">
+        <input type="text"/> 
+        <button>click</button> 
+      </Com>,
+      document.getElementById('app')
+    )
+
+    // ReactDOM.render(
+    //   <Com name="WXC" title="aaa">
+      
+    //     </Com>,
+    //   document.getElementById('app')
+    // )
+  
+  </script>
+</body>
+</html>
