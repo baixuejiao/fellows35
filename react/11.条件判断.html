@@ -10,47 +10,49 @@
   <div id="app">
 
   </div>
+
   <script src="./react.development.js"></script>
   <script src="./react-dom.development.js"></script>
   <script src="./browser.min.js"></script>
 
   <script type="text/babel">
-    class Com extends React.Component{
-      constructor(params) {
+    class Main extends React.Component{
+      constructor(params){
         super(params)
         this.state = {
-          num: 1,
-          name: 'wxc'
+          isShow: true
         }
-        this.add = this.add.bind(this)
-        this.del = this.del.bind(this)
+        this.change = this.change.bind(this)
       }
-      // 自定义函数内部无法拿到this 需要在构造函数内改变this的指向
-      add() {
-        console.log(this)
-        // this.state.num = 2
-        // console.log(this.state.num)
+      change() {
         this.setState({
-          num: 2
+          isShow: !this.state.isShow
         })
       }
-      del() {
-
-      }
       render() {
+        let elem = null
+        if(this.state.isShow) {
+          elem = <p>1234567</p>
+        } else {
+          elem = null
+        }
         return (
           <div>
-            <h1>{this.state.num}</h1>
-            <button onClick={this.add}>click</button>
+            {
+              elem
+            }
+            <button onClick={this.change}>change</button>
           </div>
+
         )
       }
     }
+
+
     ReactDOM.render(
-      <Com></Com>,
+      <Main/>,
       document.getElementById('app')
     )
-  
   </script>
 </body>
 </html>

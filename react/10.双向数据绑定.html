@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      color: #fff;
+      background:red;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <script src="./browser.min.js"></script>
+
+  <script type="text/babel">
+    class Main extends React.Component{
+      constructor(params){
+        super(params)
+        this.state = {
+          msg: ''
+        }
+        this.change = this.change.bind(this)
+      }
+      change(event) {
+        this.setState({
+          msg: event.target.value
+        })
+      }
+      // 1.设置样式的方式 在标签内 设置className id 具体的样式写在style里面 (内部样式或外部样式)
+      // 2.设置内联样式
+      render() {
+        let style = {
+          color: 'red',
+          background: 'green'
+        }
+        return (
+          <div>
+            <h1 style={style}>hahahah </h1>
+            <h2 style={{
+              color: 'red',
+              background: 'green'
+            }}>hahahah </h2>
+            <input type="text" onChange={this.change}/> 
+            <p className="active" id="title">{this.state.msg}</p>
+          </div>
+        )
+      }
+    }
+
+
+    ReactDOM.render(
+      <Main/>,
+      document.getElementById('app')
+    )
+  </script>
+</body>
+</html>

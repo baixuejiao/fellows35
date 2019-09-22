@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <script src="./browser.min.js"></script>
+
+  <script type="text/babel">
+    class Main extends React.Component{
+      constructor(params){
+        super(params)
+        this.state = {
+          opacity: 1
+        }
+        this.unmount = this.unmount.bind(this)
+      }
+      // dom渲染完成
+      componentDidMount(){
+        console.log('componentDidMount')
+        this.timer = setInterval(() => {
+          console.log('wxc')
+          // 改变透明度
+          if (this.state.opacity <=0) {
+            this.setState({
+              opacity: 1
+            })
+          } else {
+            this.setState({
+              opacity: this.state.opacity-0.1
+            })
+          }
+        }, 200);
+        
+      }
+      // 组件更新之前执行（是否要更新）
+      shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate')
+        console.log(nextProps, nextState)
+        return true // 组件是否要更新
+        // return false //
+      }
+      // 组件将要更新
+      componentWillUpdate(nextProps, nextState){
+        console.log('componentWillUpdate')
+        console.log(nextProps, nextState)
+      }
+      componentDidUpdate() {
+        console.log('componentDidUpdate')
+      }
+      componentWillUnmount() {
+        clearInterval(this.timer)
+        console.log('componentWillUnmount')
+      }
+      unmount() {
+        console.log('unmount')
+        // clearInterval(this.timer)
+        ReactDOM.unmountComponentAtNode(document.getElementById('app'))
+      }
+      render() {
+        console.log('render')
+        let style = {
+          opacity: this.state.opacity
+        }
+        return(
+          <div>
+            <h1 style={style}>12345678</h1> 
+            <button onClick={this.unmount}>unmount</button> 
+          </div>
+        )
+      }
+    }
+   
+    ReactDOM.render(
+      <Main></Main>,
+      document.getElementById('app')
+    )
+  </script>
+</body>
+</html>
