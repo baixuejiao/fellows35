@@ -1,0 +1,6 @@
+/* px rem em vh vw */
+.menu-container{
+  height: 100vh;
+  text-align: left;
+  background: #001529;
+}
