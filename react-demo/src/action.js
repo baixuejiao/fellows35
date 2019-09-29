@@ -1,8 +1,8 @@
 
-const add = (text) => {
+const add = (data) => {
   return {
     type: 'ADD',
-    text
+    data
   }
 }
 const del = (text) => {

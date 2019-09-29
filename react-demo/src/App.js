@@ -11,7 +11,7 @@ class App extends Component {
 
         <button onClick = { () => {
           console.log('add number')
-          store.dispatch(add(1))
+          store.dispatch(add(2))
         }}>add</button>
 
         <button onClick = { () => {
